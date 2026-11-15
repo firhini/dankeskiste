@@ -7,7 +7,13 @@
     "build": "next build",
     "start": "next start",
     "lint": "eslint",
-    "kalkulation": "tsx scripts/kalkulation.ts"
+    "kalkulation": "tsx scripts/kalkulation.ts",
+    "db:generate": "drizzle-kit generate",
+    "db:migrate": "drizzle-kit migrate",
+    "db:seed": "tsx db/seed.ts",
+    "test": "vitest run",
+    "typecheck": "tsc --noEmit",
+    "docs": "tsx scripts/gen-docs.ts"
   },
   "dependencies": {
     "@auth/drizzle-adapter": "^1.11.3",

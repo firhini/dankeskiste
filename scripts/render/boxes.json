@@ -1,0 +1,941 @@
+{
+  "boxes": [
+    {
+      "slug": "kleine-weihnachtskiste",
+      "name": "Kleine Weihnachtskiste",
+      "size": "klein",
+      "ribbon": "oliv",
+      "seed": 11,
+      "items": [
+        {
+          "type": "chocolate_bar",
+          "label": "Weihnachtsschokolade",
+          "sub": "VOLLMILCH · 100 G",
+          "tone": "dunkeloliv"
+        },
+        {
+          "type": "tea_box",
+          "label": "Wintertee",
+          "sub": "20 BEUTEL",
+          "tone": "salbei",
+          "dims": [
+            13,
+            6.5,
+            7.5
+          ]
+        },
+        {
+          "type": "cookie_pack",
+          "label": "Dominosteine",
+          "sub": "BIO · 125 G",
+          "tone": "dunkeloliv",
+          "dims": [
+            15,
+            9,
+            3.8
+          ]
+        },
+        {
+          "type": "cookie_pack",
+          "label": "Spekulatius",
+          "sub": "DINKEL · 150 G",
+          "tone": "salbei",
+          "dims": [
+            17,
+            8,
+            4.5
+          ]
+        }
+      ]
+    },
+    {
+      "slug": "weihnachtskiste",
+      "name": "Weihnachtskiste",
+      "size": "mittel",
+      "ribbon": "oliv",
+      "seed": 18,
+      "items": [
+        {
+          "type": "coffee_bag",
+          "label": "Kaffee",
+          "sub": "GEMAHLEN · 250 G",
+          "tone": "dunkeloliv",
+          "dims": [
+            8.5,
+            5.5,
+            17
+          ]
+        },
+        {
+          "type": "marzipan_loaf",
+          "label": "Marzipan",
+          "sub": "ZARTBITTER · 125 G",
+          "tone": "dunkeloliv",
+          "dims": [
+            13,
+            4.5,
+            3.2
+          ]
+        },
+        {
+          "type": "chocolate_bar",
+          "label": "Weihnachtsschokolade",
+          "sub": "VOLLMILCH · 100 G",
+          "tone": "dunkeloliv"
+        },
+        {
+          "type": "tea_box",
+          "label": "Wintertee",
+          "sub": "20 BEUTEL",
+          "tone": "salbei",
+          "dims": [
+            13,
+            6.5,
+            7.5
+          ]
+        },
+        {
+          "type": "cookie_pack",
+          "label": "Zimtsterne",
+          "sub": "BIO · 125 G",
+          "tone": "creme",
+          "dims": [
+            15,
+            9,
+            4.5
+          ]
+        },
+        {
+          "type": "cookie_pack",
+          "label": "Spekulatius",
+          "sub": "DINKEL · 150 G",
+          "tone": "salbei",
+          "dims": [
+            17,
+            8,
+            4.5
+          ]
+        }
+      ]
+    },
+    {
+      "slug": "grosse-weihnachtskiste",
+      "name": "Große Weihnachtskiste",
+      "size": "gross",
+      "ribbon": "dunkeloliv",
+      "seed": 25,
+      "items": [
+        {
+          "type": "bottle",
+          "variant": "wein_weiss",
+          "label": "Grauburgunder",
+          "sub": "BADEN · TROCKEN · 0,75 L"
+        },
+        {
+          "type": "coffee_bag",
+          "label": "Kaffee",
+          "sub": "100 % ARABICA · 250 G",
+          "tone": "oliv",
+          "dims": [
+            8.5,
+            5.5,
+            17
+          ]
+        },
+        {
+          "type": "marzipan_loaf",
+          "label": "Marzipan",
+          "sub": "ZARTBITTER · 125 G",
+          "tone": "dunkeloliv",
+          "dims": [
+            13,
+            4.5,
+            3.2
+          ]
+        },
+        {
+          "type": "praline_box",
+          "label": "Schokoladen-Auswahl",
+          "sub": "20 STÜCK · 250 G",
+          "tone": "creme",
+          "dims": [
+            24,
+            12.5,
+            3.2
+          ]
+        },
+        {
+          "type": "jar",
+          "label": "Konfitüre",
+          "sub": "ERDBEERE · 370 G",
+          "contents": "erdbeer",
+          "dims": [
+            8.6,
+            8.6,
+            10.5
+          ]
+        },
+        {
+          "type": "cookie_pack",
+          "label": "Zimtsterne",
+          "sub": "BIO · 125 G",
+          "tone": "creme",
+          "dims": [
+            15,
+            9,
+            4.5
+          ]
+        },
+        {
+          "type": "pouch",
+          "label": "Gebrannte Mandeln",
+          "sub": "BIO · 125 G",
+          "tone": "creme",
+          "dims": [
+            11,
+            5,
+            16
+          ]
+        }
+      ]
+    },
+    {
+      "slug": "adventskaffee",
+      "name": "Adventskaffee",
+      "size": "mittel",
+      "ribbon": "natur",
+      "seed": 32,
+      "items": [
+        {
+          "type": "coffee_bag",
+          "label": "Kaffee",
+          "sub": "GEMAHLEN · 250 G",
+          "tone": "dunkeloliv",
+          "dims": [
+            8.5,
+            5.5,
+            17
+          ]
+        },
+        {
+          "type": "cookie_pack",
+          "label": "Butterkeks",
+          "sub": "IN VOLLMILCHSCHOKOLADE · 125 G",
+          "tone": "oliv",
+          "dims": [
+            14,
+            7.5,
+            4
+          ]
+        },
+        {
+          "type": "cookie_pack",
+          "label": "Dominosteine",
+          "sub": "BIO · 125 G",
+          "tone": "dunkeloliv",
+          "dims": [
+            15,
+            9,
+            3.8
+          ]
+        },
+        {
+          "type": "cookie_pack",
+          "label": "Spekulatius",
+          "sub": "DINKEL · 150 G",
+          "tone": "salbei",
+          "dims": [
+            17,
+            8,
+            4.5
+          ]
+        },
+        {
+          "type": "pouch",
+          "label": "Amarettini",
+          "sub": "MANDELGEBÄCK · 200 G",
+          "tone": "salbei",
+          "dims": [
+            12,
+            5.5,
+            18
+          ]
+        }
+      ]
+    },
+    {
+      "slug": "suesse-weihnacht",
+      "name": "Süße Weihnacht",
+      "size": "mittel",
+      "ribbon": "salbei",
+      "seed": 39,
+      "items": [
+        {
+          "type": "praline_box",
+          "label": "Schokoladen-Auswahl",
+          "sub": "20 STÜCK · 250 G",
+          "tone": "creme",
+          "dims": [
+            24,
+            12.5,
+            3.2
+          ]
+        },
+        {
+          "type": "cookie_pack",
+          "label": "Zimtsterne",
+          "sub": "BIO · 125 G",
+          "tone": "creme",
+          "dims": [
+            15,
+            9,
+            4.5
+          ]
+        },
+        {
+          "type": "cookie_pack",
+          "label": "Dominosteine",
+          "sub": "BIO · 125 G",
+          "tone": "dunkeloliv",
+          "dims": [
+            15,
+            9,
+            3.8
+          ]
+        },
+        {
+          "type": "cookie_pack",
+          "label": "Spekulatius",
+          "sub": "DINKEL · 150 G",
+          "tone": "salbei",
+          "dims": [
+            17,
+            8,
+            4.5
+          ]
+        },
+        {
+          "type": "pouch",
+          "label": "Gebrannte Mandeln",
+          "sub": "BIO · 125 G",
+          "tone": "creme",
+          "dims": [
+            11,
+            5,
+            16
+          ]
+        }
+      ]
+    },
+    {
+      "slug": "winterabend",
+      "name": "Winterabend",
+      "size": "gross",
+      "ribbon": "salbei",
+      "seed": 46,
+      "items": [
+        {
+          "type": "bottle",
+          "variant": "saft",
+          "label": "Winterpunsch",
+          "sub": "OHNE ALKOHOL · 0,75 L"
+        },
+        {
+          "type": "tea_box",
+          "label": "Gewürztee",
+          "sub": "BIO · 17 BEUTEL",
+          "tone": "creme",
+          "dims": [
+            12,
+            6.5,
+            7.5
+          ]
+        },
+        {
+          "type": "pouch",
+          "label": "Gebrannte Mandeln",
+          "sub": "BIO · 125 G",
+          "tone": "creme",
+          "dims": [
+            11,
+            5,
+            16
+          ]
+        },
+        {
+          "type": "cookie_pack",
+          "label": "Zimtsterne",
+          "sub": "BIO · 125 G",
+          "tone": "creme",
+          "dims": [
+            15,
+            9,
+            4.5
+          ]
+        },
+        {
+          "type": "chocolate_bar",
+          "label": "Weihnachtsschokolade",
+          "sub": "VOLLMILCH · 100 G",
+          "tone": "dunkeloliv"
+        }
+      ]
+    },
+    {
+      "slug": "willkommen-im-team",
+      "name": "Willkommen im Team",
+      "size": "mittel",
+      "ribbon": "oliv",
+      "seed": 53,
+      "items": [
+        {
+          "type": "notebook",
+          "label": "Notizbuch",
+          "sub": "A5",
+          "tone": "dunkeloliv",
+          "dims": [
+            15,
+            21,
+            1.6
+          ]
+        },
+        {
+          "type": "coffee_bag",
+          "label": "Kaffee",
+          "sub": "GEMAHLEN · 250 G",
+          "tone": "dunkeloliv",
+          "dims": [
+            8.5,
+            5.5,
+            17
+          ]
+        },
+        {
+          "type": "tea_box",
+          "label": "Gewürztee",
+          "sub": "BIO · 17 BEUTEL",
+          "tone": "creme",
+          "dims": [
+            12,
+            6.5,
+            7.5
+          ]
+        },
+        {
+          "type": "chocolate_bar",
+          "label": "Zartbitter",
+          "sub": "74 % KAKAO · 100 G",
+          "tone": "oliv",
+          "dims": [
+            9.5,
+            9.5,
+            1.3
+          ]
+        },
+        {
+          "type": "pouch",
+          "label": "Studentenfutter",
+          "sub": "NÜSSE & ROSINEN · 150 G",
+          "tone": "oliv",
+          "dims": [
+            12,
+            5,
+            18
+          ]
+        }
+      ]
+    },
+    {
+      "slug": "danke-fuers-projekt",
+      "name": "Danke fürs Projekt",
+      "size": "mittel",
+      "ribbon": "natur",
+      "seed": 60,
+      "items": [
+        {
+          "type": "praline_box",
+          "label": "Schokoladen-Auswahl",
+          "sub": "20 STÜCK · 250 G",
+          "tone": "creme",
+          "dims": [
+            24,
+            12.5,
+            3.2
+          ]
+        },
+        {
+          "type": "pouch",
+          "label": "Nusskerne",
+          "sub": "UNGESALZEN · 150 G",
+          "tone": "dunkeloliv",
+          "dims": [
+            12,
+            5,
+            18
+          ]
+        },
+        {
+          "type": "chocolate_bar",
+          "label": "Zartbitter",
+          "sub": "74 % KAKAO · 100 G",
+          "tone": "oliv",
+          "dims": [
+            9.5,
+            9.5,
+            1.3
+          ]
+        },
+        {
+          "type": "pouch",
+          "label": "Amarettini",
+          "sub": "MANDELGEBÄCK · 200 G",
+          "tone": "salbei",
+          "dims": [
+            12,
+            5.5,
+            18
+          ]
+        }
+      ]
+    },
+    {
+      "slug": "jubilaeum",
+      "name": "Jubiläum",
+      "size": "gross",
+      "ribbon": "dunkeloliv",
+      "seed": 67,
+      "items": [
+        {
+          "type": "bottle",
+          "variant": "sekt",
+          "label": "Riesling Sekt",
+          "sub": "TROCKEN · 0,75 L"
+        },
+        {
+          "type": "praline_box",
+          "label": "Haselnuss-Pralinen",
+          "sub": "16 STÜCK · 200 G",
+          "tone": "creme",
+          "dims": [
+            19,
+            9.5,
+            4.8
+          ]
+        },
+        {
+          "type": "marzipan_loaf",
+          "label": "Marzipan",
+          "sub": "ZARTBITTER · 125 G",
+          "tone": "dunkeloliv",
+          "dims": [
+            13,
+            4.5,
+            3.2
+          ]
+        },
+        {
+          "type": "pouch",
+          "label": "Nusskerne",
+          "sub": "UNGESALZEN · 150 G",
+          "tone": "dunkeloliv",
+          "dims": [
+            12,
+            5,
+            18
+          ]
+        },
+        {
+          "type": "chocolate_bar",
+          "label": "Zartbitter",
+          "sub": "74 % KAKAO · 100 G",
+          "tone": "oliv",
+          "dims": [
+            9.5,
+            9.5,
+            1.3
+          ]
+        }
+      ]
+    },
+    {
+      "slug": "geburtstagsgruss",
+      "name": "Geburtstagsgruß",
+      "size": "klein",
+      "ribbon": "salbei",
+      "seed": 74,
+      "items": [
+        {
+          "type": "bottle_small",
+          "variant": "sekt",
+          "label": "Sekt",
+          "sub": "PICCOLO · 0,2 L"
+        },
+        {
+          "type": "praline_box",
+          "label": "Nuss-Pralinen",
+          "sub": "20 STÜCK · 178 G",
+          "tone": "salbei",
+          "dims": [
+            18.5,
+            11,
+            3.5
+          ]
+        },
+        {
+          "type": "chocolate_bar",
+          "label": "Zartbitter",
+          "sub": "74 % KAKAO · 100 G",
+          "tone": "oliv",
+          "dims": [
+            9.5,
+            9.5,
+            1.3
+          ]
+        },
+        {
+          "type": "tea_box",
+          "label": "Gewürztee",
+          "sub": "BIO · 17 BEUTEL",
+          "tone": "creme",
+          "dims": [
+            12,
+            6.5,
+            7.5
+          ]
+        },
+        {
+          "type": "pouch",
+          "label": "Fruchtgummi",
+          "sub": "175 G",
+          "tone": "salbei",
+          "dims": [
+            13,
+            4,
+            19
+          ]
+        }
+      ]
+    },
+    {
+      "slug": "teamfruehstueck",
+      "name": "Teamfrühstück",
+      "size": "gross",
+      "ribbon": "oliv",
+      "seed": 81,
+      "items": [
+        {
+          "type": "coffee_bag",
+          "label": "Kaffee",
+          "sub": "GEMAHLEN · 500 G",
+          "tone": "dunkeloliv",
+          "dims": [
+            9.5,
+            6.5,
+            20
+          ]
+        },
+        {
+          "type": "jar",
+          "label": "Konfitüre",
+          "sub": "ERDBEERE · 370 G",
+          "contents": "erdbeer",
+          "dims": [
+            8.6,
+            8.6,
+            10.5
+          ]
+        },
+        {
+          "type": "jar",
+          "label": "Konfitüre",
+          "sub": "APRIKOSE · 370 G",
+          "contents": "aprikose",
+          "dims": [
+            8.6,
+            8.6,
+            10.5
+          ]
+        },
+        {
+          "type": "jar",
+          "label": "Honig",
+          "sub": "LANDHONIG · 500 G",
+          "contents": "honig",
+          "dims": [
+            8.4,
+            8.4,
+            11.5
+          ]
+        },
+        {
+          "type": "jar",
+          "label": "Nuss-Nougat",
+          "sub": "BIO · 270 G",
+          "contents": "nougat",
+          "dims": [
+            7.2,
+            7.2,
+            9.5
+          ]
+        },
+        {
+          "type": "tea_box",
+          "label": "Gewürztee",
+          "sub": "BIO · 17 BEUTEL",
+          "tone": "creme",
+          "dims": [
+            12,
+            6.5,
+            7.5
+          ]
+        }
+      ]
+    },
+    {
+      "slug": "pasta-abend",
+      "name": "Pasta-Abend",
+      "size": "mittel",
+      "ribbon": "oliv",
+      "seed": 88,
+      "items": [
+        {
+          "type": "pasta_bag",
+          "label": "Fusilli",
+          "sub": "HARTWEIZEN · 500 G",
+          "tone": "creme",
+          "dims": [
+            11,
+            6,
+            24
+          ]
+        },
+        {
+          "type": "jar",
+          "label": "Pesto",
+          "sub": "BASILIKUM · 190 G",
+          "contents": "pesto",
+          "dims": [
+            6.4,
+            6.4,
+            8.5
+          ]
+        },
+        {
+          "type": "jar",
+          "label": "Tomatensugo",
+          "sub": "BASILIKUM · 400 G",
+          "contents": "tomate",
+          "dims": [
+            7.4,
+            7.4,
+            12.5
+          ]
+        },
+        {
+          "type": "jar",
+          "label": "Oliven",
+          "sub": "MIT KRÄUTERN · 170 G",
+          "contents": "oliven",
+          "dims": [
+            6.8,
+            6.8,
+            10
+          ]
+        },
+        {
+          "type": "stick_pack",
+          "label": "Grissini",
+          "sub": "125 G",
+          "tone": "creme",
+          "dims": [
+            7,
+            3.5,
+            25
+          ]
+        },
+        {
+          "type": "pouch",
+          "label": "Amarettini",
+          "sub": "MANDELGEBÄCK · 200 G",
+          "tone": "salbei",
+          "dims": [
+            12,
+            5.5,
+            18
+          ]
+        }
+      ]
+    },
+    {
+      "slug": "auf-gute-zusammenarbeit",
+      "name": "Auf gute Zusammenarbeit",
+      "size": "mittel",
+      "ribbon": "dunkeloliv",
+      "seed": 95,
+      "items": [
+        {
+          "type": "coffee_bag",
+          "label": "Kaffee",
+          "sub": "GEMAHLEN · 250 G",
+          "tone": "dunkeloliv",
+          "dims": [
+            8.5,
+            5.5,
+            17
+          ]
+        },
+        {
+          "type": "chocolate_bar",
+          "label": "Edelbitter",
+          "sub": "70 % KAKAO · 100 G",
+          "tone": "ink"
+        },
+        {
+          "type": "marzipan_loaf",
+          "label": "Marzipan",
+          "sub": "ZARTBITTER · 125 G",
+          "tone": "dunkeloliv",
+          "dims": [
+            13,
+            4.5,
+            3.2
+          ]
+        },
+        {
+          "type": "pouch",
+          "label": "Cantuccini",
+          "sub": "MIT MANDELN · 250 G",
+          "tone": "creme",
+          "dims": [
+            13,
+            6,
+            19
+          ]
+        },
+        {
+          "type": "pouch",
+          "label": "Studentenfutter",
+          "sub": "NÜSSE & ROSINEN · 150 G",
+          "tone": "oliv",
+          "dims": [
+            12,
+            5,
+            18
+          ]
+        }
+      ]
+    },
+    {
+      "slug": "osterkiste",
+      "name": "Osterkiste",
+      "size": "mittel",
+      "ribbon": "salbei",
+      "seed": 102,
+      "items": [
+        {
+          "type": "tin",
+          "label": "Schokoladen-Hase",
+          "sub": "VOLLMILCH · 100 G",
+          "tone": "creme",
+          "dims": [
+            6.5,
+            4.5,
+            13
+          ]
+        },
+        {
+          "type": "praline_box",
+          "label": "Schokoladen-Auswahl",
+          "sub": "20 STÜCK · 250 G",
+          "tone": "creme",
+          "dims": [
+            24,
+            12.5,
+            3.2
+          ]
+        },
+        {
+          "type": "tea_box",
+          "label": "Gewürztee",
+          "sub": "BIO · 17 BEUTEL",
+          "tone": "creme",
+          "dims": [
+            12,
+            6.5,
+            7.5
+          ]
+        },
+        {
+          "type": "pouch",
+          "label": "Amarettini",
+          "sub": "MANDELGEBÄCK · 200 G",
+          "tone": "salbei",
+          "dims": [
+            12,
+            5.5,
+            18
+          ]
+        }
+      ]
+    },
+    {
+      "slug": "sommerkiste",
+      "name": "Sommerkiste",
+      "size": "gross",
+      "ribbon": "natur",
+      "seed": 109,
+      "items": [
+        {
+          "type": "bottle",
+          "variant": "saft",
+          "label": "Holunderblüte",
+          "sub": "SIRUP · 0,7 L"
+        },
+        {
+          "type": "jar",
+          "label": "Oliven",
+          "sub": "MIT KRÄUTERN · 170 G",
+          "contents": "oliven",
+          "dims": [
+            6.8,
+            6.8,
+            10
+          ]
+        },
+        {
+          "type": "stick_pack",
+          "label": "Grissini",
+          "sub": "125 G",
+          "tone": "creme",
+          "dims": [
+            7,
+            3.5,
+            25
+          ]
+        },
+        {
+          "type": "pouch",
+          "label": "Röstmandeln",
+          "sub": "GESALZEN · 150 G",
+          "tone": "creme",
+          "dims": [
+            12,
+            5,
+            18
+          ]
+        },
+        {
+          "type": "pouch",
+          "label": "Amarettini",
+          "sub": "MANDELGEBÄCK · 200 G",
+          "tone": "salbei",
+          "dims": [
+            12,
+            5.5,
+            18
+          ]
+        }
+      ]
+    }
+  ]
+}

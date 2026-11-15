@@ -65,8 +65,60 @@ Jede Entscheidung: was, warum, was verworfen wurde. Rechtliche und steuerliche P
 
 ## Geschäft
 
-(wird in Phase 1 ergänzt: Sortiment, Preise, Personalisierung, Versand, Rabatte)
+### G1 · Preisstatus in drei Stufen statt „verifiziert / geschätzt“
+- **Entscheidung:** Jeder Preis trägt Quelle, Prüfdatum und einen Status: `belegt` (Seite des Händlers, bei dem gekauft wird), `richtwert` (Online-Supermarkt oder UVP), `geschätzt` (kein Beleg).
+- **Warum:** Die Händlerseiten waren aus der Arbeitsumgebung nicht direkt abrufbar; die Preise stammen aus Suchauszügen der verlinkten Seiten. REWE, Kaufland und EDEKA zeigen online keine Filialpreise für Schwetzingen. Ein Online-Preis von EDEKA24 ist kein „geschätzter“, aber auch kein bestätigter Regalpreis – das soll sichtbar bleiben.
+- **Folge:** Für 23 von 41 Artikeln ist dm, Rossmann, Lidl oder Aldi Süd als Laden eingetragen, weil dort der Preis belegt ist – obwohl REWE/Kaufland/EDEKA bevorzugt wären. Diese stehen jeweils als Ersatzquelle dabei. Nach dem ersten Einkauf lassen sich Laden und Preis im Admin umstellen.
+
+### G2 · Kalkulation mit der teuersten üblichen Zahlungsgebühr
+- **Entscheidung:** 2,8 % + 0,25 € (Stripe, Premium-/Firmenkarten EWR) + 0,4 % für die automatische Rechnung. Quelle: stripe.com/en-de/pricing und Stripe-Support, geprüft 15.11.2026.
+- **Warum:** B2B-Kunden zahlen oft mit Firmenkarten. Standardkarten (1,5 %) und SEPA (0,35 €) sind günstiger; die echte Gebühr je Bestellung kommt aus der Stripe-`balance_transaction`.
+- **Verworfen:** Mit 1,5 % rechnen (würde die Marge um rund 1,3 Punkte schönen).
+
+### G3 · 15 Boxen, vier Kartongrößen
+- **Entscheidung:** 6 Weihnachten, 5 Mitarbeiter, 2 Kunden, je 1 Ostern/Sommer. Flache Boxen ohne Glas im Klappdeckelkarton (0,55 €), nur Boxen mit Gläsern/Flaschen im 10 cm hohen Karton.
+- **Warum:** Der Karton ist nach den Artikeln der größte Kostenblock. Die Standard-Weihnachtskiste wurde deshalb ohne Glas zusammengestellt (Marzipan statt Konfitüre): 46,7 % statt 45,1 % Marge, 1,1 kg statt 1,7 kg, kein Bruchrisiko.
+- **Verworfen:** Ein Einheitskarton (teurer, viel Luft); Magnetboxen (ab ca. 12 € je Stück).
+
+### G4 · Alkohol nur in drei Boxen, immer abwählbar, nie im Mehrfachversand
+- **Entscheidung:** Wein/Sekt nur in „Große Weihnachtskiste“, „Jubiläum“ und „Geburtstagsgruß“; jeder alkoholische Artikel hat einen alkoholfreien Ersatz zum gleichen Boxpreis. Beim Versand an mehrere Empfänger packt das System automatisch alkoholfrei. Bei Lieferung an eine Firmenadresse bestätigt der Besteller, dass die Boxen nur an Volljährige gehen. Keine Spirituosen.
+- **Warum:** § 9 JuSchG (Wein/Sekt ab 16, Spirituosen ab 18). Nach LG Bochum (13 O 1/19, nicht rechtskräftig) gilt das auch im Versandhandel und verlangt eine wirksame Alterskontrolle bei der Übergabe; höchstrichterlich ungeklärt. Pakete an Privatadressen (Homeoffice) wären ohne DHL-Alterssichtprüfung angreifbar. **Rechtliche Annahme – vor Livegang prüfen lassen.**
+- **Zusatz:** DHL sieht für Flaschen zertifizierte Flaschenkartons vor (dhl.de/verpackung). Kalkuliert ist eine Wellpapp-Hülse je Flasche; für den Versand von Flaschen-Boxen empfiehlt sich die persönliche Lieferung oder ein zertifizierter Umkarton.
+
+### G5 · Personalisierung: Logo und Karte inklusive, drei Optionen mit Aufpreis
+- **Entscheidung:** Logo-Sticker und gedruckte Grußkarte sind im Preis enthalten. Handgeschriebene Karte 2,50 €, Banderole 1,20 €, Namensanhänger 0,80 € je Box; Bandfarbe frei wählbar.
+- **Warum:** Wettbewerber bieten Logo-Personalisierung meist erst ab 25–50 Stück und gegen Aufpreis. „Ab 5 Boxen mit Logo, ohne Aufpreis“ ist das stärkste Argument für eine kleine Manufaktur. Die Aufpreise decken die Handarbeit (ca. 45 €/Stunde) und summieren sich auf 4,50 € – eine 45-€-Kiste bleibt bei 49,50 € unter der 50-€-Grenze.
+
+### G6 · Mengenrabatt 3 / 5 / 8 / 10 %
+- **Entscheidung:** ab 10 / 25 / 50 / 100 Boxen, nur auf den Warenwert.
+- **Warum:** Selbst mit 10 % bleibt jede Box über 40 % Rohertrag. Größere Bestellungen sparen Einkaufs- und Fahrtzeit je Box.
+
+### G7 · Versand: DHL-Privatkundenpreise als Start, Material eingerechnet
+- **Entscheidung:** Preisstufen 7,90 / 9,50 / 12,90 / 21,90 / 26,90 € (bis 2 / 5 / 10 / 20 / 31,5 kg); dahinter DHL-Porto 2026 online (6,19 / 7,69 / 10,49 / 18,99 / 23,99 €) plus ca. 0,90 € Versandmaterial. An eine Adresse werden bis zu sechs Boxen (nach Platzbedarf) bzw. 20 kg je Sammelpaket gepackt.
+- **Warum:** Ohne Geschäftskundenvertrag (ab ca. 200 Sendungen/Jahr) gelten die Privatkundenpreise. Der Versand soll kostendeckend sein, kein Gewinnbringer und kein Verlust.
+- **Persönliche Lieferung:** 9,90 €, ab 250 € Warenwert frei – spart gegenüber DHL schon ab drei Paketen und vermeidet Glasbruch.
+
+### G8 · Fristen
+- **Entscheidung:** Startwerte wie beauftragt (Versand: Bestellschluss 10.12., Lieferung bis 16.12.; persönlich: Bestellschluss 12.12., Lieferung 15.–19.12.). Nach dem Bestellschluss ist die jeweilige Lieferart bis zum 06.01.2027 gesperrt (Meldung + Anfrageformular), danach gilt die normale Vorlaufzeit (Versand 5 Werktage, persönlich 4 Werktage).
+- **Warum:** DHL empfiehlt für Weihnachten 2026 die Einlieferung bis 21.12. (Pressemitteilung 30.10.2026) – der 16.12. lässt fünf Tage Puffer.
+
+### G9 · Rechtliche Annahmen (vor Livegang prüfen lassen)
+- **§ 19 UStG:** Grenzen seit 2025: 25.000 € Vorjahresumsatz, 100.000 € im laufenden Jahr (BMF-Schreiben 18.03.2025). Wird die 100.000-€-Grenze überschritten, ist schon dieser Umsatz steuerpflichtig – das Dashboard zeigt den Jahresumsatz.
+- **B2B-Beschränkung:** deutlicher Hinweis auf jeder Seite plus eigene, nicht vorangekreuzte Checkbox am Bestellbutton (BGH I ZR 60/16; Empfehlung IT-Recht Kanzlei). Damit entfallen Widerrufsrecht und Preisangabenverordnung.
+- **Lebensmittel:** Registrierung als Lebensmittelunternehmer (Art. 6 VO (EG) 852/2004) beim Landratsamt Rhein-Neckar-Kreis nötig, auch für reinen Handel mit verpackter Ware. Zutaten und Allergene je Artikel vor Kauf verfügbar (Art. 14 LMIV) – im Shop erst nach Prüfung an der Packung (`allergeneGeprueft`), sonst ein Hinweis mit Kontaktmöglichkeit.
+- **Verpackung:** Registrierung im Verpackungsregister LUCID und Systembeteiligung vor dem ersten Paket (seit 12.08.2026 EU-Verpackungsverordnung/VerpackDG; keine Bagatellgrenze).
+- **Marken:** Originalware darf weiterverkauft und im Text mit dem Markennamen benannt werden (§ 24 MarkenG, Erschöpfung); Logos erscheinen nicht – weder in Texten noch auf den Bildern.
+- **Impressum:** § 5 DDG; kein Link zur EU-Streitschlichtungsplattform (seit 20.07.2025 eingestellt).
+
+### G10 · Signalfarbe im Admin
+- **Entscheidung:** Der Shop nutzt ausschließlich die vier Palettenfarben und Ink; Fehler werden dort typografisch markiert (fette Schrift, Ink-Balken). Im Admin gibt es zusätzlich ein gedecktes Ziegelrot `#8C3B2A` für „Marge unter 35 %“ und Fehler.
+- **Warum:** „Rot unter 35 %“ ist ausdrücklich verlangt und muss beim schnellen Blick aufs Handy auffallen.
 
 ## Selbstprüfung je Phase
 
-(wird am Ende jeder Phase ergänzt)
+### Phase 1 – Sortiment
+- **Wirtschaftlich?** Alle 15 Boxen liegen zwischen 46,2 % und 52,8 % Rohertrag bei der teuersten Zahlungsart und Online-Richtpreisen; mit 10 % Staffelrabatt mindestens 40,6 %. Zwei Boxen lagen im ersten Entwurf unter 45 % und wurden umgestellt (Standardkiste ohne Glas, Süße Weihnacht ohne zweite Schokolade); das Teamfrühstück wurde von 69 auf 75 € angehoben.
+- **Würde ein Büroleiter bestellen?** Inhalte sind bekannte Marken (Lavazza, Lindt, Niederegger, Bonne Maman, Seeberger) und Bio-Eigenmarke von dm. Schwachpunkt: Bei 29 € sind nur vier Artikel drin – die Texte nennen deshalb genau, was enthalten ist, statt Fülle zu versprechen.
+- **Ehrlichkeit:** Kein Preis ist für die Märkte in Schwetzingen vor Ort bestätigt. Das steht in beiden Dokumenten ganz oben; der Admin warnt, wenn ein Prüfdatum älter als 30 Tage ist.
+
+(weitere Phasen folgen)
