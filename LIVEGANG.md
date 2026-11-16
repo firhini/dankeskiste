@@ -84,10 +84,9 @@ Der Webhook folgt in Schritt 10 – dafür muss die Website erst eine Adresse ha
 
 ### 7. Code bereitstellen
 
-Der fertige Stand liegt auf dem Branch `claude/dankeskiste-shop-admin-t1l0o7`. Zwei Möglichkeiten:
+Hier ist nichts zu tun. Das Repository hat nur einen Branch (`claude/dankeskiste-shop-admin-t1l0o7`), und er ist der Standard-Branch. Netlify wählt ihn beim Import von selbst als „Production branch“.
 
-- **Empfohlen:** auf GitHub einen Pull Request von diesem Branch nach `main` öffnen und zusammenführen. Netlify baut dann immer `main`.
-- Oder in Netlify unter den Build-Einstellungen diesen Branch als „Production branch“ wählen.
+Wer lieber einen Branch namens `main` möchte, kann ihn später auf GitHub anlegen und in den Repository-Einstellungen als Standard setzen; in Netlify dann den „Production branch“ umstellen. Nötig ist das nicht.
 
 ### 8. Site anlegen und Variablen eintragen
 
