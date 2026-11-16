@@ -24,8 +24,8 @@ function Zeile({ name, plan, echt, minus = true, fett }: { name: string; plan: n
   return (
     <tr className={fett ? "font-semibold" : ""}>
       <td>{name}</td>
-      <td className="zahl whitespace-nowrap text-right">{f(plan)}</td>
-      <td className="zahl whitespace-nowrap text-right">{f(echt)}</td>
+      <td className="zahl whitespace-nowrap pl-3 text-right">{f(plan)}</td>
+      <td className="zahl whitespace-nowrap pl-3 text-right">{f(echt)}</td>
     </tr>
   );
 }
@@ -250,8 +250,8 @@ export default async function BestellDetail({ params }: PageProps<"/admin/bestel
                 <Zeile name={`Stripe-Gebühr${g.offen.includes("gebuehr") ? " (noch geplant)" : ""}`} plan={g.geplant.gebuehrCent} echt={g.echt.gebuehrCent} />
                 <tr className="border-t border-salbei font-semibold">
                   <td>Gewinn vor sonstigen Ausgaben</td>
-                  <td className="zahl whitespace-nowrap text-right">{euro(g.geplant.gewinnCent, { immerCent: true })}</td>
-                  <td className={`zahl whitespace-nowrap text-right ${g.echt.gewinnCent < 0 ? "text-signal" : ""}`}>{euro(g.echt.gewinnCent, { immerCent: true })}</td>
+                  <td className="zahl whitespace-nowrap pl-3 text-right">{euro(g.geplant.gewinnCent, { immerCent: true })}</td>
+                  <td className={`zahl whitespace-nowrap pl-3 text-right ${g.echt.gewinnCent < 0 ? "text-signal" : ""}`}>{euro(g.echt.gewinnCent, { immerCent: true })}</td>
                 </tr>
                 <tr className="text-dunkel">
                   <td>Marge</td>
