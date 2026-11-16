@@ -394,7 +394,7 @@ export function Bestellung({ boxen, e, startBox }: { boxen: BestellBoxInfo[]; e:
         {angebot.staffelRabattCent > 0 ? (
           <div className="flex justify-between gap-4 text-dunkel">
             <dt>darin Mengenrabatt {String(angebot.staffelProzent).replace(".", ",")}&nbsp;%</dt>
-            <dd className="zahl whitespace-nowrap">{euroMinus(angebot.staffelRabattCent)}</dd>
+            <dd className="zahl whitespace-nowrap text-rot">{euroMinus(angebot.staffelRabattCent)}</dd>
           </div>
         ) : null}
         {angebot.perso.map((x) => (
@@ -406,7 +406,7 @@ export function Bestellung({ boxen, e, startBox }: { boxen: BestellBoxInfo[]; e:
         {angebot.rabattCodeCent > 0 ? (
           <div className="flex justify-between gap-4">
             <dt>Rabattcode {angebot.rabattCode}</dt>
-            <dd className="zahl whitespace-nowrap">{euroMinus(angebot.rabattCodeCent)}</dd>
+            <dd className="zahl whitespace-nowrap text-rot">{euroMinus(angebot.rabattCodeCent)}</dd>
           </div>
         ) : null}
         <div className="flex justify-between gap-4">
@@ -471,7 +471,7 @@ export function Bestellung({ boxen, e, startBox }: { boxen: BestellBoxInfo[]; e:
               const aktiv = nr === z.schritt;
               return (
                 <li key={name}>
-                  <button type="button" disabled={!fertig} onClick={() => fertig && setze({ schritt: nr })} aria-current={aktiv ? "step" : undefined} className={`block w-full border-t-2 pt-2 text-left ${aktiv ? "border-dunkel" : fertig ? "border-oliv" : "border-salbei"} ${fertig ? "cursor-pointer" : "cursor-default"}`}>
+                  <button type="button" disabled={!fertig} onClick={() => fertig && setze({ schritt: nr })} aria-current={aktiv ? "step" : undefined} className={`block w-full border-t-2 pt-2 text-left ${aktiv ? "border-rot" : fertig ? "border-oliv" : "border-salbei"} ${fertig ? "cursor-pointer" : "cursor-default"}`}>
                     <span className={`zahl klein flex items-center gap-1.5 ${aktiv ? "font-semibold text-ink" : "text-dunkel"}`}>
                       {fertig ? <Haken className="h-3.5 w-3.5" /> : <span>{nr}</span>}
                       <span className={aktiv ? "" : "hidden sm:inline"}>{name}</span>
@@ -485,7 +485,7 @@ export function Bestellung({ boxen, e, startBox }: { boxen: BestellBoxInfo[]; e:
 
         {abgebrochen ? <p role="status" className="klein mt-6 border-l-2 border-dunkel pl-3">Die Zahlung wurde abgebrochen. Ihre Angaben sind noch da – Sie können einfach weitermachen.</p> : null}
 
-        <h2 ref={titelRef} tabIndex={-1} className="mt-8 !text-[clamp(1.75rem,1.4rem+1.6vw,2.5rem)] text-oliv outline-none">
+        <h2 ref={titelRef} tabIndex={-1} className="ruhig mt-8 !text-[clamp(1.75rem,1.4rem+1.6vw,2.5rem)] text-oliv outline-none">
           {z.schritt === 1 ? <>Welche Boxen <em>und wie viele?</em></> : z.schritt === 2 ? <>Logo, Text <em>und Band</em></> : z.schritt === 3 ? <>Wohin <em>und wann?</em></> : <>Ihre Firma <em>und Zahlung</em></>}
         </h2>
 

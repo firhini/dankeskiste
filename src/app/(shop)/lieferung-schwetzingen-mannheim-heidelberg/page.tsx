@@ -88,7 +88,7 @@ export default async function Seite() {
           Die Lieferung kostet {euro(e.lieferung.gebuehrCent, { immerCent: true })}; ab {euro(e.lieferung.freiAbCent)} Warenwert – das sind zum Beispiel sechs Weihnachtskisten – ist sie kostenlos. Geliefert wird von Montag bis Samstag.
         </p>
         {e.fristen.aktiv && pStatus.verfuegbar && pStatus.saison ? (
-          <p className="border-l-2 border-dunkel pl-4">
+          <p className="frist">
             <strong>{e.fristen.saisonName}:</strong> Bestellschluss für die persönliche Lieferung ist der {datumLang(e.fristen.persoenlich.bestellschluss)}. Geliefert wird vom {datumLang(e.fristen.persoenlich.fensterVon)} bis zum {datumLang(e.fristen.persoenlich.fensterBis)}.
           </p>
         ) : e.fristen.aktiv && !pStatus.verfuegbar ? (

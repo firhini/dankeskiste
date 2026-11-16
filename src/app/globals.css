@@ -1,14 +1,16 @@
 @import "tailwindcss";
 
-/* Dankeskiste – Design-Tokens. Palette ist fest: vier Farben + Ink. */
+/* Dankeskiste – Design-Tokens. Vier Farben + Ink, dazu ein Rot als Akzent. */
 @theme {
   --color-creme: #ebebd8;
   --color-oliv: #637545;
   --color-dunkel: #455230;
   --color-salbei: #9ba685;
   --color-ink: #1f2416;
-  /* Nur im Admin: Signalfarbe für „Marge unter 35 %“ und Fehler */
-  --color-signal: #8c3b2a;
+  /* Akzent: Stempel- und Rotstiftfarbe. Nur auf Creme (4,6 : 1), nie auf Oliv. */
+  --color-rot: #cc2216;
+  /* Admin: Warnungen und Fehler nutzen dasselbe Rot */
+  --color-signal: var(--color-rot);
 
   --font-serif: var(--font-newsreader), "Iowan Old Style", "Palatino Linotype", Georgia, serif;
   --font-sans: var(--font-hanken), ui-sans-serif, system-ui, sans-serif;
@@ -62,6 +64,9 @@
   h3 { font-size: var(--text-h3); line-height: 1.15; letter-spacing: -0.012em; }
   h4 { font-size: var(--text-h4); line-height: 1.25; letter-spacing: -0.005em; }
   em, i { font-style: italic; }
+  /* Kursive Akzente in Überschriften: mit dem Rotstift gesetzt */
+  h1 em, h2 em { color: var(--color-rot); }
+  .auf-dunkel h1 em, .auf-dunkel h2 em, h2.ruhig em { color: inherit; }
   a { color: inherit; text-underline-offset: 0.18em; text-decoration-thickness: 1px; }
   :focus-visible {
     outline: 2px solid var(--color-ink);
@@ -69,7 +74,7 @@
     border-radius: 1px;
   }
   .auf-dunkel :focus-visible, .auf-dunkel:focus-visible { outline-color: var(--color-creme); }
-  ::selection { background: var(--color-dunkel); color: var(--color-creme); }
+  ::selection { background: var(--color-rot); color: var(--color-creme); }
   button, [role="button"], summary, label[for], select { cursor: pointer; }
   input, textarea, select, button { font: inherit; color: inherit; }
   summary { list-style: none; }
@@ -135,19 +140,21 @@
     hyphens: manual;
     transition: background-color 160ms ease, color 160ms ease, border-color 160ms ease;
   }
-  .knopf:hover { background: var(--color-ink); border-color: var(--color-ink); }
+  .knopf:hover { background: var(--color-rot); border-color: var(--color-rot); }
+  .knopf:active { background: var(--color-ink); border-color: var(--color-ink); }
   .knopf[disabled], .knopf[aria-disabled="true"] { opacity: 0.45; cursor: not-allowed; }
   .knopf-hell {
     background: transparent;
     color: var(--color-dunkel);
   }
   .knopf-hell:hover { background: var(--color-dunkel); color: var(--color-creme); border-color: var(--color-dunkel); }
+  .knopf-hell:active { background: var(--color-ink); border-color: var(--color-ink); }
   .knopf-creme {
     background: var(--color-creme);
     color: var(--color-dunkel);
     border-color: var(--color-creme);
   }
-  .knopf-creme:hover { background: var(--color-salbei); border-color: var(--color-salbei); color: var(--color-ink); }
+  .knopf-creme:hover, .knopf-creme:active { background: var(--color-salbei); border-color: var(--color-salbei); color: var(--color-ink); }
   .textlink {
     color: var(--color-dunkel);
     font-weight: 600;
@@ -157,7 +164,8 @@
     text-decoration-thickness: 1px;
     transition: text-decoration-color 160ms ease;
   }
-  .textlink:hover { text-decoration-color: var(--color-dunkel); }
+  .textlink:hover { color: var(--color-rot); text-decoration-color: var(--color-rot); }
+  .auf-dunkel .textlink:hover { color: inherit; text-decoration-color: currentColor; }
 
   .feld {
     display: block;
@@ -172,14 +180,28 @@
   }
   .feld:hover { border-color: var(--color-oliv); }
   .feld:focus-visible { outline-offset: 1px; border-color: var(--color-ink); }
-  .feld[aria-invalid="true"] { border-color: var(--color-ink); border-left-width: 4px; }
+  .feld[aria-invalid="true"] { border-color: var(--color-rot); border-left-width: 4px; }
   .feldname { display: block; font-weight: 600; font-size: var(--text-klein); margin-bottom: 0.35rem; }
   .feldfehler {
     margin-top: 0.4rem;
     padding-left: 0.6rem;
-    border-left: 2px solid var(--color-ink);
+    border-left: 2px solid var(--color-rot);
     font-size: var(--text-klein);
     font-weight: 600;
+  }
+  /* Frist-Hinweis: roter Strich am Rand, wie im Kalender angestrichen */
+  .frist { border-left: 2px solid var(--color-rot); padding-left: 1rem; }
+  .frist strong { color: var(--color-rot); }
+  /* Mit dem Rotstift unterstrichen (einmal je Seite, im Hero) */
+  .rotstift { position: relative; display: inline-block; white-space: nowrap; }
+  .rotstift svg {
+    position: absolute; left: -2%; bottom: 0.02em; width: 104%; height: 0.2em;
+    overflow: visible; pointer-events: none;
+  }
+  .rotstift path {
+    fill: none; stroke: var(--color-rot); stroke-width: 2.4; stroke-linecap: round;
+    stroke-dasharray: 1; stroke-dashoffset: 1;
+    animation: rotstift 620ms cubic-bezier(0.3, 0.6, 0.2, 1) 700ms forwards;
   }
   .marke {
     display: inline-flex;
@@ -220,8 +242,10 @@
     from { opacity: 0; transform: translateY(10px); }
     to { opacity: 1; transform: none; }
   }
+  @keyframes rotstift { to { stroke-dashoffset: 0; } }
   @media (prefers-reduced-motion: reduce) {
     .einblenden { animation: none; }
+    .rotstift path { animation: none; stroke-dashoffset: 0; }
     html { scroll-behavior: auto; }
     * { transition-duration: 0.01ms !important; }
   }

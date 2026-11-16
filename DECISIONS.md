@@ -133,8 +133,18 @@ Jede Entscheidung: was, warum, was verworfen wurde. Rechtliche und steuerliche P
 - **Impressum:** § 5 DDG; kein Link zur EU-Streitschlichtungsplattform (seit 20.07.2025 eingestellt).
 
 ### G10 · Signalfarbe im Admin
-- **Entscheidung:** Der Shop nutzt ausschließlich die vier Palettenfarben und Ink; Fehler werden dort typografisch markiert (fette Schrift, Ink-Balken). Im Admin gibt es zusätzlich ein gedecktes Ziegelrot `#8C3B2A` für „Marge unter 35 %“ und Fehler.
+- **Entscheidung (überholt durch G11):** Ursprünglich nutzte der Shop nur die vier Palettenfarben und Ink, im Admin gab es ein gedecktes Ziegelrot `#8C3B2A` für „Marge unter 35 %“ und Fehler. Seit G11 verwendet der Admin dasselbe Rot wie der Shop.
 - **Warum:** „Rot unter 35 %“ ist ausdrücklich verlangt und muss beim schnellen Blick aufs Handy auffallen.
+
+### G11 · Rot als Akzentfarbe (16.11.2026, auf Wunsch nachträglich)
+- **Entscheidung:** Die Palette bekommt eine fünfte Farbe, ein kräftiges Zinnoberrot `#CC2216`. Leitidee: Rot ist die Farbe von Stempel und Rotstift – es markiert, was ein Mensch von Hand anstreichen würde. Eingesetzt wird es an genau diesen Stellen:
+  - kursive Akzentwörter in `h1` und `h2` (überall, wo die Überschrift ohnehin kursiv betont), dazu „kiste“ in der Wortmarke;
+  - der runde Stempel im Hero und ein einzelner, von Hand gezogener Unterstrich unter „von Hand“ (einmal auf der Startseite, zeichnet sich einmal, steht bei reduzierter Bewegung sofort);
+  - Fristen (Bestellschluss-Datum, roter Randstrich) und Rabatte (Minus-Beträge, Staffel-Prozente);
+  - Zustände: Hover des Hauptknopfs und der Textlinks, Textauswahl, aktiver Schritt der Bestellung, Fehler an Formularfeldern.
+- **Warum so:** Als reine Schmuckfarbe würde Rot neben Oliv schnell laut und beliebig. An Bedeutung gebunden (Handarbeit, Frist, Nachlass, „hier sind Sie“) bleibt es selten genug, um aufzufallen.
+- **Regeln:** Rot steht nur auf Creme (Kontrast 4,6 : 1, WCAG AA auch für kleine Schrift). Auf Oliv oder Dunkel-Oliv wird es nie verwendet (1,1 bzw. 1,5 : 1) – dort bleiben die Akzente cremefarben. Keine roten Flächen außer dem Knopf im Hover. In der Bestellstrecke bleiben die Schritt-Überschriften ruhig, damit Rot dort nur Schritt, Rabatt und Fehler markiert.
+- **Verworfen:** gedecktes Weinrot (passt zu Oliv, ist aber nicht „kräftig“ und wirkt schnell braun); Rot als Knopffarbe im Ruhezustand (konkurriert mit den Überschriften, der Auftritt würde insgesamt rot statt oliv); helleres Signalrot `#E03A24` (nur 3,6 : 1 auf Creme, für kleine Schrift zu schwach).
 
 ## Selbstprüfung je Phase
 

@@ -63,7 +63,14 @@ export default async function Startseite() {
               {inSaison ? `${e.fristen.saisonName} · ` : ""}Geschenkboxen für Firmen
             </p>
             <h1 className="einblenden einblenden-2 mt-5 text-oliv">
-              Ein Dankeschön, das jemand <em>von Hand</em> gepackt hat.
+              Ein Dankeschön, das jemand{" "}
+              <em className="rotstift">
+                von Hand
+                <svg viewBox="0 0 400 20" preserveAspectRatio="none" aria-hidden>
+                  <path pathLength={1} d="M3 13C62 6 118 15 190 10.5S322 4 397 9" />
+                </svg>
+              </em>{" "}
+              gepackt hat.
             </h1>
             <p className="lead einblenden einblenden-3 mt-7 max-w-[34ch] lg:max-w-[40ch]">
               Geschenkboxen für Mitarbeiter und Kunden – ab {e.mindestmenge}&nbsp;Stück, mit Ihrem Logo auf dem Deckel und Ihrem Text auf der Karte. Eingekauft und gepackt in Schwetzingen.
@@ -91,7 +98,7 @@ export default async function Startseite() {
                 </div>
               </>
             ) : null}
-            <Stempel className="absolute -left-3 -top-8 h-24 w-24 -rotate-12 rounded-full bg-creme text-dunkel sm:-left-10 sm:h-32 sm:w-32 lg:-left-16 lg:-top-10" />
+            <Stempel className="absolute -left-3 -top-8 h-24 w-24 -rotate-12 rounded-full bg-creme text-rot sm:-left-10 sm:h-32 sm:w-32 lg:-left-16 lg:-top-10" />
           </div>
         </div>
         <dl className="mt-12 grid grid-cols-2 border-t border-salbei lg:mt-20 lg:grid-cols-4">
@@ -103,7 +110,7 @@ export default async function Startseite() {
           ].map(([name, wert, unter], i) => (
             <div key={name} className={`border-b border-salbei py-5 lg:border-b-0 lg:py-6 ${i % 2 === 1 ? "border-l pl-4 lg:pl-6" : ""} ${i === 2 ? "lg:border-l lg:pl-6" : ""}`}>
               <dt className="label text-dunkel">{name}</dt>
-              <dd className="zahl mt-2 font-serif text-[clamp(1.35rem,1.1rem+1.1vw,2rem)] leading-tight">{wert}</dd>
+              <dd className={`zahl mt-2 font-serif text-[clamp(1.35rem,1.1rem+1.1vw,2rem)] leading-tight ${inSaison && i === 3 ? "text-rot" : ""}`}>{wert}</dd>
               <dd className="klein mt-1">{unter}</dd>
             </div>
           ))}
@@ -276,7 +283,7 @@ export default async function Startseite() {
                 {e.staffeln.map((s, i) => (
                   <tr key={s.ab} className="border-b border-salbei">
                     <td className="py-3.5 pr-3">{e.staffeln[i + 1] ? `${s.ab}–${e.staffeln[i + 1].ab - 1}` : `ab ${s.ab}`}</td>
-                    <td className="py-3.5 pr-3 text-right font-semibold">−{String(s.prozent).replace(".", ",")}&nbsp;%</td>
+                    <td className="py-3.5 pr-3 text-right font-semibold text-rot">−{String(s.prozent).replace(".", ",")}&nbsp;%</td>
                     {beispiel ? <td className="py-3.5 text-right">{euro(Math.round(beispiel.preisCent * (1 - s.prozent / 100)), { immerCent: true })}</td> : null}
                   </tr>
                 ))}
@@ -303,7 +310,7 @@ export default async function Startseite() {
                 </div>
               ))}
             </dl>
-            <p className="mt-6 border-l-2 border-dunkel pl-4">
+            <p className="frist mt-6">
               {!e.fristen.aktiv || (vStatus.verfuegbar && !vStatus.saison) ? (
                 <>Versand innerhalb von {e.fristen.vorlaufVersandWerktage}&nbsp;Werktagen nach Bestellung.</>
               ) : vStatus.verfuegbar ? (
@@ -323,7 +330,7 @@ export default async function Startseite() {
               <dt>ab {euro(e.lieferung.freiAbCent)} Warenwert</dt>
               <dd className="text-right font-semibold">kostenlos</dd>
             </dl>
-            <p className="mt-6 border-l-2 border-dunkel pl-4">
+            <p className="frist mt-6">
               {!e.fristen.aktiv || (pStatus.verfuegbar && !pStatus.saison) ? (
                 <>Liefertag frei wählbar, frühestens {e.fristen.vorlaufPersoenlichWerktage}&nbsp;Werktage nach Bestellung.</>
               ) : pStatus.verfuegbar ? (

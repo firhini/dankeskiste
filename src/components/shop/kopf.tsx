@@ -6,13 +6,13 @@ export function Kopf({ kollektionen }: { kollektionen: { slug: string; name: str
     <header className="nicht-drucken sticky top-0 z-30 border-b border-salbei bg-creme">
       <div className="rand flex h-16 items-center justify-between gap-4">
         <Link href="/" className="font-serif text-[1.6rem] leading-none tracking-[-0.02em] text-dunkel no-underline" aria-label="Dankeskiste – zur Startseite">
-          Dankes<span className="italic">kiste</span>
+          Dankes<span className="italic text-rot">kiste</span>
         </Link>
         <nav aria-label="Hauptnavigation" className="hidden lg:block">
           <ul className="flex items-center gap-7">
             {punkte.map(([href, name]) => (
               <li key={href}>
-                <Link href={href} className="klein text-ink no-underline decoration-salbei decoration-1 underline-offset-[6px] hover:underline">
+                <Link href={href} className="klein text-ink no-underline decoration-rot decoration-[1.5px] underline-offset-[6px] hover:underline">
                   {name}
                 </Link>
               </li>
