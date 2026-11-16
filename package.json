@@ -17,7 +17,8 @@
     "bilder": "tsx scripts/process-images.ts",
     "render": "python3 scripts/render/render.py --boxes scripts/render/boxes.json --out renders/final --grade",
     "e2e": "playwright test",
-    "bilder:api": "tsx scripts/generate-images-api.ts"
+    "bilder:api": "tsx scripts/generate-images-api.ts",
+    "vercel-build": "drizzle-kit migrate && next build"
   },
   "dependencies": {
     "@auth/drizzle-adapter": "^1.11.3",

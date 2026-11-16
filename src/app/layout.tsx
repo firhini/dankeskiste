@@ -1,14 +1,21 @@
 import type { Metadata, Viewport } from "next";
-import { Hanken_Grotesk, Newsreader } from "next/font/google";
+import { Hanken_Grotesk } from "next/font/google";
+import localFont from "next/font/local";
 import "./globals.css";
 import { SITE_URL } from "@/lib/site";
 
-const newsreader = Newsreader({
-  subsets: ["latin"],
-  style: ["normal", "italic"],
-  axes: ["opsz"],
+/**
+ * Newsreader im Display-Schnitt: aus der variablen Google-Fonts-Datei erzeugt (optische Größe fest
+ * auf 72, Gewicht 400–500, lateinischer Zeichensatz). 77 kB statt 275 kB – siehe DECISIONS.md, T18.
+ */
+const newsreader = localFont({
+  src: [
+    { path: "../assets/fonts/Newsreader-Display-Roman.woff2", style: "normal", weight: "400 500" },
+    { path: "../assets/fonts/Newsreader-Display-Italic.woff2", style: "italic", weight: "400 500" },
+  ],
   variable: "--font-newsreader",
   display: "swap",
+  adjustFontFallback: "Times New Roman",
 });
 
 const hanken = Hanken_Grotesk({

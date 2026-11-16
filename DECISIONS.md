@@ -63,6 +63,28 @@ Jede Entscheidung: was, warum, was verworfen wurde. Rechtliche und steuerliche P
 - **Entscheidung:** Magic Link über Resend, Drizzle-Adapter für Nutzer und Tokens, Session als JWT. Zugelassen sind nur Adressen aus `ADMIN_EMAILS` (Prüfung beim Anfordern des Links, beim Einlösen und bei jedem Admin-Zugriff).
 - **Warum:** Jeder Server-Zugriff im Admin ruft `erfordereAdmin()` auf; es gibt keine Admin-Funktion, die sich nur auf die Oberfläche verlässt.
 
+### T14 · Bestellformular erscheint erst nach dem Laden
+- **Entscheidung:** Die Bestellstrecke zeigt zuerst einen ruhigen Platzhalter und rendert das Formular erst, wenn der Warenkorb aus dem Sitzungsspeicher gelesen ist.
+- **Warum:** Im Test ließ sich ein Fehler nachstellen: Wer auf einem langsamen Gerät tippte, bevor React die Seite übernommen hatte, bekam einen dauerhaft deaktivierten „Weiter“-Knopf. Ohne Eingabefelder vor dem Laden kann das nicht mehr passieren.
+- **Verworfen:** Formular serverseitig vorrendern (schneller sichtbar, aber genau dieser Wettlauf).
+
+### T15 · Admin-Formulare behalten Eingaben nach Fehlern
+- **Entscheidung:** Server Actions werden von Hand ausgelöst statt über das `action`-Attribut des Formulars.
+- **Warum:** React leert Formulare nach einer Action automatisch. Im Test verschwand dadurch nach einer Fehlermeldung der Erstattungsbetrag – der zweite Klick hätte den vollen Betrag erstattet. „Neu anlegen“-Formulare werden nur nach Erfolg geleert.
+
+### T16 · Sicherheitsnetz auf der Danke-Seite
+- **Entscheidung:** `/danke` fragt die Checkout-Session bei Stripe ab, falls der Webhook noch nicht angekommen ist, und verbucht die Zahlung über denselben, idempotenten Code.
+- **Warum:** Der Kunde sieht sofort seine Bestellnummer, auch wenn ein Webhook Sekunden später oder doppelt eintrifft.
+
+### T17 · Drei Stufen „statisch“
+- **Entscheidung:** Shop-Seiten tragen `ensureStatic = "navigation"`: Next bricht den Build ab, wenn eine dieser Seiten versehentlich pro Anfrage rendern würde. Unbekannte Box-Adressen liefern einen echten 404. Admin-Seiten sind mit `instant = false` bewusst dynamisch.
+- **Warum:** „Startseite blitzschnell“ soll eine geprüfte Eigenschaft sein, kein Zufall.
+
+### T18 · Newsreader als lokaler Display-Schnitt statt `next/font/google`
+- **Entscheidung:** Hanken Grotesk kommt über `next/font/google`. Newsreader wird aus Googles variabler Datei mit fontTools instanziert (optische Größe 72, Gewicht 400–500, lateinischer Zeichensatz) und über `next/font/local` eingebunden.
+- **Warum:** `next/font/google` kann die optische Größe nur als ganze Achse laden: 132 kB + 147 kB für Normal und Kursiv. Die instanzierten Dateien wiegen 37 kB + 40 kB und zeigen genau den Display-Schnitt, den die Headlines brauchen. Das war der größte einzelne Hebel für LCP auf dem Handy.
+- **Abweichung vom Auftrag:** „beide über `next/font/google`“ – bewusst nur für eine der beiden Schriften eingehalten. Lizenz: SIL Open Font License, Weitergabe erlaubt.
+
 ## Geschäft
 
 ### G1 · Preisstatus in drei Stufen statt „verifiziert / geschätzt“
@@ -121,4 +143,21 @@ Jede Entscheidung: was, warum, was verworfen wurde. Rechtliche und steuerliche P
 - **Würde ein Büroleiter bestellen?** Inhalte sind bekannte Marken (Lavazza, Lindt, Niederegger, Bonne Maman, Seeberger) und Bio-Eigenmarke von dm. Schwachpunkt: Bei 29 € sind nur vier Artikel drin – die Texte nennen deshalb genau, was enthalten ist, statt Fülle zu versprechen.
 - **Ehrlichkeit:** Kein Preis ist für die Märkte in Schwetzingen vor Ort bestätigt. Das steht in beiden Dokumenten ganz oben; der Admin warnt, wenn ein Prüfdatum älter als 30 Tage ist.
 
-(weitere Phasen folgen)
+### Phase 2 – Bilder
+- **Wirken sie echt?** Sie wirken wie ein sorgfältiges Produkt-Mockup: Kraftkarton mit Wellenkante, Holzwolle, Schärfentiefe, Körnung, einheitliches Fensterlicht von links. Ein geübtes Auge erkennt das Rendering an den makellosen Packungen – deshalb steht unter jedem Bild „Beispielabbildung – echte Fotos folgen“, und jedes Bild lässt sich im Admin einzeln durch ein Foto ersetzen.
+- **Ehrlich?** Auf den Bildern ist nur, was in der Box ist; Etiketten nennen die Art des Artikels („Kaffee · gemahlen · 250 g“), keine Marken. Der Sticker zeigt „Ihr Logo“.
+- **Nachgebessert:** Packungen waren anfangs fast nur grün und weiß; ergänzt um Kraft-, Sand- und Terrakottatöne.
+
+### Phase 3 – Admin
+- **Am Handy benutzbar?** Navigation scrollt horizontal, Einkaufsliste als Karten mit großen Feldern, Tabellen scrollen in sich. Geprüft bei 390 px.
+- **Stimmt der Gewinn?** Per Test belegt: echter Gewinn = bezahlter Betrag − Artikel zum bezahlten Einkaufspreis − Verpackung − Personalisierung − eingetragenes Porto − Stripe-Gebühr aus der `balance_transaction`.
+- **Gefunden und behoben:** Formular-Reset nach Fehlermeldung (T15), Wettlauf zwischen Erstattung und Webhook.
+
+### Phase 4 – Shop
+- **Würde ein Büroleiter bestellen?** Preis, Mindestmenge, „Logo inklusive“ und Bestellschluss stehen auf dem ersten Bildschirm. Die Bestellung ist in vier Schritten durch, die Summe ist immer sichtbar.
+- **KI-Merkmale?** Automatisch geprüft auf allen 27 Seiten: keine Verläufe, keine Schatten, keine Emojis, keine der verbotenen Floskeln, keine erfundenen Bewertungen oder Kundenzahlen.
+- **Gefunden und behoben:** Eingaben während des Ladens (T14); das Weihnachts-Lieferfenster fehlte in der Terminauswahl, wenn man Wochen vorher bestellte; doppelte Zeile „Weihnachten · Weihnachten“.
+
+### Phase 5 – Tests und SEO
+- **Was ist belegt?** 43 Unit-Tests und 17 Ende-zu-Ende-Tests, darunter drei komplette Bestellungen bei 375 px. Jede Seite hat genau eine H1, eigenen Titel (≤ 60 Zeichen), Beschreibung, Canonical, OG-Bild und gültiges JSON-LD.
+- **Was nicht?** Der echte Stripe-Testmodus, echte Resend-Mails, Vercel Blob und der Rich-Results-Test von Google waren aus der Arbeitsumgebung nicht erreichbar. Die drei Testbestellungen laufen gegen einen lokalen Stripe-Nachbau; die Schritte für den echten Testmodus stehen im README.
