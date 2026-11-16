@@ -1,3 +1,4 @@
+import { preload } from "react-dom";
 import type { BildVarianten } from "../../db/schema";
 
 export interface BildDaten {
@@ -22,6 +23,10 @@ function srcset(v: Record<string, string>): string {
 export function Bild({ bild, sizes, className = "", prio = false, alt }: { bild: BildDaten; sizes: string; className?: string; prio?: boolean; alt?: string }) {
   const webp = Object.entries(bild.varianten.webp).sort((a, b) => Number(a[0]) - Number(b[0]));
   const fallback = webp[Math.min(1, webp.length - 1)]?.[1] ?? Object.values(bild.varianten.avif)[0];
+  // LCP-Bild früh im <head> ankündigen, damit es nicht hinter Schriften und Skripten wartet
+  if (prio && Object.keys(bild.varianten.avif).length) {
+    preload(fallback, { as: "image", imageSrcSet: srcset(bild.varianten.avif), imageSizes: sizes, type: "image/avif", fetchPriority: "high" });
+  }
   return (
     <picture>
       {Object.keys(bild.varianten.avif).length ? <source type="image/avif" srcSet={srcset(bild.varianten.avif)} sizes={sizes} /> : null}

@@ -62,7 +62,7 @@ export default async function Kollektion({ params }: PageProps<"/kollektionen/[s
       <div className="raster mt-14 gap-y-14 border-t border-salbei pt-12">
         {ks.map((b, i) => (
           <div key={b.slug} className={ks.length > 2 && i === 0 ? "col-span-12 lg:col-span-8" : ks.length > 2 && i === 1 ? "col-span-12 sm:col-span-6 lg:col-span-4 lg:pt-20" : "col-span-12 sm:col-span-6 lg:col-span-4"}>
-            <BoxKarte box={b} gross={ks.length > 2 && i === 0} prio={i === 0} sizes={ks.length > 2 && i === 0 ? "(min-width: 1024px) 62vw, 92vw" : undefined} />
+            <BoxKarte box={b} ebene="h2" gross={ks.length > 2 && i === 0} prio={i === 0} sizes={ks.length > 2 && i === 0 ? "(min-width: 1024px) 62vw, 92vw" : undefined} />
           </div>
         ))}
       </div>

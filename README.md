@@ -204,14 +204,33 @@ Wo wird gerechnet? Alle Preise, Rabatte, Versandkosten, Fristen und das Lieferge
 
 ## 11. Abnahmestand (16.11.2026)
 
-LIGHTHOUSE_PLATZHALTER
+**Lighthouse (Mobil, Produktions-Build auf localhost, 16.11.2026)**
+
+| Seite | Performance | Barrierefreiheit | Best Practices | SEO | LCP simuliert | CLS |
+|---|--:|--:|--:|--:|--:|--:|
+| `/` | 92 | 100 | 100 | 100 | 3,3 s | 0 |
+| `/boxen` | 94 | 100 | 100 | 100 | 3,1 s | 0 |
+| `/boxen/weihnachtskiste` | 97 | 100 | 100 | 100 | 2,5 s | 0 |
+| `/kollektionen/weihnachten` | 93 | 100 | 100 | 100 | 3,2 s | 0 |
+| `/bestellen` | 95 | 100 | 100 | 100 | 2,9 s | 0 |
+| `/weihnachtsgeschenke-mitarbeiter` | 100 | 100 | 100 | 100 | 0,9 s | 0 |
+| `/firmengeschenke-mit-logo` | 100 | 100 | 100 | 100 | 0,9 s | 0 |
+| `/lieferung-schwetzingen-mannheim-heidelberg` | 100 | 100 | 100 | 100 | 0,9 s | 0 |
+
+Alle vier Kategorien liegen über 90, CLS ist 0. **Das LCP-Ziel (< 2,5 s) ist nur teilweise erreicht:** Im Standardmodus von Lighthouse (simulierte Drosselung) liegen die Seiten mit großem Bild bei 2,5–3,3 s, die Werte schwanken zwischen Läufen um etwa ± 0,3 s. Mit tatsächlich gedrosselter Verbindung und CPU (`--throttling-method=devtools`, langsames 4G, 4-fach gebremste CPU) wurden 2,0 s (`/`), 1,9 s (Box-Seite) und 1,8 s (Kollektion) gemessen. Das LCP-Element ist jeweils das Hauptbild (15 kB AVIF); es konkurriert beim Laden mit den drei Schriftdateien (112 kB). Auf Vercel bitte mit PageSpeed Insights nachmessen – dort zählen echte Netzwerkwege.
+
+Nachmessen:
+
+```bash
+npx lighthouse https://IHRE-DOMAIN/ --only-categories=performance,accessibility,best-practices,seo --view
+```
 
 **Geprüft und belegt**
 
 | Punkt | Wie geprüft |
 |---|---|
 | Sortiment, Preise mit Quelle und Prüfdatum, jede Box ≥ 45 % | `SORTIMENT.md`, `EINKAUFSLISTE.md`, Unit-Test (niedrigste Marge 46,2 %) |
-| Drei Bilder je Box, einheitliche Art Direction | Blender-Pipeline, 45 Bilder, AVIF/WebP in vier Breiten mit Blur |
+| Drei Bilder je Box, einheitliche Art Direction | Blender-Pipeline, 45 Bilder gesichtet, AVIF/WebP in vier Breiten mit Blur (360 Dateien, 12 MB) |
 | Drei Bestellwege komplett (375 px): Bestellung in der DB, Mails, Rechnungsfuß § 19, im Admin sichtbar | Playwright gegen den **Stripe-Nachbau** |
 | Einkaufsliste nach Laden gruppiert, echter Gewinn inkl. Stripe-Gebühr, Versandmail nach Sendungsnummer | Playwright (`e2e/admin.spec.ts`) |
 | Kampagnen-Kurzlink zählt Scans ohne personenbezogene Daten und ordnet Bestellungen zu | Playwright |

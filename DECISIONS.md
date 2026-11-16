@@ -160,4 +160,5 @@ Jede Entscheidung: was, warum, was verworfen wurde. Rechtliche und steuerliche P
 
 ### Phase 5 – Tests und SEO
 - **Was ist belegt?** 43 Unit-Tests und 17 Ende-zu-Ende-Tests, darunter drei komplette Bestellungen bei 375 px. Jede Seite hat genau eine H1, eigenen Titel (≤ 60 Zeichen), Beschreibung, Canonical, OG-Bild und gültiges JSON-LD.
+- **Lighthouse (Mobil):** Performance 92–100, Barrierefreiheit, Best Practices und SEO je 100 auf acht geprüften Seiten, CLS 0. Das LCP-Ziel < 2,5 s wird im Simulationsmodus auf den Bildseiten verfehlt (2,5–3,3 s), mit echter Drosselung erreicht (1,8–2,0 s). Größter Hebel war die Schrift (T18); die Vorab-Ankündigung des Hauptbilds brachte wenig.
 - **Was nicht?** Der echte Stripe-Testmodus, echte Resend-Mails, Vercel Blob und der Rich-Results-Test von Google waren aus der Arbeitsumgebung nicht erreichbar. Die drei Testbestellungen laufen gegen einen lokalen Stripe-Nachbau; die Schritte für den echten Testmodus stehen im README.
