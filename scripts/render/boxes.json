@@ -11,13 +11,13 @@
           "type": "chocolate_bar",
           "label": "Weihnachtsschokolade",
           "sub": "VOLLMILCH · 100 G",
-          "tone": "dunkeloliv"
+          "tone": "rost"
         },
         {
           "type": "tea_box",
           "label": "Wintertee",
           "sub": "20 BEUTEL",
-          "tone": "salbei",
+          "tone": "terrakotta",
           "dims": [
             13,
             6.5,
@@ -28,7 +28,7 @@
           "type": "cookie_pack",
           "label": "Dominosteine",
           "sub": "BIO · 125 G",
-          "tone": "dunkeloliv",
+          "tone": "kakao",
           "dims": [
             15,
             9,
@@ -81,13 +81,13 @@
           "type": "chocolate_bar",
           "label": "Weihnachtsschokolade",
           "sub": "VOLLMILCH · 100 G",
-          "tone": "dunkeloliv"
+          "tone": "rost"
         },
         {
           "type": "tea_box",
           "label": "Wintertee",
           "sub": "20 BEUTEL",
-          "tone": "salbei",
+          "tone": "terrakotta",
           "dims": [
             13,
             6.5,
@@ -98,7 +98,7 @@
           "type": "cookie_pack",
           "label": "Zimtsterne",
           "sub": "BIO · 125 G",
-          "tone": "creme",
+          "tone": "sand",
           "dims": [
             15,
             9,
@@ -157,7 +157,7 @@
           "type": "praline_box",
           "label": "Schokoladen-Auswahl",
           "sub": "20 STÜCK · 250 G",
-          "tone": "creme",
+          "tone": "natur",
           "dims": [
             24,
             12.5,
@@ -179,7 +179,7 @@
           "type": "cookie_pack",
           "label": "Zimtsterne",
           "sub": "BIO · 125 G",
-          "tone": "creme",
+          "tone": "sand",
           "dims": [
             15,
             9,
@@ -190,7 +190,7 @@
           "type": "pouch",
           "label": "Gebrannte Mandeln",
           "sub": "BIO · 125 G",
-          "tone": "creme",
+          "tone": "kraft",
           "dims": [
             11,
             5,
@@ -221,7 +221,7 @@
           "type": "cookie_pack",
           "label": "Butterkeks",
           "sub": "IN VOLLMILCHSCHOKOLADE · 125 G",
-          "tone": "oliv",
+          "tone": "kraft",
           "dims": [
             14,
             7.5,
@@ -232,7 +232,7 @@
           "type": "cookie_pack",
           "label": "Dominosteine",
           "sub": "BIO · 125 G",
-          "tone": "dunkeloliv",
+          "tone": "kakao",
           "dims": [
             15,
             9,
@@ -254,7 +254,7 @@
           "type": "pouch",
           "label": "Amarettini",
           "sub": "MANDELGEBÄCK · 200 G",
-          "tone": "salbei",
+          "tone": "natur",
           "dims": [
             12,
             5.5,
@@ -274,7 +274,7 @@
           "type": "praline_box",
           "label": "Schokoladen-Auswahl",
           "sub": "20 STÜCK · 250 G",
-          "tone": "creme",
+          "tone": "natur",
           "dims": [
             24,
             12.5,
@@ -285,7 +285,7 @@
           "type": "cookie_pack",
           "label": "Zimtsterne",
           "sub": "BIO · 125 G",
-          "tone": "creme",
+          "tone": "sand",
           "dims": [
             15,
             9,
@@ -296,7 +296,7 @@
           "type": "cookie_pack",
           "label": "Dominosteine",
           "sub": "BIO · 125 G",
-          "tone": "dunkeloliv",
+          "tone": "kakao",
           "dims": [
             15,
             9,
@@ -318,7 +318,7 @@
           "type": "pouch",
           "label": "Gebrannte Mandeln",
           "sub": "BIO · 125 G",
-          "tone": "creme",
+          "tone": "kraft",
           "dims": [
             11,
             5,
@@ -344,7 +344,7 @@
           "type": "tea_box",
           "label": "Gewürztee",
           "sub": "BIO · 17 BEUTEL",
-          "tone": "creme",
+          "tone": "natur",
           "dims": [
             12,
             6.5,
@@ -355,7 +355,7 @@
           "type": "pouch",
           "label": "Gebrannte Mandeln",
           "sub": "BIO · 125 G",
-          "tone": "creme",
+          "tone": "kraft",
           "dims": [
             11,
             5,
@@ -366,7 +366,7 @@
           "type": "cookie_pack",
           "label": "Zimtsterne",
           "sub": "BIO · 125 G",
-          "tone": "creme",
+          "tone": "sand",
           "dims": [
             15,
             9,
@@ -377,7 +377,7 @@
           "type": "chocolate_bar",
           "label": "Weihnachtsschokolade",
           "sub": "VOLLMILCH · 100 G",
-          "tone": "dunkeloliv"
+          "tone": "rost"
         }
       ]
     },
@@ -414,7 +414,7 @@
           "type": "tea_box",
           "label": "Gewürztee",
           "sub": "BIO · 17 BEUTEL",
-          "tone": "creme",
+          "tone": "natur",
           "dims": [
             12,
             6.5,
@@ -456,7 +456,7 @@
           "type": "praline_box",
           "label": "Schokoladen-Auswahl",
           "sub": "20 STÜCK · 250 G",
-          "tone": "creme",
+          "tone": "natur",
           "dims": [
             24,
             12.5,
@@ -489,7 +489,7 @@
           "type": "pouch",
           "label": "Amarettini",
           "sub": "MANDELGEBÄCK · 200 G",
-          "tone": "salbei",
+          "tone": "natur",
           "dims": [
             12,
             5.5,
@@ -515,7 +515,7 @@
           "type": "praline_box",
           "label": "Haselnuss-Pralinen",
           "sub": "16 STÜCK · 200 G",
-          "tone": "creme",
+          "tone": "senf",
           "dims": [
             19,
             9.5,
@@ -596,7 +596,7 @@
           "type": "tea_box",
           "label": "Gewürztee",
           "sub": "BIO · 17 BEUTEL",
-          "tone": "creme",
+          "tone": "natur",
           "dims": [
             12,
             6.5,
@@ -607,7 +607,7 @@
           "type": "pouch",
           "label": "Fruchtgummi",
           "sub": "175 G",
-          "tone": "salbei",
+          "tone": "natur",
           "dims": [
             13,
             4,
@@ -682,7 +682,7 @@
           "type": "tea_box",
           "label": "Gewürztee",
           "sub": "BIO · 17 BEUTEL",
-          "tone": "creme",
+          "tone": "natur",
           "dims": [
             12,
             6.5,
@@ -702,7 +702,7 @@
           "type": "pasta_bag",
           "label": "Fusilli",
           "sub": "HARTWEIZEN · 500 G",
-          "tone": "creme",
+          "tone": "natur",
           "dims": [
             11,
             6,
@@ -746,7 +746,7 @@
           "type": "stick_pack",
           "label": "Grissini",
           "sub": "125 G",
-          "tone": "creme",
+          "tone": "sand",
           "dims": [
             7,
             3.5,
@@ -757,7 +757,7 @@
           "type": "pouch",
           "label": "Amarettini",
           "sub": "MANDELGEBÄCK · 200 G",
-          "tone": "salbei",
+          "tone": "natur",
           "dims": [
             12,
             5.5,
@@ -788,7 +788,7 @@
           "type": "chocolate_bar",
           "label": "Edelbitter",
           "sub": "70 % KAKAO · 100 G",
-          "tone": "ink"
+          "tone": "kakao"
         },
         {
           "type": "marzipan_loaf",
@@ -805,7 +805,7 @@
           "type": "pouch",
           "label": "Cantuccini",
           "sub": "MIT MANDELN · 250 G",
-          "tone": "creme",
+          "tone": "kraft",
           "dims": [
             13,
             6,
@@ -836,7 +836,7 @@
           "type": "tin",
           "label": "Schokoladen-Hase",
           "sub": "VOLLMILCH · 100 G",
-          "tone": "creme",
+          "tone": "senf",
           "dims": [
             6.5,
             4.5,
@@ -847,7 +847,7 @@
           "type": "praline_box",
           "label": "Schokoladen-Auswahl",
           "sub": "20 STÜCK · 250 G",
-          "tone": "creme",
+          "tone": "natur",
           "dims": [
             24,
             12.5,
@@ -858,7 +858,7 @@
           "type": "tea_box",
           "label": "Gewürztee",
           "sub": "BIO · 17 BEUTEL",
-          "tone": "creme",
+          "tone": "natur",
           "dims": [
             12,
             6.5,
@@ -869,7 +869,7 @@
           "type": "pouch",
           "label": "Amarettini",
           "sub": "MANDELGEBÄCK · 200 G",
-          "tone": "salbei",
+          "tone": "natur",
           "dims": [
             12,
             5.5,
@@ -906,7 +906,7 @@
           "type": "stick_pack",
           "label": "Grissini",
           "sub": "125 G",
-          "tone": "creme",
+          "tone": "sand",
           "dims": [
             7,
             3.5,
@@ -917,7 +917,7 @@
           "type": "pouch",
           "label": "Röstmandeln",
           "sub": "GESALZEN · 150 G",
-          "tone": "creme",
+          "tone": "sand",
           "dims": [
             12,
             5,
@@ -928,7 +928,7 @@
           "type": "pouch",
           "label": "Amarettini",
           "sub": "MANDELGEBÄCK · 200 G",
-          "tone": "salbei",
+          "tone": "natur",
           "dims": [
             12,
             5.5,

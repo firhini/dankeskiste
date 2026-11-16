@@ -12,7 +12,7 @@
     "db:migrate": "drizzle-kit migrate",
     "db:seed": "tsx db/seed.ts",
     "test": "vitest run",
-    "typecheck": "tsc --noEmit",
+    "typecheck": "next typegen && tsc --noEmit",
     "docs": "tsx scripts/gen-docs.ts"
   },
   "dependencies": {

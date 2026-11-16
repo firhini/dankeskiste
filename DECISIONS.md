@@ -68,7 +68,7 @@ Jede Entscheidung: was, warum, was verworfen wurde. Rechtliche und steuerliche P
 ### G1 · Preisstatus in drei Stufen statt „verifiziert / geschätzt“
 - **Entscheidung:** Jeder Preis trägt Quelle, Prüfdatum und einen Status: `belegt` (Seite des Händlers, bei dem gekauft wird), `richtwert` (Online-Supermarkt oder UVP), `geschätzt` (kein Beleg).
 - **Warum:** Die Händlerseiten waren aus der Arbeitsumgebung nicht direkt abrufbar; die Preise stammen aus Suchauszügen der verlinkten Seiten. REWE, Kaufland und EDEKA zeigen online keine Filialpreise für Schwetzingen. Ein Online-Preis von EDEKA24 ist kein „geschätzter“, aber auch kein bestätigter Regalpreis – das soll sichtbar bleiben.
-- **Folge:** Für 23 von 41 Artikeln ist dm, Rossmann, Lidl oder Aldi Süd als Laden eingetragen, weil dort der Preis belegt ist – obwohl REWE/Kaufland/EDEKA bevorzugt wären. Diese stehen jeweils als Ersatzquelle dabei. Nach dem ersten Einkauf lassen sich Laden und Preis im Admin umstellen.
+- **Folge:** Für 19 von 41 Artikeln ist dm, Rossmann, Lidl oder Aldi Süd als Laden eingetragen, weil dort der Preis belegt ist – obwohl REWE/Kaufland/EDEKA bevorzugt wären. Diese stehen jeweils als Ersatzquelle dabei. Nach dem ersten Einkauf lassen sich Laden und Preis im Admin umstellen.
 
 ### G2 · Kalkulation mit der teuersten üblichen Zahlungsgebühr
 - **Entscheidung:** 2,8 % + 0,25 € (Stripe, Premium-/Firmenkarten EWR) + 0,4 % für die automatische Rechnung. Quelle: stripe.com/en-de/pricing und Stripe-Support, geprüft 15.11.2026.

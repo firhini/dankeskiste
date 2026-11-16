@@ -94,7 +94,7 @@ export const artikel: SeedArtikel[] = [
     quelleHinweis: "Produktseite dm: 2,35 €", geprueftAm: D, status: "belegt",
     gewichtGramm: 80, mhd: "18–36 Monate", alkohol: false,
     allergene: "keine deklarationspflichtigen Allergene zu erwarten",
-    render: { type: "tea_box", label: "Wintertee", sub: "20 BEUTEL", tone: "salbei", dims: [13, 6.5, 7.5] },
+    render: { type: "tea_box", label: "Wintertee", sub: "20 BEUTEL", tone: "terrakotta", dims: [13, 6.5, 7.5] },
   },
   {
     id: "yogi-tea-classic-17",
@@ -104,7 +104,7 @@ export const artikel: SeedArtikel[] = [
     quelleHinweis: "Produktseite dm: 3,25 €", geprueftAm: D, status: "belegt",
     gewichtGramm: 65, mhd: "24–36 Monate", alkohol: false,
     allergene: "laut dm-Produktseite vegan, gluten- und laktosefrei",
-    render: { type: "tea_box", label: "Gewürztee", sub: "BIO · 17 BEUTEL", tone: "creme", dims: [12, 6.5, 7.5] },
+    render: { type: "tea_box", label: "Gewürztee", sub: "BIO · 17 BEUTEL", tone: "natur", dims: [12, 6.5, 7.5] },
   },
 
   // ───────────── Schokolade & Pralinen ─────────────
@@ -116,7 +116,7 @@ export const artikel: SeedArtikel[] = [
     quelleHinweis: "Hersteller-Shop Lindt: 3,99 € (UVP)", geprueftAm: D, status: "richtwert",
     gewichtGramm: 115, mhd: "4–8 Monate", alkohol: false, saisonal: "Oktober–Dezember",
     allergene: "Entwurf: Milch, Soja; kann Haselnüsse, Mandeln enthalten",
-    render: { type: "chocolate_bar", label: "Weihnachtsschokolade", sub: "VOLLMILCH · 100 G", tone: "dunkeloliv" },
+    render: { type: "chocolate_bar", label: "Weihnachtsschokolade", sub: "VOLLMILCH · 100 G", tone: "rost" },
   },
   {
     id: "lindt-excellence-70-100",
@@ -126,7 +126,7 @@ export const artikel: SeedArtikel[] = [
     quelleHinweis: "EDEKA24 online: 4,99 € (49,90 €/kg)", geprueftAm: D, status: "richtwert",
     gewichtGramm: 115, mhd: "9–15 Monate", alkohol: false,
     allergene: "Entwurf: kann Milch, Soja, Haselnüsse, Mandeln enthalten",
-    render: { type: "chocolate_bar", label: "Edelbitter", sub: "70 % KAKAO · 100 G", tone: "ink" },
+    render: { type: "chocolate_bar", label: "Edelbitter", sub: "70 % KAKAO · 100 G", tone: "kakao" },
   },
   {
     id: "ritter-sport-kakao-klasse-100",
@@ -146,7 +146,7 @@ export const artikel: SeedArtikel[] = [
     quelleHinweis: "Produktseite Rossmann: 4,59 € (1 kg = 18,36 €)", geprueftAm: D, status: "belegt",
     gewichtGramm: 320, mhd: "6–9 Monate", alkohol: false,
     allergene: "Entwurf: Milch, Soja, Haselnüsse, Mandeln; kann weitere Schalenfrüchte enthalten",
-    render: { type: "praline_box", label: "Schokoladen-Auswahl", sub: "20 STÜCK · 250 G", tone: "creme", dims: [24, 12.5, 3.2] },
+    render: { type: "praline_box", label: "Schokoladen-Auswahl", sub: "20 STÜCK · 250 G", tone: "natur", dims: [24, 12.5, 3.2] },
   },
   {
     id: "ferrero-rocher-200",
@@ -156,7 +156,7 @@ export const artikel: SeedArtikel[] = [
     quelleHinweis: "Online-Supermarkt Knuspr: 4,99 €", geprueftAm: D, status: "richtwert",
     gewichtGramm: 300, mhd: "4–8 Monate (im Sommer nicht im Sortiment)", alkohol: false,
     allergene: "Entwurf: Haselnüsse, Milch, Weizen (Gluten), Soja",
-    render: { type: "praline_box", label: "Haselnuss-Pralinen", sub: "16 STÜCK · 200 G", tone: "creme", dims: [19, 9.5, 4.8] },
+    render: { type: "praline_box", label: "Haselnuss-Pralinen", sub: "16 STÜCK · 200 G", tone: "senf", dims: [19, 9.5, 4.8] },
   },
   {
     id: "ferrero-kuesschen-178",
@@ -186,7 +186,7 @@ export const artikel: SeedArtikel[] = [
     quelleHinweis: "Hersteller-Shop Lindt, Saison 2026: 4,99 € (UVP); Preis 2027 offen", geprueftAm: D, status: "geschaetzt",
     gewichtGramm: 110, mhd: "4–8 Monate", alkohol: false, saisonal: "Februar–April",
     allergene: "Entwurf: Milch, Soja; kann Haselnüsse, Mandeln enthalten",
-    render: { type: "tin", label: "Schokoladen-Hase", sub: "VOLLMILCH · 100 G", tone: "creme", dims: [6.5, 4.5, 13] },
+    render: { type: "tin", label: "Schokoladen-Hase", sub: "VOLLMILCH · 100 G", tone: "senf", dims: [6.5, 4.5, 13] },
   },
 
   // ───────────── Gebäck ─────────────
@@ -198,7 +198,7 @@ export const artikel: SeedArtikel[] = [
     quelleHinweis: "Produktseite dm: 2,95 €", geprueftAm: D, status: "belegt",
     gewichtGramm: 145, mhd: "2–4 Monate – erst ab Mitte November einkaufen", alkohol: false, saisonal: "Oktober–Dezember",
     allergene: "Entwurf: Haselnüsse, Mandeln, Ei; kann Gluten enthalten",
-    render: { type: "cookie_pack", label: "Zimtsterne", sub: "BIO · 125 G", tone: "creme", dims: [15, 9, 4.5] },
+    render: { type: "cookie_pack", label: "Zimtsterne", sub: "BIO · 125 G", tone: "sand", dims: [15, 9, 4.5] },
   },
   {
     id: "dmbio-dominosteine-125",
@@ -208,7 +208,7 @@ export const artikel: SeedArtikel[] = [
     quelleHinweis: "Produktseite dm: 2,65 €", geprueftAm: D, status: "belegt",
     gewichtGramm: 145, mhd: "2–4 Monate – erst ab Mitte November einkaufen", alkohol: false, saisonal: "Oktober–Dezember",
     allergene: "Entwurf: Weizen (Gluten), Mandeln, Soja; kann Milch enthalten",
-    render: { type: "cookie_pack", label: "Dominosteine", sub: "BIO · 125 G", tone: "dunkeloliv", dims: [15, 9, 3.8] },
+    render: { type: "cookie_pack", label: "Dominosteine", sub: "BIO · 125 G", tone: "kakao", dims: [15, 9, 3.8] },
   },
   {
     id: "dmbio-spekulatius-150",
@@ -228,7 +228,7 @@ export const artikel: SeedArtikel[] = [
     quelleHinweis: "dm, Kategorieseite Nüsse: 2,85 € (22,80 €/kg)", geprueftAm: D, status: "belegt",
     gewichtGramm: 135, mhd: "4–8 Monate", alkohol: false,
     allergene: "Entwurf: Mandeln; kann andere Schalenfrüchte, Erdnüsse enthalten",
-    render: { type: "pouch", label: "Gebrannte Mandeln", sub: "BIO · 125 G", tone: "creme", dims: [11, 5, 16] },
+    render: { type: "pouch", label: "Gebrannte Mandeln", sub: "BIO · 125 G", tone: "kraft", dims: [11, 5, 16] },
   },
   {
     id: "leibniz-choco-125",
@@ -238,7 +238,7 @@ export const artikel: SeedArtikel[] = [
     quelleHinweis: "Rossmann, Markenübersicht Leibniz: 3,79 € (ältere Produktseite zeigt 1,69 € – verworfen)", geprueftAm: D, status: "richtwert",
     gewichtGramm: 145, mhd: "5–8 Monate", alkohol: false,
     allergene: "Entwurf: Weizen (Gluten), Milch, Soja",
-    render: { type: "cookie_pack", label: "Butterkeks", sub: "IN VOLLMILCHSCHOKOLADE · 125 G", tone: "oliv", dims: [14, 7.5, 4] },
+    render: { type: "cookie_pack", label: "Butterkeks", sub: "IN VOLLMILCHSCHOKOLADE · 125 G", tone: "kraft", dims: [14, 7.5, 4] },
   },
   {
     id: "gadeschi-amarettini-200",
@@ -248,7 +248,7 @@ export const artikel: SeedArtikel[] = [
     quelleHinweis: "Produktseite Rossmann: 1,79 € (8,95 €/kg)", geprueftAm: D, status: "belegt",
     gewichtGramm: 210, mhd: "6–9 Monate", alkohol: false,
     allergene: "Entwurf: Ei, Aprikosenkerne/Mandeln; kann Gluten, Milch enthalten",
-    render: { type: "pouch", label: "Amarettini", sub: "MANDELGEBÄCK · 200 G", tone: "salbei", dims: [12, 5.5, 18] },
+    render: { type: "pouch", label: "Amarettini", sub: "MANDELGEBÄCK · 200 G", tone: "natur", dims: [12, 5.5, 18] },
   },
   {
     id: "edeka-cantuccini-250",
@@ -258,7 +258,7 @@ export const artikel: SeedArtikel[] = [
     quelleHinweis: "EDEKA24 online: 3,29 € (13,16 €/kg)", geprueftAm: D, status: "richtwert",
     gewichtGramm: 265, mhd: "6–9 Monate", alkohol: false,
     allergene: "Entwurf: Weizen (Gluten), Mandeln, Ei; kann Milch enthalten",
-    render: { type: "pouch", label: "Cantuccini", sub: "MIT MANDELN · 250 G", tone: "creme", dims: [13, 6, 19] },
+    render: { type: "pouch", label: "Cantuccini", sub: "MIT MANDELN · 250 G", tone: "kraft", dims: [13, 6, 19] },
   },
 
   // ───────────── Frühstück ─────────────
@@ -332,7 +332,7 @@ export const artikel: SeedArtikel[] = [
     quelleHinweis: "Produktseite Rossmann: 4,19 € (27,93 €/kg)", geprueftAm: D, status: "belegt",
     gewichtGramm: 160, mhd: "4–8 Monate", alkohol: false,
     allergene: "Entwurf: Mandeln; kann andere Schalenfrüchte, Erdnüsse enthalten",
-    render: { type: "pouch", label: "Röstmandeln", sub: "GESALZEN · 150 G", tone: "creme", dims: [12, 5, 18] },
+    render: { type: "pouch", label: "Röstmandeln", sub: "GESALZEN · 150 G", tone: "sand", dims: [12, 5, 18] },
   },
   {
     id: "haribo-goldbaeren-175",
@@ -342,7 +342,7 @@ export const artikel: SeedArtikel[] = [
     quelleHinweis: "Produktseite Rossmann: 1,19 € (6,80 €/kg)", geprueftAm: D, status: "belegt",
     gewichtGramm: 180, mhd: "6–12 Monate", alkohol: false,
     allergene: "Entwurf: keine deklarationspflichtigen Allergene; enthält Gelatine (nicht vegetarisch)",
-    render: { type: "pouch", label: "Fruchtgummi", sub: "175 G", tone: "salbei", dims: [13, 4, 19] },
+    render: { type: "pouch", label: "Fruchtgummi", sub: "175 G", tone: "natur", dims: [13, 4, 19] },
   },
 
   // ───────────── Getränke ─────────────
@@ -429,7 +429,7 @@ export const artikel: SeedArtikel[] = [
     quelleHinweis: "EDEKA24 online: 2,79 €", geprueftAm: D, status: "richtwert",
     gewichtGramm: 515, mhd: "18–30 Monate", alkohol: false,
     allergene: "Entwurf: Hartweizen (Gluten); kann Soja, Senf enthalten",
-    render: { type: "pasta_bag", label: "Fusilli", sub: "HARTWEIZEN · 500 G", tone: "creme", dims: [11, 6, 24] },
+    render: { type: "pasta_bag", label: "Fusilli", sub: "HARTWEIZEN · 500 G", tone: "natur", dims: [11, 6, 24] },
   },
   {
     id: "barilla-pesto-genovese-190",
@@ -469,7 +469,7 @@ export const artikel: SeedArtikel[] = [
     quelleHinweis: "Kein Preisbeleg gefunden; Schätzung aus Erfahrungswerten (1,29–1,99 €)", geprueftAm: D, status: "geschaetzt",
     gewichtGramm: 140, mhd: "6–12 Monate", alkohol: false,
     allergene: "Entwurf: Weizen (Gluten); kann Sesam, Milch enthalten",
-    render: { type: "stick_pack", label: "Grissini", sub: "125 G", tone: "creme", dims: [7, 3.5, 25] },
+    render: { type: "stick_pack", label: "Grissini", sub: "125 G", tone: "sand", dims: [7, 3.5, 25] },
   },
 
   // ───────────── Non-Food ─────────────
