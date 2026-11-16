@@ -1,5 +1,5 @@
 import "server-only";
-import { asc, eq } from "drizzle-orm";
+import { asc, eq, inArray, sql } from "drizzle-orm";
 import { cacheLife, cacheTag } from "next/cache";
 import { db, schema } from "../../../db";
 import type { BildVarianten, InhaltSnapshot, VerpackungSnapshot } from "../../../db/schema";
@@ -41,7 +41,10 @@ export interface ShopBox extends KatalogBox {
   zielgruppe: string;
   kurz: string;
   text: string;
+  /** Im Admin als Bestseller markiert oder nach echten Bestellungen unter den ersten drei */
   bestseller: boolean;
+  /** Platz nach tatsächlich verkaufter Stückzahl (1 = meistverkauft); null, solange es keine bezahlten Bestellungen gibt */
+  bestsellerRang: number | null;
   band: string;
   sortierung: number;
   seoTitel: string;
@@ -82,13 +85,25 @@ async function ladeRoh() {
   return { kollektionen, boxen, items, verpackung, bilder, artikel, packaging };
 }
 
+/** Verkaufte Stückzahl je Box aus bezahlten Bestellungen – Grundlage für „Bestseller“. */
+async function ladeVerkaufsRang(): Promise<Map<string, number>> {
+  const zeilen = await db
+    .select({ slug: schema.orderItems.boxSlug, menge: sql<number>`sum(${schema.orderItems.menge})::int` })
+    .from(schema.orderItems)
+    .innerJoin(schema.orders, eq(schema.orders.id, schema.orderItems.orderId))
+    .where(inArray(schema.orders.status, ["neu", "eingekauft", "gepackt", "versendet", "geliefert", "abgeschlossen"]))
+    .groupBy(schema.orderItems.boxSlug);
+  const sortiert = zeilen.filter((z) => z.menge > 0).sort((a, b) => b.menge - a.menge);
+  return new Map(sortiert.map((z, i) => [z.slug, i + 1]));
+}
+
 /** Öffentlicher Katalog: nur aktive, im Zeitraum sichtbare Kollektionen und Boxen. Keine Einkaufspreise. */
 export async function ladeKatalog(): Promise<Katalog> {
   "use cache";
   cacheTag("katalog");
   cacheLife("hours");
   const heute = heuteBerlin();
-  const roh = await ladeRoh();
+  const [roh, rang] = await Promise.all([ladeRoh(), ladeVerkaufsRang()]);
   const artikelNach = new Map(roh.artikel.map((a) => [a.id, a]));
   const packNach = new Map(roh.packaging.map((p) => [p.id, p]));
   const kollNach = new Map(roh.kollektionen.map((k) => [k.id, k]));
@@ -116,7 +131,8 @@ export async function ladeKatalog(): Promise<Katalog> {
         zielgruppe: b.zielgruppe,
         kurz: b.kurz,
         text: b.text,
-        bestseller: b.bestseller,
+        bestseller: b.bestseller || (rang.get(b.slug) ?? 99) <= 3,
+        bestsellerRang: rang.get(b.slug) ?? null,
         band: b.band,
         sortierung: b.sortierung,
         seoTitel: b.seoTitel,

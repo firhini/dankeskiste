@@ -32,7 +32,7 @@ export default async function Startseite() {
   // Am Handy stehen die Karten zu zweit nebeneinander; bei gerader Anzahl auch die erste.
   const saisonGerade = saisonBoxen.length % 2 === 0;
   const weitere = kollektionen.filter((k) => k.slug !== saison?.slug);
-  const bestseller = boxen.filter((b) => b.bestseller && b.slug !== held?.slug).slice(0, 3);
+  const bestseller = boxen.filter((b) => b.bestseller && b.slug !== held?.slug).sort((a, b) => (a.bestsellerRang ?? 99) - (b.bestsellerRang ?? 99)).slice(0, 3);
   const abPreis = boxen.length ? Math.min(...boxen.map((b) => b.preisCent)) : 0;
   const vStatus = lieferStatus("versand", heute, e.fristen);
   const pStatus = lieferStatus("persoenlich", heute, e.fristen);
@@ -180,7 +180,7 @@ export default async function Startseite() {
       {bestseller.length ? (
         <section className="rand abschnitt border-t border-salbei" aria-labelledby="best-titel">
           <div className="mb-10 flex flex-wrap items-end justify-between gap-4">
-            <h2 id="best-titel" className="text-oliv">Drei, die <em>fast immer passen</em></h2>
+            <h2 id="best-titel" className="text-oliv">Am häufigsten <em>bestellt</em></h2>
             <Link href="/boxen" className="textlink">Alle {boxen.length} Boxen ansehen</Link>
           </div>
           <div className="raster gap-y-12">

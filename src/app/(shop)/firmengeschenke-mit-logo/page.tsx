@@ -24,7 +24,7 @@ export default async function Seite() {
       titel={<>Firmengeschenke mit Logo – <em>ohne</em> Mindestauflage von 50 Stück</>}
       vorspann={`Ihr Logo auf dem Deckel und Ihr Text auf der Karte gehören bei jeder Dankeskiste dazu. Schon ab ${e.mindestmenge} Boxen, ohne Einrichtungskosten.`}
       boxen={boxen.filter((b) => b.bestseller)}
-      boxenTitel={<>Drei Boxen, <em>die ein Logo gut tragen</em></>}
+      boxenTitel={<>Diese Boxen tragen <em>oft ein Logo</em></>}
       schluss="Logo hochladen, Text eintippen, fertig – die Personalisierung ist Schritt zwei von vier in der Bestellung."
       fragen={[
         { frage: "Was kostet das Logo auf der Box?", text: "Nichts extra. Der runde Logo-Sticker auf dem Deckel und die gedruckte Grußkarte sind im Preis jeder Box enthalten. Es gibt keine Einrichtungs- oder Druckvorstufenkosten." },

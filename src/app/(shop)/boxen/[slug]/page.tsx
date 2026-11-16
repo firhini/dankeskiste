@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { Bild } from "@/components/bild";
-import { BoxKarte } from "@/components/shop/box-karte";
+import { BoxKarte, BoxMarke } from "@/components/shop/box-karte";
 import { Brotkrumen } from "@/components/shop/brotkrumen";
 import { JsonLd } from "@/components/shop/jsonld";
 import { Haken, Pfeil, Plus } from "@/components/shop/zeichen";
@@ -83,6 +83,7 @@ export default async function BoxSeite({ params }: PageProps<"/boxen/[slug]">) {
 
         {/* Kaufbereich */}
         <div className="col-span-12 lg:col-span-5 lg:pl-4">
+          <BoxMarke box={box} className="mb-3" />
           <p className="label text-dunkel">
             <Link href={`/kollektionen/${box.kollektionSlug}`} className="no-underline hover:underline">{box.kollektionName}</Link>
             {box.anlass && box.anlass !== box.kollektionName ? ` · ${box.anlass}` : ""}

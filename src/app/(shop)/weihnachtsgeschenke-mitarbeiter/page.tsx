@@ -26,7 +26,7 @@ export default async function Seite() {
       titel={<>Weihnachtsgeschenke für Mitarbeiter, <em>die ankommen</em></>}
       vorspann="Was ein Team wirklich freut, was es kosten darf und bis wann Sie bestellen müssen – eine ehrliche Übersicht von jemandem, der die Kisten selbst packt."
       boxen={zeige}
-      boxenTitel={<>Drei Kisten <em>für drei Budgets</em></>}
+      boxenTitel={<>Drei Kisten, <em>die oft gewählt werden</em></>}
       schluss="Die meisten Bestellungen kommen in der letzten Novemberwoche. Wer früher bestellt, hat die freie Wahl beim Liefertag."
       fragen={[
         { frage: "Wie viel sollte ein Weihnachtsgeschenk für Mitarbeiter kosten?", text: "Üblich sind 25 bis 50 € pro Person. In diesem Rahmen liegen die meisten Dankeskisten. Wichtiger als der Betrag ist, dass alle im Team gleich behandelt werden und das Geschenk persönlich wirkt – etwa durch zwei Sätze auf der Karte." },

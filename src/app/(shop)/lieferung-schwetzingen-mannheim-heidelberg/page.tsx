@@ -47,7 +47,7 @@ export default async function Seite() {
         titel={<>Firmengeschenke, persönlich geliefert in <em>Mannheim, Heidelberg</em> und Schwetzingen</>}
         vorspann="Im Rhein-Neckar-Raum kommen Ihre Geschenkboxen nicht mit dem Paketdienst, sondern mit mir: an Ihrem Wunschtag, bis in den Besprechungsraum."
         boxen={boxen.filter((b) => ["teamfruehstueck", "weihnachtskiste", "willkommen-im-team", "pasta-abend"].includes(b.slug))}
-        boxenTitel={<>Drei Boxen <em>für die Lieferung vor Ort</em></>}
+        boxenTitel={<>Wird in der Region <em>gern geliefert</em></>}
         schluss="Liegt Ihre Firma knapp außerhalb des Gebiets? Fragen Sie einfach – oft lässt sich eine Tour passend legen."
         fragen={[
           { frage: "Was kostet die persönliche Lieferung?", text: `${euro(e.lieferung.gebuehrCent, { immerCent: true })} je Bestellung. Ab ${euro(e.lieferung.freiAbCent)} Warenwert ist sie kostenlos.` },

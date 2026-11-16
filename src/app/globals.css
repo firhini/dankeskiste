@@ -216,6 +216,23 @@
     border-radius: var(--radius-fein);
   }
 
+  /* „Bestseller“ / „Beliebt“: wie mit dem Stempel aufgedrückt */
+  .stempelmarke {
+    display: inline-block;
+    padding: 0.22rem 0.5rem 0.2rem;
+    background: var(--color-creme);
+    border: 1.5px solid var(--color-rot);
+    border-radius: var(--radius-fein);
+    color: var(--color-rot);
+    font-size: 0.6875rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    line-height: 1.2;
+    text-transform: uppercase;
+    transform: rotate(-2deg);
+    pointer-events: none;
+  }
+
   /* Dezente Papierstruktur auf Creme (< 3 % Deckkraft) */
   .papier { position: relative; isolation: isolate; }
   .papier::before {
