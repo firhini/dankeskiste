@@ -1,0 +1,48 @@
+{
+  "boxes": [
+    {
+      "slug": "kleine-freude",
+      "size": "klein",
+      "ribbon": "natur",
+      "seed": 3,
+      "items": [
+        {"type": "tea_box", "label": "Kräutertee", "sub": "BIO · 15 BEUTEL", "tone": "salbei"},
+        {"type": "jar", "label": "Honig", "sub": "BLÜTE · 250 G", "contents": "honig", "dims": [6.6, 6.6, 8.2]},
+        {"type": "chocolate_bar", "label": "Schokolade", "sub": "ZARTBITTER · 100 G", "tone": "kakao"},
+        {"type": "candle", "label": "Kerze", "sub": "SOJAWACHS · 180 G"}
+      ]
+    },
+    {
+      "slug": "weihnachtskiste",
+      "size": "mittel",
+      "ribbon": "oliv",
+      "seed": 7,
+      "items": [
+        {"type": "coffee_bag", "label": "Kaffee", "sub": "GEMAHLEN · 500 G", "tone": "oliv"},
+        {"type": "jar", "label": "Konfitüre", "sub": "ERDBEERE · 370 G", "contents": "erdbeer"},
+        {"type": "chocolate_bar", "label": "Schokolade", "sub": "VOLLMILCH · 100 G"},
+        {"type": "tin", "label": "Lebkuchen", "sub": "ELISEN · 200 G", "tone": "creme"},
+        {"type": "pouch", "label": "Mandeln", "sub": "GEBRANNT · 150 G", "tone": "kraft"},
+        {"type": "marzipan_loaf", "label": "Marzipan", "sub": "EDELBITTER · 125 G"},
+        {"type": "bottle_small", "variant": "sekt", "label": "Sekt", "sub": "TROCKEN · 0,2 L"}
+      ]
+    },
+    {
+      "slug": "genusskiste-gross",
+      "size": "gross",
+      "ribbon": "dunkeloliv",
+      "seed": 12,
+      "items": [
+        {"type": "bottle", "variant": "wein_rot", "label": "Spätburgunder", "sub": "TROCKEN · 0,75 L"},
+        {"type": "pasta_bag", "label": "Pasta", "sub": "HARTWEIZEN · 500 G", "tone": "natur"},
+        {"type": "jar", "label": "Pesto", "sub": "BASILIKUM · 190 G", "contents": "pesto", "dims": [6.4, 6.4, 8.0]},
+        {"type": "jar", "label": "Oliven", "sub": "GRÜN · 300 G", "contents": "oliven", "tone": "ink"},
+        {"type": "stick_pack", "label": "Grissini", "sub": "ROSMARIN · 125 G", "tone": "sand"},
+        {"type": "praline_box", "label": "Pralinen", "sub": "HANDGEMACHT · 12 STÜCK", "tone": "dunkeloliv"},
+        {"type": "cookie_pack", "label": "Gebäck", "sub": "BUTTER · 150 G", "tone": "salbei"},
+        {"type": "pouch", "label": "Nussmix", "sub": "GERÖSTET · 200 G", "tone": "kraft"},
+        {"type": "notebook", "label": "Notizbuch", "sub": "A6 · LINIERT", "tone": "ink", "dims": [10.5, 1.3, 14.8]}
+      ]
+    }
+  ]
+}
