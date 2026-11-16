@@ -3,7 +3,7 @@ import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { erfordereAdmin } from "@/auth";
 import { BoxEditor } from "@/components/admin/box-editor";
-import { Absenden, Formular } from "@/components/admin/formular";
+import { Absenden, Formular, FotoEingabe } from "@/components/admin/formular";
 import { AKnopf, Block, Seite, feldKlein } from "@/components/admin/ui";
 import { Bild } from "@/components/bild";
 import { ladeBoxenMitKalkulation } from "@/lib/server/admin-daten";
@@ -80,7 +80,7 @@ export default async function BoxSeite({ params }: PageProps<"/admin/boxen/[id]"
                   <input type="hidden" name="bildId" value={bild.id} />
                   <input type="hidden" name="art" value={bild.art} />
                   <label className="nur-sr" htmlFor={`d-${bild.id}`}>Foto für {ART_NAME[bild.art]}</label>
-                  <input id={`d-${bild.id}`} name="datei" type="file" accept="image/jpeg,image/png,image/webp" required className="klein w-full" />
+                  <FotoEingabe id={`d-${bild.id}`} />
                   <label className="nur-sr" htmlFor={`alt-${bild.id}`}>Bildbeschreibung</label>
                   <input id={`alt-${bild.id}`} name="alt" defaultValue={bild.alt} className={feldKlein} />
                   <Absenden>Durch Foto ersetzen</Absenden>
@@ -96,7 +96,7 @@ export default async function BoxSeite({ params }: PageProps<"/admin/boxen/[id]"
               <Formular aktion={bildHochladen} leeren className="mt-2 space-y-2">
                 <input type="hidden" name="boxId" value={b.box.id} />
                 <label className="nur-sr" htmlFor="d-neu">Foto</label>
-                <input id="d-neu" name="datei" type="file" accept="image/jpeg,image/png,image/webp" required className="klein w-full" />
+                <FotoEingabe id="d-neu" />
                 <label className="feldname" htmlFor="alt-neu">Bildbeschreibung (Alt-Text)</label>
                 <input id="alt-neu" name="alt" className={feldKlein} placeholder={`Geschenkbox „${b.box.name}“ …`} />
                 <Absenden>Hochladen</Absenden>

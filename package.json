@@ -18,10 +18,12 @@
     "render": "python3 scripts/render/render.py --boxes scripts/render/boxes.json --out renders/final --grade",
     "e2e": "playwright test",
     "bilder:api": "tsx scripts/generate-images-api.ts",
-    "vercel-build": "drizzle-kit migrate && next build"
+    "vercel-build": "npm run bereitstellen",
+    "bereitstellen": "tsx scripts/vor-dem-build.ts && next build"
   },
   "dependencies": {
     "@auth/drizzle-adapter": "^1.11.3",
+    "@netlify/blobs": "^11.1.9",
     "@vercel/blob": "^2.9.0",
     "drizzle-orm": "^0.45.4",
     "next": "16.4.6",

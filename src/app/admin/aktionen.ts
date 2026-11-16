@@ -12,7 +12,7 @@ import { neuerEinstand } from "@/lib/calc/profit";
 import { einstellungenSchema } from "@/lib/einstellungen";
 import { parseEuro } from "@/lib/geld";
 import { aktualisiereStripeDaten, erstatte, sendeBestaetigungErneut, setzeStatus, versende } from "@/lib/server/bestellungen";
-import { speichereEinstellungen } from "@/lib/server/einstellungen";
+import { ladeEinstellungenFrisch, speichereEinstellungen } from "@/lib/server/einstellungen";
 import { erkenneTyp, speichereDatei } from "@/lib/server/storage";
 import { stripe, stripeKonfiguriert } from "@/lib/server/stripe";
 import { db, schema } from "../../../db";
@@ -26,6 +26,9 @@ const ganz = (f: FormData, k: string) => {
 };
 const slugAus = (s: string) =>
   s.toLowerCase().replace(/ä/g, "ae").replace(/ö/g, "oe").replace(/ü/g, "ue").replace(/ß/g, "ss").replace(/[^a-z0-9]+/g, "-").replace(/^-+|-+$/g, "").slice(0, 60);
+
+/** Fotos kommen bereits im Browser verkleinert an; die Grenze liegt unter dem Limit der Hoster (ca. 4,5 MB je Anfrage). */
+const FOTO_MAX = 3.5 * 1024 * 1024;
 
 async function aktion(f: () => Promise<string | void>): Promise<Ergebnis> {
   await erfordereAdmin();
@@ -275,7 +278,7 @@ export async function bildHochladen(_: Ergebnis, f: FormData): Promise<Ergebnis>
     const ersetzeId = txt(f, "bildId") ? Number(txt(f, "bildId")) : null;
     const datei = f.get("datei");
     if (!(datei instanceof File) || datei.size === 0) throw new Error("Bitte ein Foto auswählen.");
-    if (datei.size > 12 * 1024 * 1024) throw new Error("Das Foto ist größer als 12 MB.");
+    if (datei.size > FOTO_MAX) throw new Error("Das Foto ist größer als 3,5 MB. Bitte kleiner exportieren.");
     const roh = Buffer.from(await datei.arrayBuffer());
     if (!erkenneTyp(roh, ["image/jpeg", "image/png", "image/webp"])) throw new Error("Bitte ein JPG-, PNG- oder WebP-Foto hochladen.");
     const [box] = await db.select().from(schema.boxes).where(eq(schema.boxes.id, boxId));
@@ -424,11 +427,39 @@ export async function einstellungenSpeichern(eingabe: unknown): Promise<{ ok?: s
   if (e.fristen.versand.bestellschluss > e.fristen.versand.lieferungBis) return { fehler: "Versand: Der Bestellschluss liegt nach dem Liefertermin." };
   if (e.fristen.persoenlich.fensterVon > e.fristen.persoenlich.fensterBis) return { fehler: "Persönliche Lieferung: Das Lieferfenster endet vor seinem Beginn." };
   const stufen = [...e.versand.stufen].sort((a, b) => a.bisGramm - b.bisGramm);
-  await speichereEinstellungen({ ...e, versand: { ...e.versand, stufen }, staffeln: [...e.staffeln].sort((a, b) => a.ab - b.ab) });
+  // Das Inhaberfoto wird getrennt hochgeladen und darf vom Editor nicht überschrieben werden.
+  const fotoUrl = (await ladeEinstellungenFrisch()).kontakt.fotoUrl;
+  await speichereEinstellungen({ ...e, kontakt: { ...e.kontakt, fotoUrl }, versand: { ...e.versand, stufen }, staffeln: [...e.staffeln].sort((a, b) => a.ab - b.ab) });
   updateTag("einstellungen");
   updateTag("katalog");
   refresh();
   return { ok: "Gespeichert – gilt ab sofort für neue Bestellungen." };
+}
+
+export async function inhaberFotoSpeichern(_: Ergebnis, f: FormData): Promise<Ergebnis> {
+  return aktion(async () => {
+    const datei = f.get("datei");
+    if (!(datei instanceof File) || datei.size === 0) throw new Error("Bitte ein Foto auswählen.");
+    if (datei.size > FOTO_MAX) throw new Error("Das Foto ist größer als 3,5 MB. Bitte kleiner exportieren.");
+    const roh = Buffer.from(await datei.arrayBuffer());
+    if (!erkenneTyp(roh, ["image/jpeg", "image/png", "image/webp"])) throw new Error("Bitte ein JPG-, PNG- oder WebP-Foto hochladen.");
+    const { default: sharp } = await import("sharp");
+    const bild = await sharp(roh, { failOn: "error" }).rotate().resize(960, 1200, { fit: "cover", position: "attention" }).webp({ quality: 80 }).toBuffer();
+    const fotoUrl = await speichereDatei("inhaber", `inhaber-${Date.now().toString(36)}.webp`, bild, "image/webp");
+    const e = await ladeEinstellungenFrisch();
+    await speichereEinstellungen({ ...e, kontakt: { ...e.kontakt, fotoUrl } });
+    updateTag("einstellungen");
+    return "Foto gespeichert – es erscheint auf der Startseite.";
+  });
+}
+
+export async function inhaberFotoEntfernen(): Promise<Ergebnis> {
+  return aktion(async () => {
+    const e = await ladeEinstellungenFrisch();
+    await speichereEinstellungen({ ...e, kontakt: { ...e.kontakt, fotoUrl: "" } });
+    updateTag("einstellungen");
+    return "Foto entfernt.";
+  });
 }
 
 export async function kollektionSpeichern(_: Ergebnis, f: FormData): Promise<Ergebnis> {

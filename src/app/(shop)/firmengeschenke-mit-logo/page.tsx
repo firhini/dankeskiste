@@ -24,11 +24,11 @@ export default async function Seite() {
       titel={<>Firmengeschenke mit Logo – <em>ohne</em> Mindestauflage von 50 Stück</>}
       vorspann={`Ihr Logo auf dem Deckel und Ihr Text auf der Karte gehören bei jeder Dankeskiste dazu. Schon ab ${e.mindestmenge} Boxen, ohne Einrichtungskosten.`}
       boxen={boxen.filter((b) => b.bestseller)}
-      boxenTitel={<>Diese Boxen tragen <em>oft ein Logo</em></>}
+      boxenTitel={<>Drei Boxen, <em>die ein Logo gut tragen</em></>}
       schluss="Logo hochladen, Text eintippen, fertig – die Personalisierung ist Schritt zwei von vier in der Bestellung."
       fragen={[
         { frage: "Was kostet das Logo auf der Box?", text: "Nichts extra. Der runde Logo-Sticker auf dem Deckel und die gedruckte Grußkarte sind im Preis jeder Box enthalten. Es gibt keine Einrichtungs- oder Druckvorstufenkosten." },
-        { frage: "In welchem Format brauchen Sie das Logo?", text: "Am besten als Vektordatei (SVG oder PDF). PNG und JPG gehen auch, wenn das Logo mindestens 600 Pixel breit ist. Die Datei darf bis 5 MB groß sein. Ein Logo mit transparentem oder weißem Hintergrund wirkt auf dem runden Sticker am besten." },
+        { frage: "In welchem Format brauchen Sie das Logo?", text: "Am besten als Vektordatei (SVG oder PDF). PNG und JPG gehen auch, wenn das Logo mindestens 600 Pixel breit ist. Die Datei darf bis 4 MB groß sein. Ein Logo mit transparentem oder weißem Hintergrund wirkt auf dem runden Sticker am besten." },
         { frage: "Bekomme ich vorab einen Korrekturabzug?", text: "Auf Wunsch ja: Schreiben Sie „Bitte Abzug“ in die Bestellnotiz. Sie bekommen dann ein Foto des fertigen Stickers per Mail, bevor gepackt wird. Bei knappen Terminen vor Weihnachten kostet das etwa einen Tag." },
         { frage: "Können Sie das Logo auch auf den Karton drucken?", text: "Nein. Bedruckte Kartons lohnen sich erst ab einigen hundert Stück und brauchen Wochen Vorlauf. Mit Sticker und Banderole sieht die Box nach Ihrer Firma aus – auch bei fünf Stück und in fünf Tagen." },
       ]}

@@ -49,3 +49,6 @@ next-env.d.ts
 /playwright-report/
 /.lighthouse/
 __pycache__/
+
+# netlify
+.netlify

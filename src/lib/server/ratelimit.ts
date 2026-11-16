@@ -14,7 +14,7 @@ const FAKTOR = process.env.STRIPE_SECRET_KEY?.startsWith("sk_test_") ? Math.max(
 export async function rateLimit(bereich: string, grundLimit: number, fensterSekunden: number): Promise<{ ok: boolean; rest: number }> {
   const limit = grundLimit * FAKTOR;
   const h = await headers();
-  const ip = (h.get("x-forwarded-for") ?? "").split(",")[0].trim() || h.get("x-real-ip") || "unbekannt";
+  const ip = h.get("x-nf-client-connection-ip") || (h.get("x-forwarded-for") ?? "").split(",")[0].trim() || h.get("x-real-ip") || "unbekannt";
   const salz = process.env.AUTH_SECRET ?? "dankeskiste";
   const schluessel = `${bereich}:${createHash("sha256").update(`${salz}:${ip}`).digest("base64url").slice(0, 22)}`;
   const jetzt = Date.now();

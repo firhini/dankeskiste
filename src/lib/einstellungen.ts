@@ -63,6 +63,8 @@ export const einstellungenSchema = z.object({
     email: z.string(),
     steuernummer: z.string(),
     aufsichtHinweis: z.string(),
+    /** Foto für „Wer packt Ihre Kiste?“ – wird im Admin hochgeladen */
+    fotoUrl: z.string().default(""),
   }),
 });
 
@@ -139,5 +141,6 @@ export const startEinstellungen: Einstellungen = {
     email: PLATZHALTER,
     steuernummer: PLATZHALTER,
     aufsichtHinweis: "",
+    fotoUrl: "",
   },
 };

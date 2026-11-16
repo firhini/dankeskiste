@@ -101,12 +101,17 @@ Live-Schlüssel (`sk_live_…`) und ein **eigener Live-Webhook** mit eigenem `wh
 
 ## 5. Deployment und Domain
 
-1. Repository in Vercel importieren (Framework: Next.js). Build-Befehl: `npm run vercel-build`.
-2. Alle Variablen aus Abschnitt 2 unter **Settings → Environment Variables** eintragen.
-3. **Storage → Blob** anlegen (setzt `BLOB_READ_WRITE_TOKEN`).
-4. **Settings → Domains:** Domain hinzufügen, DNS-Einträge beim Registrar setzen. `NEXT_PUBLIC_SITE_URL` auf die endgültige Adresse stellen und neu deployen – sie steckt in Sitemap, Canonicals und QR-Codes.
-5. **Resend:** Domain verifizieren (SPF/DKIM), `MAIL_FROM` auf eine Adresse dieser Domain setzen.
-6. **Search Console:** Property anlegen, Code in `NEXT_PUBLIC_GSC_VERIFICATION`, Sitemap `/sitemap.xml` einreichen.
+**Die vollständige Schritt-für-Schritt-Anleitung für den Livegang steht in [`LIVEGANG.md`](LIVEGANG.md)** – von den Konten über Netlify, Stripe und die Domain bis zur Generalprobe vor der ersten Werbung, ohne Codeänderung.
+
+Kurzfassung:
+
+- **Netlify:** Repository importieren; Build-Befehl und Ordner stehen in `netlify.toml`. Uploads (Logos, Fotos) liegen in Netlify Blobs, ohne Einstellung. Region der Functions auf Frankfurt stellen.
+- **Vercel:** Repository importieren, Build-Befehl `npm run vercel-build`, unter **Storage → Blob** einen Speicher anlegen (setzt `BLOB_READ_WRITE_TOKEN`).
+- `npm run bereitstellen` prüft vor jedem Build die Umgebungsvariablen, bringt die Datenbank auf den aktuellen Stand und füllt eine leere Datenbank einmalig mit dem Sortiment. Vorhandene Daten bleiben unberührt.
+- `NEXT_PUBLIC_SITE_URL` auf die endgültige Adresse stellen und neu bereitstellen – sie steckt in Sitemap, Canonicals, Mails und QR-Codes.
+- Im Admin unter **Einstellungen** zeigt der **Livegang-Check**, was eingerichtet ist und was fehlt.
+
+Der Netlify-Build ist lokal geprüft (Next.js-Laufzeit 5.16.7); der Betrieb auf Netlify selbst konnte in der Entwicklungsumgebung nicht getestet werden. `LIVEGANG.md` enthält dafür eine Kontrollrunde.
 
 ## 6. Tägliche Arbeit im Admin
 

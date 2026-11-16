@@ -54,3 +54,40 @@ export function Absenden({ children, className = "knopf !min-h-10 !px-3.5 !py-2 
     </button>
   );
 }
+
+/**
+ * Dateifeld für Fotos. Große Handyfotos werden vor dem Hochladen im Browser auf höchstens
+ * 2400 px Kantenlänge verkleinert – sonst scheitert der Upload an der Größengrenze des Hosters.
+ */
+export function FotoEingabe({ id, name = "datei", required = true }: { id: string; name?: string; required?: boolean }) {
+  return (
+    <input
+      id={id}
+      name={name}
+      type="file"
+      accept="image/jpeg,image/png,image/webp"
+      required={required}
+      className="klein w-full"
+      onChange={async (ev) => {
+        const feld = ev.currentTarget;
+        const datei = feld.files?.[0];
+        if (!datei || datei.size < 1_500_000) return;
+        try {
+          const bild = await createImageBitmap(datei, { imageOrientation: "from-image" });
+          const faktor = Math.min(1, 2400 / Math.max(bild.width, bild.height));
+          const flaeche = document.createElement("canvas");
+          flaeche.width = Math.round(bild.width * faktor);
+          flaeche.height = Math.round(bild.height * faktor);
+          flaeche.getContext("2d")?.drawImage(bild, 0, 0, flaeche.width, flaeche.height);
+          const klein = await new Promise<Blob | null>((fertig) => flaeche.toBlob(fertig, "image/jpeg", 0.86));
+          if (!klein || klein.size >= datei.size) return;
+          const ersatz = new DataTransfer();
+          ersatz.items.add(new File([klein], datei.name.replace(/\.[^.]+$/, "") + ".jpg", { type: "image/jpeg" }));
+          feld.files = ersatz.files;
+        } catch {
+          // Verkleinern nicht möglich – die Datei geht unverändert hoch, der Server prüft die Größe.
+        }
+      }}
+    />
+  );
+}

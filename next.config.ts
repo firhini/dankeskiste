@@ -36,6 +36,8 @@ const nextConfig: NextConfig = {
     },
   },
   serverExternalPackages: ["sharp", "pg"],
+  // Foto-Uploads im Admin: Fotos werden im Browser verkleinert, 4 MB bleibt unter den Grenzen von Netlify und Vercel.
+  experimental: { serverActions: { bodySizeLimit: "4mb" } },
   async headers() {
     return [
       {

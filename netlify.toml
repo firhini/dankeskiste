@@ -1,0 +1,8 @@
+# Netlify: Build und Laufzeit. Die Next.js-Laufzeit (OpenNext) installiert Netlify selbst.
+# „bereitstellen“ prüft die Umgebungsvariablen, bringt die Datenbank auf Stand und baut die Seite.
+[build]
+  command = "npm run bereitstellen"
+  publish = ".next"
+
+[build.environment]
+  NODE_VERSION = "22"

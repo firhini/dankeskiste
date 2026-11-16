@@ -5,10 +5,30 @@ import path from "node:path";
 
 export const UPLOAD_DIR = path.join(process.cwd(), ".uploads");
 
+/** Netlify Blobs steht auf Netlify ohne weitere Einstellung bereit; überall sonst gibt es `null`. */
+export async function netlifySpeicher() {
+  const g = globalThis as { netlifyBlobsContext?: unknown };
+  if (!g.netlifyBlobsContext && !process.env.NETLIFY_BLOBS_CONTEXT) return null;
+  try {
+    const { getStore } = await import("@netlify/blobs");
+    return getStore({ name: "uploads", consistency: "strong" });
+  } catch {
+    return null;
+  }
+}
+
+/** Wo Uploads landen – für die Statusanzeige im Admin. */
+export async function speicherArt(): Promise<"vercel" | "netlify" | "lokal" | "fehlt"> {
+  if (process.env.BLOB_READ_WRITE_TOKEN) return "vercel";
+  if (await netlifySpeicher()) return "netlify";
+  return process.env.NODE_ENV === "production" && process.env.UPLOAD_LOKAL !== "1" ? "fehlt" : "lokal";
+}
+
 /**
  * Speichert eine Datei unter einer nicht erratbaren URL.
- * Produktion: Vercel Blob (öffentliche URL mit zufälligem Suffix).
- * Lokal ohne BLOB_READ_WRITE_TOKEN: .uploads/ + Auslieferung über /api/datei/[name].
+ * Vercel: Vercel Blob, sobald BLOB_READ_WRITE_TOKEN gesetzt ist (öffentliche URL mit zufälligem Suffix).
+ * Netlify: Netlify Blobs, ohne Einstellung; Auslieferung über /api/datei/[name].
+ * Lokal: .uploads/ + Auslieferung über /api/datei/[name].
  */
 export async function speichereDatei(ordner: string, dateiname: string, inhalt: Buffer, contentType: string): Promise<string> {
   const sauber = dateiname.toLowerCase().replace(/[^a-z0-9.]+/g, "-").replace(/^-+|-+$/g, "").slice(-60) || "datei";
@@ -17,11 +37,17 @@ export async function speichereDatei(ordner: string, dateiname: string, inhalt: 
     const blob = await put(`${ordner}/${sauber}`, inhalt, { access: "public", addRandomSuffix: true, contentType });
     return blob.url;
   }
+  const name = `${randomBytes(18).toString("base64url")}-${sauber}`;
+  const netlify = await netlifySpeicher();
+  if (netlify) {
+    const daten = inhalt.buffer.slice(inhalt.byteOffset, inhalt.byteOffset + inhalt.byteLength) as ArrayBuffer;
+    await netlify.set(name, daten, { metadata: { contentType, ordner } });
+    return `/api/datei/${name}`;
+  }
   if (process.env.NODE_ENV === "production" && process.env.UPLOAD_LOKAL !== "1") {
-    throw new Error("BLOB_READ_WRITE_TOKEN fehlt – Uploads sind nicht konfiguriert.");
+    throw new Error("Kein Speicher für Uploads: weder Netlify Blobs noch BLOB_READ_WRITE_TOKEN verfügbar.");
   }
   await mkdir(UPLOAD_DIR, { recursive: true });
-  const name = `${randomBytes(18).toString("base64url")}-${sauber}`;
   await writeFile(path.join(UPLOAD_DIR, name), inhalt);
   return `/api/datei/${name}`;
 }

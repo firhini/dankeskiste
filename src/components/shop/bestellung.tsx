@@ -193,7 +193,7 @@ export function Bestellung({ boxen, e, startBox }: { boxen: BestellBoxInfo[]; e:
   async function ladeLogo(datei: File | undefined) {
     if (!datei) return;
     setLogoStatus({});
-    if (datei.size > 5 * 1024 * 1024) return setLogoStatus({ fehler: "Die Datei ist größer als 5 MB. Bitte laden Sie eine kleinere Version hoch." });
+    if (datei.size > 4 * 1024 * 1024) return setLogoStatus({ fehler: "Die Datei ist größer als 4 MB. Bitte laden Sie eine kleinere Version hoch." });
     setLogoStatus({ laeuft: true });
     try {
       const f = new FormData();
@@ -464,17 +464,17 @@ export function Bestellung({ boxen, e, startBox }: { boxen: BestellBoxInfo[]; e:
       <div className="col-span-12 lg:col-span-7">
         {/* Fortschritt */}
         <nav aria-label="Bestellschritte">
-          <ol className="grid grid-cols-4 gap-1.5">
+          <ol className="grid gap-1.5 sm:!grid-cols-4" style={{ gridTemplateColumns: SCHRITTE.map((_, i) => (i + 1 === z.schritt ? "minmax(0,2.4fr)" : "minmax(0,1fr)")).join(" ") }}>
             {SCHRITTE.map((name, i) => {
               const nr = (i + 1) as Zustand["schritt"];
               const fertig = nr < z.schritt;
               const aktiv = nr === z.schritt;
               return (
                 <li key={name}>
-                  <button type="button" disabled={!fertig} onClick={() => fertig && setze({ schritt: nr })} aria-current={aktiv ? "step" : undefined} className={`block w-full border-t-2 pt-2 text-left ${aktiv ? "border-rot" : fertig ? "border-oliv" : "border-salbei"} ${fertig ? "cursor-pointer" : "cursor-default"}`}>
+                  <button type="button" disabled={!fertig} onClick={() => fertig && setze({ schritt: nr })} aria-current={aktiv ? "step" : undefined} className={`block min-h-11 w-full border-t-2 pt-2 text-left ${aktiv ? "border-rot" : fertig ? "border-oliv" : "border-salbei"} ${fertig ? "cursor-pointer" : "cursor-default"}`}>
                     <span className={`zahl klein flex items-center gap-1.5 ${aktiv ? "font-semibold text-ink" : "text-dunkel"}`}>
                       {fertig ? <Haken className="h-3.5 w-3.5" /> : <span>{nr}</span>}
-                      <span className={aktiv ? "" : "hidden sm:inline"}>{name}</span>
+                      <span className={aktiv ? "whitespace-nowrap" : "hidden sm:inline"}>{name}</span>
                     </span>
                   </button>
                 </li>
@@ -536,7 +536,7 @@ export function Bestellung({ boxen, e, startBox }: { boxen: BestellBoxInfo[]; e:
           <div className="mt-6 space-y-9">
             <div>
               <h3 className="!font-sans !text-[1.0625rem] !font-semibold">Ihr Logo <span className="klein font-normal">– inklusive</span></h3>
-              <p className="klein mt-1">Kommt als runder Sticker (5&nbsp;cm) auf jeden Deckel. PNG, JPG, SVG oder PDF, höchstens 5&nbsp;MB. Sie können das Logo auch später per Mail schicken.</p>
+              <p className="klein mt-1">Kommt als runder Sticker (5&nbsp;cm) auf jeden Deckel. PNG, JPG, SVG oder PDF, höchstens 4&nbsp;MB. Sie können das Logo auch später per Mail schicken.</p>
               {z.perso.logoUrl ? (
                 <p className="mt-3 flex flex-wrap items-center gap-3 border border-salbei p-3">
                   <Haken className="h-4 w-4 text-oliv" />
@@ -809,9 +809,9 @@ export function Bestellung({ boxen, e, startBox }: { boxen: BestellBoxInfo[]; e:
       </aside>
 
       {/* Leiste Mobil */}
-      <div className="fixed inset-x-0 bottom-0 z-20 border-t border-salbei bg-creme lg:hidden">
+      <div className="fussleiste fussleiste-hoch fixed inset-x-0 bottom-0 z-20 border-t border-salbei bg-creme lg:hidden">
         <details className="group">
-          <summary className="flex items-center justify-between gap-3 px-5 pt-3">
+          <summary className="flex min-h-11 items-center justify-between gap-3 px-5 pt-2">
             <span className="klein flex items-center gap-2">
               <Plus className="h-3.5 w-3.5 transition-transform group-open:rotate-45" />
               <span>{angebot.anzahlBoxen} {angebot.anzahlBoxen === 1 ? "Box" : "Boxen"} · Details</span>

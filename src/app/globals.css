@@ -140,21 +140,27 @@
     hyphens: manual;
     transition: background-color 160ms ease, color 160ms ease, border-color 160ms ease;
   }
-  .knopf:hover { background: var(--color-rot); border-color: var(--color-rot); }
+  /* Hover nur mit Maus: am Handy bliebe der Knopf nach dem Tippen sonst rot stehen */
+  @media (hover: hover) {
+    .knopf:hover { background: var(--color-rot); border-color: var(--color-rot); }
+    .knopf-hell:hover { background: var(--color-dunkel); color: var(--color-creme); border-color: var(--color-dunkel); }
+    .knopf-creme:hover { background: var(--color-salbei); border-color: var(--color-salbei); color: var(--color-ink); }
+    .textlink:hover { color: var(--color-rot); text-decoration-color: var(--color-rot); }
+    .auf-dunkel .textlink:hover { color: inherit; text-decoration-color: currentColor; }
+  }
   .knopf:active { background: var(--color-ink); border-color: var(--color-ink); }
   .knopf[disabled], .knopf[aria-disabled="true"] { opacity: 0.45; cursor: not-allowed; }
   .knopf-hell {
     background: transparent;
     color: var(--color-dunkel);
   }
-  .knopf-hell:hover { background: var(--color-dunkel); color: var(--color-creme); border-color: var(--color-dunkel); }
-  .knopf-hell:active { background: var(--color-ink); border-color: var(--color-ink); }
+  .knopf-hell:active { background: var(--color-ink); border-color: var(--color-ink); color: var(--color-creme); }
   .knopf-creme {
     background: var(--color-creme);
     color: var(--color-dunkel);
     border-color: var(--color-creme);
   }
-  .knopf-creme:hover, .knopf-creme:active { background: var(--color-salbei); border-color: var(--color-salbei); color: var(--color-ink); }
+  .knopf-creme:active { background: var(--color-salbei); border-color: var(--color-salbei); color: var(--color-ink); }
   .textlink {
     color: var(--color-dunkel);
     font-weight: 600;
@@ -164,8 +170,6 @@
     text-decoration-thickness: 1px;
     transition: text-decoration-color 160ms ease;
   }
-  .textlink:hover { color: var(--color-rot); text-decoration-color: var(--color-rot); }
-  .auf-dunkel .textlink:hover { color: inherit; text-decoration-color: currentColor; }
 
   .feld {
     display: block;
@@ -253,6 +257,12 @@
     position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px;
     overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0;
   }
+}
+
+/* Feste Leisten am Handy (Kaufleiste, Bestellung) dürfen das Ende des Footers nicht verdecken. */
+@media (max-width: 1023px) {
+  body:has(.fussleiste) footer { padding-bottom: 5rem; }
+  body:has(.fussleiste-hoch) footer { padding-bottom: 8rem; }
 }
 
 @media print {

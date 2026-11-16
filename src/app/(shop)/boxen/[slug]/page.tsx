@@ -214,6 +214,16 @@ export default async function BoxSeite({ params }: PageProps<"/boxen/[slug]">) {
         </section>
       ) : null}
 
+      {/* Kaufleiste am Handy: bleibt sichtbar, wenn der Knopf oben aus dem Bild gescrollt ist */}
+      <div className="fussleiste nicht-drucken fixed inset-x-0 bottom-0 z-20 border-t border-salbei bg-creme lg:hidden">
+        <div className="rand flex items-center gap-4 pb-[max(0.75rem,env(safe-area-inset-bottom))] pt-3">
+          <p className="min-w-0 flex-1 leading-tight">
+            <span className="zahl font-serif text-[1.375rem] leading-none">{euro(box.preisCent)}</span>
+            <span className="klein block truncate text-dunkel">je Box · ab {e.mindestmenge}&nbsp;Stück</span>
+          </p>
+          <Link href={`/bestellen?box=${box.slug}`} className="knopf shrink-0 !px-5">Bestellen <Pfeil /></Link>
+        </div>
+      </div>
       <JsonLd
         daten={{
           "@context": "https://schema.org",

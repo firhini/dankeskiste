@@ -146,6 +146,19 @@ Jede Entscheidung: was, warum, was verworfen wurde. Rechtliche und steuerliche P
 - **Regeln:** Rot steht nur auf Creme (Kontrast 4,6 : 1, WCAG AA auch für kleine Schrift). Auf Oliv oder Dunkel-Oliv wird es nie verwendet (1,1 bzw. 1,5 : 1) – dort bleiben die Akzente cremefarben. Keine roten Flächen außer dem Knopf im Hover. In der Bestellstrecke bleiben die Schritt-Überschriften ruhig, damit Rot dort nur Schritt, Rabatt und Fehler markiert.
 - **Verworfen:** gedecktes Weinrot (passt zu Oliv, ist aber nicht „kräftig“ und wirkt schnell braun); Rot als Knopffarbe im Ruhezustand (konkurriert mit den Überschriften, der Auftritt würde insgesamt rot statt oliv); helleres Signalrot `#E03A24` (nur 3,6 : 1 auf Creme, für kleine Schrift zu schwach).
 
+### G12 · Prüfung vor dem Livegang (16.11.2026)
+- **Unwahre Behauptungen entfernt:** „Am häufigsten bestellt“, „die oft gewählt werden“, „tragen oft ein Logo“ und „gern geliefert“ standen im Shop, bevor es eine einzige Bestellung gab. Ersetzt durch Überschriften, die nichts behaupten („Drei, die fast immer passen“, „Drei Kisten für drei Budgets“).
+- **Startseite am Handy gekürzt:** Box-Karten stehen zu zweit nebeneinander (ohne Beschreibung), der Vorspann ist kürzer, das Produktbild rückt in den ersten Bildschirm. Zwei zusätzliche Kauf-Knöpfe (nach „So läuft’s“ und bei der Personalisierung), auf Box-Seiten eine feste Kaufleiste am unteren Rand.
+- **Kein leerer Fotorahmen mehr:** „Wer packt Ihre Kiste?“ zeigt ohne Foto nur Text; das Foto wird im Admin hochgeladen (`kontakt.fotoUrl`), nicht mehr als Datei ins Repository gelegt.
+- **Upload-Grenzen:** Logos höchstens 4 MB statt 5 MB, weil Netlify und Vercel je Anfrage nur rund 4,5 MB annehmen. Fotos im Admin werden im Browser auf 2400 px verkleinert; vorher wären sie an der 1-MB-Grenze für Server Actions gescheitert.
+- **Hover nur mit Maus:** Der rote Hover-Zustand blieb am Handy nach dem Tippen stehen (`@media (hover: hover)`).
+
+### T19 · Netlify als Hoster
+- **Entscheidung:** Das Projekt läuft auf Netlify und Vercel aus demselben Code. Netlify: `netlify.toml`, Uploads in Netlify Blobs (Auslieferung über `/api/datei/[name]`), Client-IP aus `x-nf-client-connection-ip`. Der Build-Schritt `npm run bereitstellen` ersetzt das Handbuch für die Datenbank: Variablen prüfen, migrieren, leere Datenbank einmalig füllen.
+- **Warum:** Wunsch des Betreibers; zudem erlaubt Vercel im kostenlosen Tarif keine kommerzielle Nutzung.
+- **Offen:** Der Netlify-Build ist lokal mit der Laufzeit 5.16.7 geprüft, der Betrieb (Cache Components mit `updateTag`, Blobs, Login) nicht. Die Next.js-Dokumentation führt Netlify noch nicht als geprüften Adapter. `LIVEGANG.md` verlangt deshalb eine Kontrollrunde nach dem ersten Deployment und nennt Vercel als Ausweichweg.
+- **Verworfen:** Vercel Blob auch auf Netlify (bräuchte trotzdem ein Vercel-Konto); Seed bei jedem Build (würde im Admin gepflegte Preise überschreiben).
+
 ## Selbstprüfung je Phase
 
 ### Phase 1 – Sortiment

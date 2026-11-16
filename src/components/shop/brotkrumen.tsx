@@ -11,7 +11,7 @@ export function Brotkrumen({ pfad }: { pfad: [string, string][] }) {
           {alle.map(([name, href], i) => (
             <li key={href} className="flex items-center gap-2">
               {i > 0 ? <span aria-hidden className="text-salbei">/</span> : null}
-              {i === alle.length - 1 ? <span aria-current="page">{name}</span> : <Link href={href} className="no-underline hover:underline">{name}</Link>}
+              {i === alle.length - 1 ? <span aria-current="page">{name}</span> : <Link href={href} className="-my-2 inline-block py-2 no-underline hover:underline">{name}</Link>}
             </li>
           ))}
         </ol>

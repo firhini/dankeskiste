@@ -21,7 +21,7 @@ export const metadata: Metadata = {
   alternates: { canonical: "/" },
 };
 
-const inhaberFoto = existsSync(path.join(process.cwd(), "public/images/inhaber.jpg"));
+const inhaberDatei = existsSync(path.join(process.cwd(), "public/images/inhaber.jpg"));
 
 export default async function Startseite() {
   const [katalog, e] = await Promise.all([ladeKatalog(), ladeEinstellungen()]);
@@ -29,6 +29,8 @@ export default async function Startseite() {
   const saison = kollektionen.find((k) => k.slug === e.saison.kollektionSlug) ?? kollektionen[0];
   const saisonBoxen = boxen.filter((b) => b.kollektionSlug === saison?.slug);
   const held = saisonBoxen.find((b) => b.bestseller) ?? saisonBoxen[0] ?? boxen[0];
+  // Am Handy stehen die Karten zu zweit nebeneinander; bei gerader Anzahl auch die erste.
+  const saisonGerade = saisonBoxen.length % 2 === 0;
   const weitere = kollektionen.filter((k) => k.slug !== saison?.slug);
   const bestseller = boxen.filter((b) => b.bestseller && b.slug !== held?.slug).slice(0, 3);
   const abPreis = boxen.length ? Math.min(...boxen.map((b) => b.preisCent)) : 0;
@@ -38,12 +40,13 @@ export default async function Startseite() {
   const p = e.personalisierung;
   const geschlossen = held;
   const inhaber = e.kontakt.inhaber !== PLATZHALTER ? e.kontakt.inhaber : null;
+  const foto = e.kontakt.fotoUrl || (inhaberDatei ? "/images/inhaber.jpg" : null);
   const beispiel = boxen.find((b) => b.preisCent === 4500) ?? held;
 
   const fragen: Frage[] = [
     { frage: "Ab wie vielen Boxen kann ich bestellen?", text: `Ab ${e.mindestmenge} Boxen. Sie können verschiedene Boxen mischen – zum Beispiel drei kleine für Aushilfen und zwei große für die Teamleitung.` },
     { frage: "Sind das Netto- oder Bruttopreise?", text: "Weder noch: Dankeskiste ist Kleinunternehmer nach § 19 UStG und berechnet keine Umsatzsteuer. Der angezeigte Preis ist der Betrag, der auf Ihrer Rechnung steht. Vorsteuer können Sie daraus nicht ziehen." },
-    { frage: "Wie kommt unser Logo auf die Box?", text: "Sie laden das Logo bei der Bestellung hoch (PNG, JPG, SVG oder PDF, bis 5 MB). Ich drucke es auf runde Sticker mit 5 cm Durchmesser und klebe einen auf jeden Deckel. Das ist im Preis enthalten, ebenso die gedruckte Grußkarte mit Ihrem Text." },
+    { frage: "Wie kommt unser Logo auf die Box?", text: "Sie laden das Logo bei der Bestellung hoch (PNG, JPG, SVG oder PDF, bis 4 MB). Ich drucke es auf runde Sticker mit 5 cm Durchmesser und klebe einen auf jeden Deckel. Das ist im Preis enthalten, ebenso die gedruckte Grußkarte mit Ihrem Text." },
     { frage: "Können Sie direkt an Mitarbeiter im Homeoffice versenden?", text: "Ja. Sie laden eine Tabelle mit Namen und Adressen hoch (eine Vorlage gibt es in der Bestellung), jede Box geht als eigenes DHL-Paket raus. Die Versandkosten fallen dann je Adresse an. Sendungsnummern bekommen Sie per Mail." },
     { frage: "Gibt es die Boxen auch ohne Alkohol?", text: "Die meisten Boxen enthalten ohnehin keinen Alkohol. Wo Wein oder Sekt dabei ist, tauschen wir ihn auf Wunsch gegen ein alkoholfreies Getränk – ein Haken in der Bestellung genügt, der Preis bleibt gleich. Beim Versand an mehrere Privatadressen packen wir grundsätzlich alkoholfrei." },
     { frage: "Was ist mit Allergien und Unverträglichkeiten?", text: "Alle Lebensmittel sind original verpackt und vom Hersteller gekennzeichnet; nichts wird umgefüllt. Auf jeder Box-Seite steht, welche Artikel enthalten sind. Maßgeblich sind die Angaben auf den Packungen. Wenn jemand im Team etwas nicht verträgt, schreiben Sie es in die Notiz – ich tausche den Artikel aus." },
@@ -73,14 +76,17 @@ export default async function Startseite() {
               gepackt hat.
             </h1>
             <p className="lead einblenden einblenden-3 mt-7 max-w-[34ch] lg:max-w-[40ch]">
-              Geschenkboxen für Mitarbeiter und Kunden – ab {e.mindestmenge}&nbsp;Stück, mit Ihrem Logo auf dem Deckel und Ihrem Text auf der Karte. Eingekauft und gepackt in Schwetzingen.
+              Geschenkboxen für Mitarbeiter und Kunden – ab {e.mindestmenge}&nbsp;Stück, mit Ihrem Logo auf dem Deckel<span className="hidden sm:inline"> und Ihrem Text auf der Karte</span>. Eingekauft und gepackt in Schwetzingen.
             </p>
-            <div className="einblenden einblenden-3 mt-8 flex flex-wrap gap-3">
-              <Link href={saison ? `/kollektionen/${saison.slug}` : "/boxen"} className="knopf">
+            <div className="einblenden einblenden-3 mt-7 flex flex-wrap items-center gap-x-5 gap-y-3 sm:mt-8 sm:gap-3">
+              <Link href={saison ? `/kollektionen/${saison.slug}` : "/boxen"} className="knopf w-full sm:w-auto">
                 {saison ? `${saison.name}: Boxen ansehen` : "Boxen ansehen"} <Pfeil />
               </Link>
-              <Link href="#anfrage" className="knopf knopf-hell">
+              <Link href="#anfrage" className="knopf knopf-hell hidden sm:inline-flex">
                 Angebot anfragen
+              </Link>
+              <Link href="#anfrage" className="textlink klein sm:hidden">
+                oder Angebot anfragen
               </Link>
             </div>
           </div>
@@ -126,10 +132,10 @@ export default async function Startseite() {
             </h2>
             <p className="mass col-span-12 lg:col-span-5 lg:col-start-8 lg:pt-3">{saison.beschreibung}</p>
           </div>
-          <div className="raster gap-y-12">
+          <div className="raster gap-y-9 sm:gap-y-12">
             {saisonBoxen.map((b, i) => (
-              <div key={b.slug} className={i === 0 ? "col-span-12 lg:col-span-7" : i === 1 ? "col-span-12 sm:col-span-6 lg:col-span-5 lg:pt-16" : "col-span-12 sm:col-span-6 lg:col-span-4"}>
-                <BoxKarte box={b} gross={i === 0} sizes={i === 0 ? "(min-width: 1024px) 56vw, 92vw" : undefined} />
+              <div key={b.slug} className={i === 0 ? `${saisonGerade ? "col-span-6" : "col-span-12"} lg:col-span-7` : i === 1 ? "col-span-6 lg:col-span-5 lg:pt-16" : "col-span-6 lg:col-span-4"}>
+                <BoxKarte box={b} gross={i === 0} kompakt={i > 0 || saisonGerade} sizes={i === 0 ? `(min-width: 1024px) 56vw, ${saisonGerade ? "46vw" : "92vw"}` : "(min-width: 1024px) 40vw, 46vw"} />
               </div>
             ))}
           </div>
@@ -174,13 +180,13 @@ export default async function Startseite() {
       {bestseller.length ? (
         <section className="rand abschnitt border-t border-salbei" aria-labelledby="best-titel">
           <div className="mb-10 flex flex-wrap items-end justify-between gap-4">
-            <h2 id="best-titel" className="text-oliv">Am häufigsten <em>bestellt</em></h2>
+            <h2 id="best-titel" className="text-oliv">Drei, die <em>fast immer passen</em></h2>
             <Link href="/boxen" className="textlink">Alle {boxen.length} Boxen ansehen</Link>
           </div>
           <div className="raster gap-y-12">
-            {bestseller.map((b) => (
-              <div key={b.slug} className="col-span-12 sm:col-span-6 lg:col-span-4">
-                <BoxKarte box={b} />
+            {bestseller.map((b, i) => (
+              <div key={b.slug} className={`sm:col-span-6 lg:col-span-4 ${i === 0 && bestseller.length % 2 === 1 ? "col-span-12" : "col-span-6"}`}>
+                <BoxKarte box={b} kompakt={i > 0 || bestseller.length % 2 === 0} />
               </div>
             ))}
           </div>
@@ -207,6 +213,10 @@ export default async function Startseite() {
                 </div>
               </li>
             ))}
+            <li className="list-none pt-7">
+              <Link href="/bestellen" className="knopf w-full sm:w-auto">Boxen zusammenstellen <Pfeil /></Link>
+              <p className="klein mt-3 text-dunkel">Unverbindlich, bis Sie am Ende bezahlen. Rechnung auf Ihre Firma kommt sofort per Mail.</p>
+            </li>
           </ol>
         </div>
       </section>
@@ -241,6 +251,7 @@ export default async function Startseite() {
               </tbody>
             </table>
             <p className="klein mt-4">Preise je Box. <Link href="/firmengeschenke-mit-logo" className="underline decoration-salbei underline-offset-4">Mehr zur Personalisierung</Link></p>
+            <Link href="/bestellen" className="knopf knopf-creme mt-7 w-full sm:w-auto">Mit Logo bestellen <Pfeil /></Link>
           </div>
           <div className="col-span-12 lg:col-span-5 lg:col-start-8">
             {geschlossen ? (
@@ -347,25 +358,25 @@ export default async function Startseite() {
       {/* ── Wer packt Ihre Kiste? ── */}
       <section className="rand abschnitt border-t border-salbei" aria-labelledby="wer-titel">
         <div className="raster items-start gap-y-10">
-          <div className="col-span-8 col-start-3 sm:col-span-5 sm:col-start-1 lg:col-span-4">
-            {inhaberFoto ? (
-              // eslint-disable-next-line @next/next/no-img-element
-              <img src="/images/inhaber.jpg" alt={inhaber ? `${inhaber} beim Packen einer Dankeskiste` : "Der Inhaber beim Packen einer Dankeskiste"} width={800} height={1000} loading="lazy" className="aspect-[4/5] w-full rounded-[2px] object-cover" />
-            ) : (
-              <div className="flex aspect-[4/5] w-full items-center justify-center rounded-[2px] border border-salbei" role="img" aria-label="Platz für ein Foto des Inhabers">
-                <span className="label px-6 text-center text-dunkel">Foto folgt<br />vor Livegang einsetzen</span>
-              </div>
-            )}
-          </div>
-          <div className="col-span-12 sm:col-span-7 lg:col-span-6 lg:col-start-6">
+          {foto ? (
+            <div className="col-span-8 col-start-3 sm:col-span-5 sm:col-start-1 lg:col-span-4">
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img src={foto} alt={inhaber ? `${inhaber} beim Packen einer Dankeskiste` : "Der Inhaber beim Packen einer Dankeskiste"} width={960} height={1200} loading="lazy" className="aspect-[4/5] w-full rounded-[2px] object-cover" />
+            </div>
+          ) : null}
+          <div className={foto ? "col-span-12 sm:col-span-7 lg:col-span-6 lg:col-start-6" : "col-span-12 lg:col-span-7 lg:col-start-3"}>
             <h2 id="wer-titel" className="text-oliv">Wer packt <em>Ihre Kiste?</em></h2>
             <div className="mass mt-6 space-y-4">
               <p>Ich. Jede einzelne. Dankeskiste ist kein Versandzentrum, sondern ein großer Tisch in Schwetzingen, ein Stapel Kartons und ein Sack Holzwolle.</p>
               <p>Ich kaufe die Sachen selbst ein, hier in der Kurpfalz, und zwar erst dann, wenn Ihre Bestellung da ist. Deshalb ist nichts monatelang gelagert. Wenn im Regal etwas fehlt, rufe ich Sie an, statt stillschweigend etwas anderes einzupacken.</p>
               <p>Und wenn Sie eine Frage haben, landen Sie nicht in einer Warteschleife, sondern bei mir.</p>
             </div>
-            <p className="mt-8 font-serif text-[2rem] italic leading-none text-dunkel">{inhaber ?? "Ihr Name"}</p>
-            <p className="klein mt-2">{inhaber ? "Inhaber, Dankeskiste" : "Unterschrift und Name – vor Livegang ausfüllen"}</p>
+            {inhaber ? (
+              <>
+                <p className="mt-8 font-serif text-[2rem] italic leading-none text-dunkel">{inhaber}</p>
+                <p className="klein mt-2">Inhaber, Dankeskiste</p>
+              </>
+            ) : null}
           </div>
         </div>
       </section>

@@ -1,7 +1,8 @@
 import { rateLimit, zuVieleAnfragen } from "@/lib/server/ratelimit";
 import { erkenneTyp, speichereDatei, svgIstUnbedenklich } from "@/lib/server/storage";
 
-const MAX = 5 * 1024 * 1024;
+// 4 MB: Netlify und Vercel nehmen je Anfrage nur rund 4,5 MB an.
+const MAX = 4 * 1024 * 1024;
 const ERLAUBT = ["image/png", "image/jpeg", "image/svg+xml", "application/pdf"];
 
 /** Logo-Upload: Typ wird am Dateiinhalt geprüft, Größe begrenzt, Ablage unter nicht erratbarer URL. */
@@ -9,7 +10,7 @@ export async function POST(request: Request) {
   const limit = await rateLimit("upload", 15, 600);
   if (!limit.ok) return zuVieleAnfragen();
   const laenge = Number(request.headers.get("content-length") ?? 0);
-  if (laenge > MAX + 64 * 1024) return Response.json({ fehler: "Die Datei ist größer als 5 MB." }, { status: 413 });
+  if (laenge > MAX + 64 * 1024) return Response.json({ fehler: "Die Datei ist größer als 4 MB." }, { status: 413 });
   let datei: FormDataEntryValue | null;
   try {
     datei = (await request.formData()).get("datei");
@@ -17,7 +18,7 @@ export async function POST(request: Request) {
     return Response.json({ fehler: "Der Upload war nicht lesbar." }, { status: 400 });
   }
   if (!(datei instanceof File) || datei.size === 0) return Response.json({ fehler: "Bitte wählen Sie eine Datei aus." }, { status: 400 });
-  if (datei.size > MAX) return Response.json({ fehler: "Die Datei ist größer als 5 MB. Bitte laden Sie eine kleinere Version hoch." }, { status: 413 });
+  if (datei.size > MAX) return Response.json({ fehler: "Die Datei ist größer als 4 MB. Bitte laden Sie eine kleinere Version hoch." }, { status: 413 });
   const inhalt = Buffer.from(await datei.arrayBuffer());
   const typ = erkenneTyp(inhalt, ERLAUBT);
   if (!typ) return Response.json({ fehler: "Dieses Format können wir nicht verwenden. Bitte laden Sie PNG, JPG, SVG oder PDF hoch." }, { status: 415 });

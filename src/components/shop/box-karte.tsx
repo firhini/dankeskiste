@@ -15,23 +15,23 @@ export function BoxBild({ box, art = "hero", sizes, prio, className = "" }: { bo
   return <Bild bild={bild} sizes={sizes} prio={prio} className={`object-cover ${className}`} />;
 }
 
-export function BoxKarte({ box, sizes = "(min-width: 1024px) 30vw, (min-width: 640px) 45vw, 92vw", gross = false, prio = false, ebene = "h3" }: { box: ShopBox; sizes?: string; gross?: boolean; prio?: boolean; ebene?: "h2" | "h3" }) {
+export function BoxKarte({ box, sizes = "(min-width: 1024px) 30vw, (min-width: 640px) 45vw, 92vw", gross = false, prio = false, ebene = "h3", kompakt = false }: { box: ShopBox; sizes?: string; gross?: boolean; prio?: boolean; ebene?: "h2" | "h3"; /** Am Handy schmal (zwei Karten nebeneinander): Name und Preis untereinander, ohne Beschreibung */ kompakt?: boolean }) {
   const Titel = ebene;
   return (
     <article className="group relative flex h-full flex-col">
       <div className="overflow-hidden rounded-[2px] bg-salbei/25">
         <BoxBild box={box} sizes={sizes} prio={prio} className={`${gross ? "aspect-[4/3] lg:aspect-[16/11]" : "aspect-[4/3]"} w-full transition-transform duration-500 ease-out group-hover:scale-[1.02]`} />
       </div>
-      <div className="mt-4 flex items-baseline justify-between gap-4 border-b border-salbei pb-3">
-        <Titel className={gross ? "!text-[clamp(1.6rem,1.3rem+1.4vw,2.4rem)] !leading-[1.15] !tracking-[-0.012em]" : "!text-[1.5rem] !leading-[1.15] !tracking-[-0.012em]"}>
+      <div className={`mt-4 flex justify-between border-b border-salbei pb-3 ${kompakt ? "flex-col gap-1 sm:flex-row sm:items-baseline sm:gap-4" : "items-baseline gap-4"}`}>
+        <Titel className={kompakt ? `!text-[1.1875rem] !leading-[1.2] !tracking-[-0.01em] sm:!text-[1.5rem] sm:!leading-[1.15] ${gross ? "lg:!text-[clamp(1.6rem,1.3rem+1.4vw,2.4rem)]" : ""}` : gross ? "!text-[clamp(1.6rem,1.3rem+1.4vw,2.4rem)] !leading-[1.15] !tracking-[-0.012em]" : "!text-[1.5rem] !leading-[1.15] !tracking-[-0.012em]"}>
           <Link href={`/boxen/${box.slug}`} className="no-underline after:absolute after:inset-0">
             {box.name}
           </Link>
         </Titel>
-        <p className="zahl whitespace-nowrap font-serif text-[1.5rem] leading-none text-dunkel">{euro(box.preisCent)}</p>
+        <p className={`zahl whitespace-nowrap font-serif leading-none text-dunkel ${kompakt ? "text-[1.1875rem] sm:text-[1.5rem]" : "text-[1.5rem]"}`}>{euro(box.preisCent)}</p>
       </div>
-      <p className="klein mt-3 max-w-[46ch]">{box.kurz}</p>
-      <p className="label mt-3 text-dunkel">
+      <p className={`klein mt-3 max-w-[46ch] ${kompakt ? "hidden sm:block" : ""}`}>{box.kurz}</p>
+      <p className={`label mt-3 text-dunkel ${kompakt ? "hidden sm:block" : ""}`}>
         {box.inhalt.reduce((s, x) => s + x.menge, 0)}&nbsp;Teile{box.alkohol ? " · auch ohne Alkohol" : " · ohne Alkohol"}
       </p>
     </article>
