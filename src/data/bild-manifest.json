@@ -1,4 +1,240 @@
 {
+ "adventskaffee": {
+  "hero": {
+   "varianten": {
+    "avif": {
+     "480": "/images/boxen/geschenkbox-adventskaffee-geoeffnet-480.avif",
+     "800": "/images/boxen/geschenkbox-adventskaffee-geoeffnet-800.avif",
+     "1200": "/images/boxen/geschenkbox-adventskaffee-geoeffnet-1200.avif",
+     "1600": "/images/boxen/geschenkbox-adventskaffee-geoeffnet-1600.avif"
+    },
+    "webp": {
+     "480": "/images/boxen/geschenkbox-adventskaffee-geoeffnet-480.webp",
+     "800": "/images/boxen/geschenkbox-adventskaffee-geoeffnet-800.webp",
+     "1200": "/images/boxen/geschenkbox-adventskaffee-geoeffnet-1200.webp",
+     "1600": "/images/boxen/geschenkbox-adventskaffee-geoeffnet-1600.webp"
+    }
+   },
+   "breite": 1600,
+   "hoehe": 1200,
+   "blur": "data:image/webp;base64,UklGRloAAABXRUJQVlA4IE4AAAAQBACdASoUAA8APu1iqU2ppaOiMAgBMB2JQBOmUABN2HQdFldetS4PAAD+3uhuwFOebjGDvtE0pwFLd6oRejMR8uRT2jkvEBfRsaRwAAA="
+  },
+  "flatlay": {
+   "varianten": {
+    "avif": {
+     "480": "/images/boxen/geschenkbox-adventskaffee-inhalt-480.avif",
+     "800": "/images/boxen/geschenkbox-adventskaffee-inhalt-800.avif",
+     "1200": "/images/boxen/geschenkbox-adventskaffee-inhalt-1200.avif",
+     "1600": "/images/boxen/geschenkbox-adventskaffee-inhalt-1600.avif"
+    },
+    "webp": {
+     "480": "/images/boxen/geschenkbox-adventskaffee-inhalt-480.webp",
+     "800": "/images/boxen/geschenkbox-adventskaffee-inhalt-800.webp",
+     "1200": "/images/boxen/geschenkbox-adventskaffee-inhalt-1200.webp",
+     "1600": "/images/boxen/geschenkbox-adventskaffee-inhalt-1600.webp"
+    }
+   },
+   "breite": 1600,
+   "hoehe": 1600,
+   "blur": "data:image/webp;base64,UklGRl4AAABXRUJQVlA4IFIAAACQBACdASoUABQAPu1qrVCppaQiqAqpMB2JZQAALj/cj0ZyM1OJYQ3Hqji6nAAA/tMT2r2u1Dhi12V/7h9T1aq/AuaY45fxu5Muq/FeUJp9gAAA"
+  },
+  "geschlossen": {
+   "varianten": {
+    "avif": {
+     "480": "/images/boxen/geschenkbox-adventskaffee-geschlossen-480.avif",
+     "800": "/images/boxen/geschenkbox-adventskaffee-geschlossen-800.avif",
+     "1200": "/images/boxen/geschenkbox-adventskaffee-geschlossen-1200.avif",
+     "1600": "/images/boxen/geschenkbox-adventskaffee-geschlossen-1600.avif"
+    },
+    "webp": {
+     "480": "/images/boxen/geschenkbox-adventskaffee-geschlossen-480.webp",
+     "800": "/images/boxen/geschenkbox-adventskaffee-geschlossen-800.webp",
+     "1200": "/images/boxen/geschenkbox-adventskaffee-geschlossen-1200.webp",
+     "1600": "/images/boxen/geschenkbox-adventskaffee-geschlossen-1600.webp"
+    }
+   },
+   "breite": 1600,
+   "hoehe": 1200,
+   "blur": "data:image/webp;base64,UklGRlYAAABXRUJQVlA4IEoAAAAwBACdASoUAA8APu1iqk2ppaQiMAgBMB2JYwCdMoADTtO5ciu1xWEf9iAA/t6xYomwrI3pp6NXzdmtNu850guE0ox+Tu7rsdAAAA=="
+  }
+ },
+ "auf-gute-zusammenarbeit": {
+  "hero": {
+   "varianten": {
+    "avif": {
+     "480": "/images/boxen/geschenkbox-auf-gute-zusammenarbeit-geoeffnet-480.avif",
+     "800": "/images/boxen/geschenkbox-auf-gute-zusammenarbeit-geoeffnet-800.avif",
+     "1200": "/images/boxen/geschenkbox-auf-gute-zusammenarbeit-geoeffnet-1200.avif",
+     "1600": "/images/boxen/geschenkbox-auf-gute-zusammenarbeit-geoeffnet-1600.avif"
+    },
+    "webp": {
+     "480": "/images/boxen/geschenkbox-auf-gute-zusammenarbeit-geoeffnet-480.webp",
+     "800": "/images/boxen/geschenkbox-auf-gute-zusammenarbeit-geoeffnet-800.webp",
+     "1200": "/images/boxen/geschenkbox-auf-gute-zusammenarbeit-geoeffnet-1200.webp",
+     "1600": "/images/boxen/geschenkbox-auf-gute-zusammenarbeit-geoeffnet-1600.webp"
+    }
+   },
+   "breite": 1600,
+   "hoehe": 1200,
+   "blur": "data:image/webp;base64,UklGRloAAABXRUJQVlA4IE4AAAAwBACdASoUAA8APu1iqk4ppaQiMAgBMB2JQBOmUABfh+aBxNV/JhoYAAAA/t6+04PcXTKivAOWQeHp7RdQCNLP7tJMDwOuXiAqlJSOAAA="
+  },
+  "flatlay": {
+   "varianten": {
+    "avif": {
+     "480": "/images/boxen/geschenkbox-auf-gute-zusammenarbeit-inhalt-480.avif",
+     "800": "/images/boxen/geschenkbox-auf-gute-zusammenarbeit-inhalt-800.avif",
+     "1200": "/images/boxen/geschenkbox-auf-gute-zusammenarbeit-inhalt-1200.avif",
+     "1600": "/images/boxen/geschenkbox-auf-gute-zusammenarbeit-inhalt-1600.avif"
+    },
+    "webp": {
+     "480": "/images/boxen/geschenkbox-auf-gute-zusammenarbeit-inhalt-480.webp",
+     "800": "/images/boxen/geschenkbox-auf-gute-zusammenarbeit-inhalt-800.webp",
+     "1200": "/images/boxen/geschenkbox-auf-gute-zusammenarbeit-inhalt-1200.webp",
+     "1600": "/images/boxen/geschenkbox-auf-gute-zusammenarbeit-inhalt-1600.webp"
+    }
+   },
+   "breite": 1600,
+   "hoehe": 1600,
+   "blur": "data:image/webp;base64,UklGRmoAAABXRUJQVlA4IF4AAACwBACdASoUABQAPu1kqU2ppaQiMBgMATAdiWUArDOOwYBes1hysbYm8CTf1O68AP7D+TmKGWZINRdb1ok75cqG81hwJxY6lxxKws4R4Z2LaxuWGLkgD3/gzGsBR4AA"
+  },
+  "geschlossen": {
+   "varianten": {
+    "avif": {
+     "480": "/images/boxen/geschenkbox-auf-gute-zusammenarbeit-geschlossen-480.avif",
+     "800": "/images/boxen/geschenkbox-auf-gute-zusammenarbeit-geschlossen-800.avif",
+     "1200": "/images/boxen/geschenkbox-auf-gute-zusammenarbeit-geschlossen-1200.avif",
+     "1600": "/images/boxen/geschenkbox-auf-gute-zusammenarbeit-geschlossen-1600.avif"
+    },
+    "webp": {
+     "480": "/images/boxen/geschenkbox-auf-gute-zusammenarbeit-geschlossen-480.webp",
+     "800": "/images/boxen/geschenkbox-auf-gute-zusammenarbeit-geschlossen-800.webp",
+     "1200": "/images/boxen/geschenkbox-auf-gute-zusammenarbeit-geschlossen-1200.webp",
+     "1600": "/images/boxen/geschenkbox-auf-gute-zusammenarbeit-geschlossen-1600.webp"
+    }
+   },
+   "breite": 1600,
+   "hoehe": 1200,
+   "blur": "data:image/webp;base64,UklGRlIAAABXRUJQVlA4IEYAAABQBACdASoUAA8APu1iqk2ppaQiMAgBMB2JYwCdMoADTthbm8kc+TSJTfcAAP7esWfccg9aEuoP8Lrve8zNSHpxEoaUu0AA"
+  }
+ },
+ "danke-fuers-projekt": {
+  "hero": {
+   "varianten": {
+    "avif": {
+     "480": "/images/boxen/geschenkbox-danke-fuers-projekt-geoeffnet-480.avif",
+     "800": "/images/boxen/geschenkbox-danke-fuers-projekt-geoeffnet-800.avif",
+     "1200": "/images/boxen/geschenkbox-danke-fuers-projekt-geoeffnet-1200.avif",
+     "1600": "/images/boxen/geschenkbox-danke-fuers-projekt-geoeffnet-1600.avif"
+    },
+    "webp": {
+     "480": "/images/boxen/geschenkbox-danke-fuers-projekt-geoeffnet-480.webp",
+     "800": "/images/boxen/geschenkbox-danke-fuers-projekt-geoeffnet-800.webp",
+     "1200": "/images/boxen/geschenkbox-danke-fuers-projekt-geoeffnet-1200.webp",
+     "1600": "/images/boxen/geschenkbox-danke-fuers-projekt-geoeffnet-1600.webp"
+    }
+   },
+   "breite": 1600,
+   "hoehe": 1200,
+   "blur": "data:image/webp;base64,UklGRlwAAABXRUJQVlA4IFAAAAAQBACdASoUAA8APu1kqk4ppaQiMAgBMB2JYwCdMoACa5eLs+SJmzRtAAD+3uhui/qfZQAqmsqv8dTkZ7cNsg6QgI9UKCXz1shvkwnuUIAAAA=="
+  },
+  "flatlay": {
+   "varianten": {
+    "avif": {
+     "480": "/images/boxen/geschenkbox-danke-fuers-projekt-inhalt-480.avif",
+     "800": "/images/boxen/geschenkbox-danke-fuers-projekt-inhalt-800.avif",
+     "1200": "/images/boxen/geschenkbox-danke-fuers-projekt-inhalt-1200.avif",
+     "1600": "/images/boxen/geschenkbox-danke-fuers-projekt-inhalt-1600.avif"
+    },
+    "webp": {
+     "480": "/images/boxen/geschenkbox-danke-fuers-projekt-inhalt-480.webp",
+     "800": "/images/boxen/geschenkbox-danke-fuers-projekt-inhalt-800.webp",
+     "1200": "/images/boxen/geschenkbox-danke-fuers-projekt-inhalt-1200.webp",
+     "1600": "/images/boxen/geschenkbox-danke-fuers-projekt-inhalt-1600.webp"
+    }
+   },
+   "breite": 1600,
+   "hoehe": 1600,
+   "blur": "data:image/webp;base64,UklGRmgAAABXRUJQVlA4IFwAAABQBACdASoUABQAPu1mrE+ppSQiMBgIATAdiWcAuwAQ31vM8TDQb4HoBAJgAP7DkF98n8B8CsG6n0+LguaB1ge+TcSrXS+ZLAeMR/EIszKeHg+EbH0fF63DxSAAAA=="
+  },
+  "geschlossen": {
+   "varianten": {
+    "avif": {
+     "480": "/images/boxen/geschenkbox-danke-fuers-projekt-geschlossen-480.avif",
+     "800": "/images/boxen/geschenkbox-danke-fuers-projekt-geschlossen-800.avif",
+     "1200": "/images/boxen/geschenkbox-danke-fuers-projekt-geschlossen-1200.avif",
+     "1600": "/images/boxen/geschenkbox-danke-fuers-projekt-geschlossen-1600.avif"
+    },
+    "webp": {
+     "480": "/images/boxen/geschenkbox-danke-fuers-projekt-geschlossen-480.webp",
+     "800": "/images/boxen/geschenkbox-danke-fuers-projekt-geschlossen-800.webp",
+     "1200": "/images/boxen/geschenkbox-danke-fuers-projekt-geschlossen-1200.webp",
+     "1600": "/images/boxen/geschenkbox-danke-fuers-projekt-geschlossen-1600.webp"
+    }
+   },
+   "breite": 1600,
+   "hoehe": 1200,
+   "blur": "data:image/webp;base64,UklGRlQAAABXRUJQVlA4IEgAAAAwBACdASoUAA8APu1kq04ppaQiMAgBMB2JYwCdMoADTtPKlWtsT2gasYAA/t6xYomwqEIDCwd/bk49SznSCvZEa2VuEgcYAAA="
+  }
+ },
+ "geburtstagsgruss": {
+  "hero": {
+   "varianten": {
+    "avif": {
+     "480": "/images/boxen/geschenkbox-geburtstagsgruss-geoeffnet-480.avif",
+     "800": "/images/boxen/geschenkbox-geburtstagsgruss-geoeffnet-800.avif",
+     "1200": "/images/boxen/geschenkbox-geburtstagsgruss-geoeffnet-1200.avif",
+     "1600": "/images/boxen/geschenkbox-geburtstagsgruss-geoeffnet-1600.avif"
+    },
+    "webp": {
+     "480": "/images/boxen/geschenkbox-geburtstagsgruss-geoeffnet-480.webp",
+     "800": "/images/boxen/geschenkbox-geburtstagsgruss-geoeffnet-800.webp",
+     "1200": "/images/boxen/geschenkbox-geburtstagsgruss-geoeffnet-1200.webp",
+     "1600": "/images/boxen/geschenkbox-geburtstagsgruss-geoeffnet-1600.webp"
+    }
+   },
+   "breite": 1600,
+   "hoehe": 1200,
+   "blur": "data:image/webp;base64,UklGRlgAAABXRUJQVlA4IEwAAAAQBACdASoUAA8APu1iqk2ppaQiMAgBMB2JYwCsACFU2T1mIQYon1ugAAD+3pYtaSYekDTY5vzkYrBXSS1GP40sbpm+wRYoFpIjTQAA"
+  },
+  "flatlay": {
+   "varianten": {
+    "avif": {
+     "480": "/images/boxen/geschenkbox-geburtstagsgruss-inhalt-480.avif",
+     "800": "/images/boxen/geschenkbox-geburtstagsgruss-inhalt-800.avif",
+     "1200": "/images/boxen/geschenkbox-geburtstagsgruss-inhalt-1200.avif",
+     "1600": "/images/boxen/geschenkbox-geburtstagsgruss-inhalt-1600.avif"
+    },
+    "webp": {
+     "480": "/images/boxen/geschenkbox-geburtstagsgruss-inhalt-480.webp",
+     "800": "/images/boxen/geschenkbox-geburtstagsgruss-inhalt-800.webp",
+     "1200": "/images/boxen/geschenkbox-geburtstagsgruss-inhalt-1200.webp",
+     "1600": "/images/boxen/geschenkbox-geburtstagsgruss-inhalt-1600.webp"
+    }
+   },
+   "breite": 1600,
+   "hoehe": 1600,
+   "blur": "data:image/webp;base64,UklGRmIAAABXRUJQVlA4IFYAAADQBACdASoUABQAPu1iq02ppaQiMBgMATAdiWcAygAQ3XOIku+u78Mi91lryUPEAAD+0xeuEZR59o2GqPaZpr5SIZDcszNG/mr+eW3znnCDO5SjgAAAAA=="
+  },
+  "geschlossen": {
+   "varianten": {
+    "avif": {
+     "480": "/images/boxen/geschenkbox-geburtstagsgruss-geschlossen-480.avif",
+     "800": "/images/boxen/geschenkbox-geburtstagsgruss-geschlossen-800.avif",
+     "1200": "/images/boxen/geschenkbox-geburtstagsgruss-geschlossen-1200.avif",
+     "1600": "/images/boxen/geschenkbox-geburtstagsgruss-geschlossen-1600.avif"
+    },
+    "webp": {
+     "480": "/images/boxen/geschenkbox-geburtstagsgruss-geschlossen-480.webp",
+     "800": "/images/boxen/geschenkbox-geburtstagsgruss-geschlossen-800.webp",
+     "1200": "/images/boxen/geschenkbox-geburtstagsgruss-geschlossen-1200.webp",
+     "1600": "/images/boxen/geschenkbox-geburtstagsgruss-geschlossen-1600.webp"
+    }
+   },
+   "breite": 1600,
+   "hoehe": 1200,
+   "blur": "data:image/webp;base64,UklGRlQAAABXRUJQVlA4IEgAAAAwBACdASoUAA8APu1mqk4ppaOiMAgBMB2JYwCdMoADTtPKlQS8tggJiAAA/t6sPboS9WtYP5k5jAo51sx6zUoyJq8JigaAAAA="
+  }
+ },
  "grosse-weihnachtskiste": {
   "hero": {
    "varianten": {
@@ -18,6 +254,103 @@
    "breite": 1600,
    "hoehe": 1200,
    "blur": "data:image/webp;base64,UklGRloAAABXRUJQVlA4IE4AAAAQBACdASoUAA8APu1iqk4ppaQiMAgBMB2JYwCdMoAC/B/A2PkeE32EgAD+3t2afzvTec+UeN39FyX8TPTNscq9nHBceVaYTDU/XWncTAA="
+  },
+  "flatlay": {
+   "varianten": {
+    "avif": {
+     "480": "/images/boxen/geschenkbox-grosse-weihnachtskiste-inhalt-480.avif",
+     "800": "/images/boxen/geschenkbox-grosse-weihnachtskiste-inhalt-800.avif",
+     "1200": "/images/boxen/geschenkbox-grosse-weihnachtskiste-inhalt-1200.avif",
+     "1600": "/images/boxen/geschenkbox-grosse-weihnachtskiste-inhalt-1600.avif"
+    },
+    "webp": {
+     "480": "/images/boxen/geschenkbox-grosse-weihnachtskiste-inhalt-480.webp",
+     "800": "/images/boxen/geschenkbox-grosse-weihnachtskiste-inhalt-800.webp",
+     "1200": "/images/boxen/geschenkbox-grosse-weihnachtskiste-inhalt-1200.webp",
+     "1600": "/images/boxen/geschenkbox-grosse-weihnachtskiste-inhalt-1600.webp"
+    }
+   },
+   "breite": 1600,
+   "hoehe": 1600,
+   "blur": "data:image/webp;base64,UklGRmYAAABXRUJQVlA4IFoAAABQBACdASoUABQAPu1ip02ppaMiMBgMATAdiWUArDMYAYBeor5ujaO2m3vgAP7D8RGubDHkWyJC6dBqhGvIZ6+/nb82OuWlqLBVO4b8zss9F5Bo6AnHgRuAAAA="
+  },
+  "geschlossen": {
+   "varianten": {
+    "avif": {
+     "480": "/images/boxen/geschenkbox-grosse-weihnachtskiste-geschlossen-480.avif",
+     "800": "/images/boxen/geschenkbox-grosse-weihnachtskiste-geschlossen-800.avif",
+     "1200": "/images/boxen/geschenkbox-grosse-weihnachtskiste-geschlossen-1200.avif",
+     "1600": "/images/boxen/geschenkbox-grosse-weihnachtskiste-geschlossen-1600.avif"
+    },
+    "webp": {
+     "480": "/images/boxen/geschenkbox-grosse-weihnachtskiste-geschlossen-480.webp",
+     "800": "/images/boxen/geschenkbox-grosse-weihnachtskiste-geschlossen-800.webp",
+     "1200": "/images/boxen/geschenkbox-grosse-weihnachtskiste-geschlossen-1200.webp",
+     "1600": "/images/boxen/geschenkbox-grosse-weihnachtskiste-geschlossen-1600.webp"
+    }
+   },
+   "breite": 1600,
+   "hoehe": 1200,
+   "blur": "data:image/webp;base64,UklGRlQAAABXRUJQVlA4IEgAAAAwBACdASoUAA8APu1iqk2ppaQiMAgBMB2JYwCdMoADTpx2ULseY9wecIAA/t6yXUJKq8V5npM50MAWl6MxA23N4NT3iGJQAAA="
+  }
+ },
+ "jubilaeum": {
+  "hero": {
+   "varianten": {
+    "avif": {
+     "480": "/images/boxen/geschenkbox-jubilaeum-geoeffnet-480.avif",
+     "800": "/images/boxen/geschenkbox-jubilaeum-geoeffnet-800.avif",
+     "1200": "/images/boxen/geschenkbox-jubilaeum-geoeffnet-1200.avif",
+     "1600": "/images/boxen/geschenkbox-jubilaeum-geoeffnet-1600.avif"
+    },
+    "webp": {
+     "480": "/images/boxen/geschenkbox-jubilaeum-geoeffnet-480.webp",
+     "800": "/images/boxen/geschenkbox-jubilaeum-geoeffnet-800.webp",
+     "1200": "/images/boxen/geschenkbox-jubilaeum-geoeffnet-1200.webp",
+     "1600": "/images/boxen/geschenkbox-jubilaeum-geoeffnet-1600.webp"
+    }
+   },
+   "breite": 1600,
+   "hoehe": 1200,
+   "blur": "data:image/webp;base64,UklGRlwAAABXRUJQVlA4IFAAAAAwBACdASoUAA8APu1kqk4ppaQiMAgBMB2JQBOmUABoAXoARsALglrDcAAA/t6w8xgSmp/6CuZ9PrU0amu+uJAcldt+tz/+ZKT5RIwa5ffAAA=="
+  },
+  "flatlay": {
+   "varianten": {
+    "avif": {
+     "480": "/images/boxen/geschenkbox-jubilaeum-inhalt-480.avif",
+     "800": "/images/boxen/geschenkbox-jubilaeum-inhalt-800.avif",
+     "1200": "/images/boxen/geschenkbox-jubilaeum-inhalt-1200.avif",
+     "1600": "/images/boxen/geschenkbox-jubilaeum-inhalt-1600.avif"
+    },
+    "webp": {
+     "480": "/images/boxen/geschenkbox-jubilaeum-inhalt-480.webp",
+     "800": "/images/boxen/geschenkbox-jubilaeum-inhalt-800.webp",
+     "1200": "/images/boxen/geschenkbox-jubilaeum-inhalt-1200.webp",
+     "1600": "/images/boxen/geschenkbox-jubilaeum-inhalt-1600.webp"
+    }
+   },
+   "breite": 1600,
+   "hoehe": 1600,
+   "blur": "data:image/webp;base64,UklGRmQAAABXRUJQVlA4IFgAAABQBACdASoUABQAPulep02pJSOiN/VYASAdCWMAnTMOgXsAxFQiAAxM+vCgAP7D8RGupc1tXlGWg4fU+3t+ktTjXdhp/4TF9VMdSW7efnpI5RRwyQedAAAA"
+  },
+  "geschlossen": {
+   "varianten": {
+    "avif": {
+     "480": "/images/boxen/geschenkbox-jubilaeum-geschlossen-480.avif",
+     "800": "/images/boxen/geschenkbox-jubilaeum-geschlossen-800.avif",
+     "1200": "/images/boxen/geschenkbox-jubilaeum-geschlossen-1200.avif",
+     "1600": "/images/boxen/geschenkbox-jubilaeum-geschlossen-1600.avif"
+    },
+    "webp": {
+     "480": "/images/boxen/geschenkbox-jubilaeum-geschlossen-480.webp",
+     "800": "/images/boxen/geschenkbox-jubilaeum-geschlossen-800.webp",
+     "1200": "/images/boxen/geschenkbox-jubilaeum-geschlossen-1200.webp",
+     "1600": "/images/boxen/geschenkbox-jubilaeum-geschlossen-1600.webp"
+    }
+   },
+   "breite": 1600,
+   "hoehe": 1200,
+   "blur": "data:image/webp;base64,UklGRlQAAABXRUJQVlA4IEgAAABQBACdASoUAA8APu1mqk4ppaOiMAgBMB2JYwCdMoADTp1fjh4G5whyV94AAP7esl1CSnbYZ2B3AFTswYuMI5SV/s6TiWFgAAA="
   }
  },
  "kleine-weihnachtskiste": {
@@ -79,6 +412,301 @@
    "blur": "data:image/webp;base64,UklGRlIAAABXRUJQVlA4IEYAAAAwBACdASoUAA8APu1iqk2ppaQiMAgBMB2JYwCdMoADTtPPFbINXxgTNYAA/t6sP+Du7vFtaZxLbzIByyCt1o9P+L4eagAA"
   }
  },
+ "osterkiste": {
+  "hero": {
+   "varianten": {
+    "avif": {
+     "480": "/images/boxen/geschenkbox-osterkiste-geoeffnet-480.avif",
+     "800": "/images/boxen/geschenkbox-osterkiste-geoeffnet-800.avif",
+     "1200": "/images/boxen/geschenkbox-osterkiste-geoeffnet-1200.avif",
+     "1600": "/images/boxen/geschenkbox-osterkiste-geoeffnet-1600.avif"
+    },
+    "webp": {
+     "480": "/images/boxen/geschenkbox-osterkiste-geoeffnet-480.webp",
+     "800": "/images/boxen/geschenkbox-osterkiste-geoeffnet-800.webp",
+     "1200": "/images/boxen/geschenkbox-osterkiste-geoeffnet-1200.webp",
+     "1600": "/images/boxen/geschenkbox-osterkiste-geoeffnet-1600.webp"
+    }
+   },
+   "breite": 1600,
+   "hoehe": 1200,
+   "blur": "data:image/webp;base64,UklGRlgAAABXRUJQVlA4IEwAAAAQBACdASoUAA8APu1kqk4ppaQiMAgBMB2JYwCdMoAC/DMvDaoCEKibIAD+3ue1lj/nwJDMJrWKv6Fabd4eLQWsokYoLo2hg7HVZAAA"
+  },
+  "flatlay": {
+   "varianten": {
+    "avif": {
+     "480": "/images/boxen/geschenkbox-osterkiste-inhalt-480.avif",
+     "800": "/images/boxen/geschenkbox-osterkiste-inhalt-800.avif",
+     "1200": "/images/boxen/geschenkbox-osterkiste-inhalt-1200.avif",
+     "1600": "/images/boxen/geschenkbox-osterkiste-inhalt-1600.avif"
+    },
+    "webp": {
+     "480": "/images/boxen/geschenkbox-osterkiste-inhalt-480.webp",
+     "800": "/images/boxen/geschenkbox-osterkiste-inhalt-800.webp",
+     "1200": "/images/boxen/geschenkbox-osterkiste-inhalt-1200.webp",
+     "1600": "/images/boxen/geschenkbox-osterkiste-inhalt-1600.webp"
+    }
+   },
+   "breite": 1600,
+   "hoehe": 1600,
+   "blur": "data:image/webp;base64,UklGRmgAAABXRUJQVlA4IFwAAABwBACdASoUABQAPu1oqk8ppiOiKA1RMB2JZQC7ABEbakgfTclvplvAspqSoAD+w4YHYvRqIhAT0A4/1FOVP1VzbpfIczG1Ww18z4pyvHXqCKiooXoTGSAU/wAAAA=="
+  },
+  "geschlossen": {
+   "varianten": {
+    "avif": {
+     "480": "/images/boxen/geschenkbox-osterkiste-geschlossen-480.avif",
+     "800": "/images/boxen/geschenkbox-osterkiste-geschlossen-800.avif",
+     "1200": "/images/boxen/geschenkbox-osterkiste-geschlossen-1200.avif",
+     "1600": "/images/boxen/geschenkbox-osterkiste-geschlossen-1600.avif"
+    },
+    "webp": {
+     "480": "/images/boxen/geschenkbox-osterkiste-geschlossen-480.webp",
+     "800": "/images/boxen/geschenkbox-osterkiste-geschlossen-800.webp",
+     "1200": "/images/boxen/geschenkbox-osterkiste-geschlossen-1200.webp",
+     "1600": "/images/boxen/geschenkbox-osterkiste-geschlossen-1600.webp"
+    }
+   },
+   "breite": 1600,
+   "hoehe": 1200,
+   "blur": "data:image/webp;base64,UklGRlQAAABXRUJQVlA4IEgAAAAwBACdASoUAA8APu1kq04ppaQiMAgBMB2JQBOmUABp2wvUIDFOAeEHHsAA/t6xYoVeU5PDzZQ0zKkoDyGXVIkGKVkE6qegAAA="
+  }
+ },
+ "pasta-abend": {
+  "hero": {
+   "varianten": {
+    "avif": {
+     "480": "/images/boxen/geschenkbox-pasta-abend-geoeffnet-480.avif",
+     "800": "/images/boxen/geschenkbox-pasta-abend-geoeffnet-800.avif",
+     "1200": "/images/boxen/geschenkbox-pasta-abend-geoeffnet-1200.avif",
+     "1600": "/images/boxen/geschenkbox-pasta-abend-geoeffnet-1600.avif"
+    },
+    "webp": {
+     "480": "/images/boxen/geschenkbox-pasta-abend-geoeffnet-480.webp",
+     "800": "/images/boxen/geschenkbox-pasta-abend-geoeffnet-800.webp",
+     "1200": "/images/boxen/geschenkbox-pasta-abend-geoeffnet-1200.webp",
+     "1600": "/images/boxen/geschenkbox-pasta-abend-geoeffnet-1600.webp"
+    }
+   },
+   "breite": 1600,
+   "hoehe": 1200,
+   "blur": "data:image/webp;base64,UklGRlYAAABXRUJQVlA4IEoAAADQAwCdASoUAA8APu1iqk2ppaQiMAgBMB2JYwCdABhwP/5PehU7iDAA/t7oV1/zGDVyatWY8LzGqK1I0hK0cqIHvgxIiIEFcwAAAA=="
+  },
+  "flatlay": {
+   "varianten": {
+    "avif": {
+     "480": "/images/boxen/geschenkbox-pasta-abend-inhalt-480.avif",
+     "800": "/images/boxen/geschenkbox-pasta-abend-inhalt-800.avif",
+     "1200": "/images/boxen/geschenkbox-pasta-abend-inhalt-1200.avif",
+     "1600": "/images/boxen/geschenkbox-pasta-abend-inhalt-1600.avif"
+    },
+    "webp": {
+     "480": "/images/boxen/geschenkbox-pasta-abend-inhalt-480.webp",
+     "800": "/images/boxen/geschenkbox-pasta-abend-inhalt-800.webp",
+     "1200": "/images/boxen/geschenkbox-pasta-abend-inhalt-1200.webp",
+     "1600": "/images/boxen/geschenkbox-pasta-abend-inhalt-1600.webp"
+    }
+   },
+   "breite": 1600,
+   "hoehe": 1600,
+   "blur": "data:image/webp;base64,UklGRmgAAABXRUJQVlA4IFwAAADQBACdASoUABQAPu1iqk2ppaQiMBgMATAdiWUAuzNVwanYMHdWDi3XTVh9R85LAAD+0xbb0AStrrNAr04XhoezyGDJHM4iTCBSoKeuEDm1S+wgh7NsaiYVAAAAAA=="
+  },
+  "geschlossen": {
+   "varianten": {
+    "avif": {
+     "480": "/images/boxen/geschenkbox-pasta-abend-geschlossen-480.avif",
+     "800": "/images/boxen/geschenkbox-pasta-abend-geschlossen-800.avif",
+     "1200": "/images/boxen/geschenkbox-pasta-abend-geschlossen-1200.avif",
+     "1600": "/images/boxen/geschenkbox-pasta-abend-geschlossen-1600.avif"
+    },
+    "webp": {
+     "480": "/images/boxen/geschenkbox-pasta-abend-geschlossen-480.webp",
+     "800": "/images/boxen/geschenkbox-pasta-abend-geschlossen-800.webp",
+     "1200": "/images/boxen/geschenkbox-pasta-abend-geschlossen-1200.webp",
+     "1600": "/images/boxen/geschenkbox-pasta-abend-geschlossen-1600.webp"
+    }
+   },
+   "breite": 1600,
+   "hoehe": 1200,
+   "blur": "data:image/webp;base64,UklGRlQAAABXRUJQVlA4IEgAAAAQBACdASoUAA8APu1kq04ppaQiMAgBMB2JQBOmUABp20Aoivcjqd3jgAD+3rFn1nfuDs4nSKWwFpejyGX1xPrFVqLUy0agAAA="
+  }
+ },
+ "sommerkiste": {
+  "hero": {
+   "varianten": {
+    "avif": {
+     "480": "/images/boxen/geschenkbox-sommerkiste-geoeffnet-480.avif",
+     "800": "/images/boxen/geschenkbox-sommerkiste-geoeffnet-800.avif",
+     "1200": "/images/boxen/geschenkbox-sommerkiste-geoeffnet-1200.avif",
+     "1600": "/images/boxen/geschenkbox-sommerkiste-geoeffnet-1600.avif"
+    },
+    "webp": {
+     "480": "/images/boxen/geschenkbox-sommerkiste-geoeffnet-480.webp",
+     "800": "/images/boxen/geschenkbox-sommerkiste-geoeffnet-800.webp",
+     "1200": "/images/boxen/geschenkbox-sommerkiste-geoeffnet-1200.webp",
+     "1600": "/images/boxen/geschenkbox-sommerkiste-geoeffnet-1600.webp"
+    }
+   },
+   "breite": 1600,
+   "hoehe": 1200,
+   "blur": "data:image/webp;base64,UklGRlgAAABXRUJQVlA4IEwAAAAwBACdASoUAA8APu1kqU2ppaQiMAgBMB2JYwCdMoAC/ElJQPybJrEiJWAA/t7bi7tYVhlPwPtwsvTNs2WiAuhzFAPYkOLqQQ8W7yAA"
+  },
+  "flatlay": {
+   "varianten": {
+    "avif": {
+     "480": "/images/boxen/geschenkbox-sommerkiste-inhalt-480.avif",
+     "800": "/images/boxen/geschenkbox-sommerkiste-inhalt-800.avif",
+     "1200": "/images/boxen/geschenkbox-sommerkiste-inhalt-1200.avif",
+     "1600": "/images/boxen/geschenkbox-sommerkiste-inhalt-1600.avif"
+    },
+    "webp": {
+     "480": "/images/boxen/geschenkbox-sommerkiste-inhalt-480.webp",
+     "800": "/images/boxen/geschenkbox-sommerkiste-inhalt-800.webp",
+     "1200": "/images/boxen/geschenkbox-sommerkiste-inhalt-1200.webp",
+     "1600": "/images/boxen/geschenkbox-sommerkiste-inhalt-1600.webp"
+    }
+   },
+   "breite": 1600,
+   "hoehe": 1600,
+   "blur": "data:image/webp;base64,UklGRmgAAABXRUJQVlA4IFwAAADwBACdASoUABQAPu1kp02ppaOiMBgMATAdiWUAuzMvwaa/aHu6p7sGfkpW33N7/oAA/tMnw0UnFLzXr7DhtcScarMK18QumxjRO6w2r6cbEOPuSqWcVxAFLYAAAA=="
+  },
+  "geschlossen": {
+   "varianten": {
+    "avif": {
+     "480": "/images/boxen/geschenkbox-sommerkiste-geschlossen-480.avif",
+     "800": "/images/boxen/geschenkbox-sommerkiste-geschlossen-800.avif",
+     "1200": "/images/boxen/geschenkbox-sommerkiste-geschlossen-1200.avif",
+     "1600": "/images/boxen/geschenkbox-sommerkiste-geschlossen-1600.avif"
+    },
+    "webp": {
+     "480": "/images/boxen/geschenkbox-sommerkiste-geschlossen-480.webp",
+     "800": "/images/boxen/geschenkbox-sommerkiste-geschlossen-800.webp",
+     "1200": "/images/boxen/geschenkbox-sommerkiste-geschlossen-1200.webp",
+     "1600": "/images/boxen/geschenkbox-sommerkiste-geschlossen-1600.webp"
+    }
+   },
+   "breite": 1600,
+   "hoehe": 1200,
+   "blur": "data:image/webp;base64,UklGRlgAAABXRUJQVlA4IEwAAAAwBACdASoUAA8APu1iqk2ppaQiMAgBMB2JYwCdMoADTpyLjxgezP0jwEAA/t6yXJyAsHhvSFIXm7P+85iissvZOUkGFP7xfPV4AAAA"
+  }
+ },
+ "suesse-weihnacht": {
+  "hero": {
+   "varianten": {
+    "avif": {
+     "480": "/images/boxen/geschenkbox-suesse-weihnacht-geoeffnet-480.avif",
+     "800": "/images/boxen/geschenkbox-suesse-weihnacht-geoeffnet-800.avif",
+     "1200": "/images/boxen/geschenkbox-suesse-weihnacht-geoeffnet-1200.avif",
+     "1600": "/images/boxen/geschenkbox-suesse-weihnacht-geoeffnet-1600.avif"
+    },
+    "webp": {
+     "480": "/images/boxen/geschenkbox-suesse-weihnacht-geoeffnet-480.webp",
+     "800": "/images/boxen/geschenkbox-suesse-weihnacht-geoeffnet-800.webp",
+     "1200": "/images/boxen/geschenkbox-suesse-weihnacht-geoeffnet-1200.webp",
+     "1600": "/images/boxen/geschenkbox-suesse-weihnacht-geoeffnet-1600.webp"
+    }
+   },
+   "breite": 1600,
+   "hoehe": 1200,
+   "blur": "data:image/webp;base64,UklGRloAAABXRUJQVlA4IE4AAAAwBACdASoUAA8APu1iqk4ppaQiMAgBMB2JQBOmUABfiC+DktLZ/yurwAAA/tOGUSY94wbBv6XDlD+dIQbKcfSvbtXOCSxIGfJhEl9uAAA="
+  },
+  "flatlay": {
+   "varianten": {
+    "avif": {
+     "480": "/images/boxen/geschenkbox-suesse-weihnacht-inhalt-480.avif",
+     "800": "/images/boxen/geschenkbox-suesse-weihnacht-inhalt-800.avif",
+     "1200": "/images/boxen/geschenkbox-suesse-weihnacht-inhalt-1200.avif",
+     "1600": "/images/boxen/geschenkbox-suesse-weihnacht-inhalt-1600.avif"
+    },
+    "webp": {
+     "480": "/images/boxen/geschenkbox-suesse-weihnacht-inhalt-480.webp",
+     "800": "/images/boxen/geschenkbox-suesse-weihnacht-inhalt-800.webp",
+     "1200": "/images/boxen/geschenkbox-suesse-weihnacht-inhalt-1200.webp",
+     "1600": "/images/boxen/geschenkbox-suesse-weihnacht-inhalt-1600.webp"
+    }
+   },
+   "breite": 1600,
+   "hoehe": 1600,
+   "blur": "data:image/webp;base64,UklGRmgAAABXRUJQVlA4IFwAAADwBACdASoUABQAPu1qq08ppiOiMBgIATAdiWUArAAQ5wJ1wtb99WoXv8f+4dwleogA/sOF9LEmQSQV/QHil2IMlRTK4YOcjlpb7nMd6CYxpHdfgdJUC5KFp6n+AA=="
+  },
+  "geschlossen": {
+   "varianten": {
+    "avif": {
+     "480": "/images/boxen/geschenkbox-suesse-weihnacht-geschlossen-480.avif",
+     "800": "/images/boxen/geschenkbox-suesse-weihnacht-geschlossen-800.avif",
+     "1200": "/images/boxen/geschenkbox-suesse-weihnacht-geschlossen-1200.avif",
+     "1600": "/images/boxen/geschenkbox-suesse-weihnacht-geschlossen-1600.avif"
+    },
+    "webp": {
+     "480": "/images/boxen/geschenkbox-suesse-weihnacht-geschlossen-480.webp",
+     "800": "/images/boxen/geschenkbox-suesse-weihnacht-geschlossen-800.webp",
+     "1200": "/images/boxen/geschenkbox-suesse-weihnacht-geschlossen-1200.webp",
+     "1600": "/images/boxen/geschenkbox-suesse-weihnacht-geschlossen-1600.webp"
+    }
+   },
+   "breite": 1600,
+   "hoehe": 1200,
+   "blur": "data:image/webp;base64,UklGRlQAAABXRUJQVlA4IEgAAABQBACdASoUAA8APu1mqk4ppaOiMAgBMB2JYwCdMoADTtjPOd3mYD7va5jAAP7esWKIlc2ZyDzZVApZaXo8hlbJ52Wj0p6VUAA="
+  }
+ },
+ "teamfruehstueck": {
+  "hero": {
+   "varianten": {
+    "avif": {
+     "480": "/images/boxen/geschenkbox-teamfruehstueck-geoeffnet-480.avif",
+     "800": "/images/boxen/geschenkbox-teamfruehstueck-geoeffnet-800.avif",
+     "1200": "/images/boxen/geschenkbox-teamfruehstueck-geoeffnet-1200.avif",
+     "1600": "/images/boxen/geschenkbox-teamfruehstueck-geoeffnet-1600.avif"
+    },
+    "webp": {
+     "480": "/images/boxen/geschenkbox-teamfruehstueck-geoeffnet-480.webp",
+     "800": "/images/boxen/geschenkbox-teamfruehstueck-geoeffnet-800.webp",
+     "1200": "/images/boxen/geschenkbox-teamfruehstueck-geoeffnet-1200.webp",
+     "1600": "/images/boxen/geschenkbox-teamfruehstueck-geoeffnet-1600.webp"
+    }
+   },
+   "breite": 1600,
+   "hoehe": 1200,
+   "blur": "data:image/webp;base64,UklGRloAAABXRUJQVlA4IE4AAAAQBACdASoUAA8APu1iqk2ppaQiMAgBMB2JQBOmUABfiWhuni/P9LaqYAD+3ux9ucObRvx3mrC/EtKxabQ1RvTBdg1w/9WJ0KGDnvShgAA="
+  },
+  "flatlay": {
+   "varianten": {
+    "avif": {
+     "480": "/images/boxen/geschenkbox-teamfruehstueck-inhalt-480.avif",
+     "800": "/images/boxen/geschenkbox-teamfruehstueck-inhalt-800.avif",
+     "1200": "/images/boxen/geschenkbox-teamfruehstueck-inhalt-1200.avif",
+     "1600": "/images/boxen/geschenkbox-teamfruehstueck-inhalt-1600.avif"
+    },
+    "webp": {
+     "480": "/images/boxen/geschenkbox-teamfruehstueck-inhalt-480.webp",
+     "800": "/images/boxen/geschenkbox-teamfruehstueck-inhalt-800.webp",
+     "1200": "/images/boxen/geschenkbox-teamfruehstueck-inhalt-1200.webp",
+     "1600": "/images/boxen/geschenkbox-teamfruehstueck-inhalt-1600.webp"
+    }
+   },
+   "breite": 1600,
+   "hoehe": 1600,
+   "blur": "data:image/webp;base64,UklGRm4AAABXRUJQVlA4IGIAAAAQBACdASoUABQAPulep02pJSOiN/VYASAdCWUAnQAQxUG/dJVq2mXwAAD+wzyKkboYd98SWHc8vTzZURhoCMa08E9EiGAstcXwrd/2K7u1mku1cmzw/Qn/X7yIZfo16ScAAA=="
+  },
+  "geschlossen": {
+   "varianten": {
+    "avif": {
+     "480": "/images/boxen/geschenkbox-teamfruehstueck-geschlossen-480.avif",
+     "800": "/images/boxen/geschenkbox-teamfruehstueck-geschlossen-800.avif",
+     "1200": "/images/boxen/geschenkbox-teamfruehstueck-geschlossen-1200.avif",
+     "1600": "/images/boxen/geschenkbox-teamfruehstueck-geschlossen-1600.avif"
+    },
+    "webp": {
+     "480": "/images/boxen/geschenkbox-teamfruehstueck-geschlossen-480.webp",
+     "800": "/images/boxen/geschenkbox-teamfruehstueck-geschlossen-800.webp",
+     "1200": "/images/boxen/geschenkbox-teamfruehstueck-geschlossen-1200.webp",
+     "1600": "/images/boxen/geschenkbox-teamfruehstueck-geschlossen-1600.webp"
+    }
+   },
+   "breite": 1600,
+   "hoehe": 1200,
+   "blur": "data:image/webp;base64,UklGRlYAAABXRUJQVlA4IEoAAAAwBACdASoUAA8APu1iqk2ppaQiMAgBMB2JYwCdMoADTpyfCEN25jPS2gAA/t6yXRW+oMeJvORVjxYkepYd4f9Lfe1xbEQ61QAAAA=="
+  }
+ },
  "weihnachtskiste": {
   "hero": {
    "varianten": {
@@ -136,6 +764,124 @@
    "breite": 1600,
    "hoehe": 1200,
    "blur": "data:image/webp;base64,UklGRlQAAABXRUJQVlA4IEgAAAAwBACdASoUAA8APu1mqk4ppaOiMAgBMB2JQBOmUABp20BLPvK2J7QifAAA/t6xZ9Z3xa1g/mYWQBaXo8hlrLmh+StC4SBxgAA="
+  }
+ },
+ "willkommen-im-team": {
+  "hero": {
+   "varianten": {
+    "avif": {
+     "480": "/images/boxen/geschenkbox-willkommen-im-team-geoeffnet-480.avif",
+     "800": "/images/boxen/geschenkbox-willkommen-im-team-geoeffnet-800.avif",
+     "1200": "/images/boxen/geschenkbox-willkommen-im-team-geoeffnet-1200.avif",
+     "1600": "/images/boxen/geschenkbox-willkommen-im-team-geoeffnet-1600.avif"
+    },
+    "webp": {
+     "480": "/images/boxen/geschenkbox-willkommen-im-team-geoeffnet-480.webp",
+     "800": "/images/boxen/geschenkbox-willkommen-im-team-geoeffnet-800.webp",
+     "1200": "/images/boxen/geschenkbox-willkommen-im-team-geoeffnet-1200.webp",
+     "1600": "/images/boxen/geschenkbox-willkommen-im-team-geoeffnet-1600.webp"
+    }
+   },
+   "breite": 1600,
+   "hoehe": 1200,
+   "blur": "data:image/webp;base64,UklGRloAAABXRUJQVlA4IE4AAADwAwCdASoUAA8APu1iqU2ppaQiMAgBMB2JQBWGUABffB/ylxw+m9oAAP7evsUa4kuU9UjMYo39C9LNIt+Ago78FrritglReIDv/wqXwAA="
+  },
+  "flatlay": {
+   "varianten": {
+    "avif": {
+     "480": "/images/boxen/geschenkbox-willkommen-im-team-inhalt-480.avif",
+     "800": "/images/boxen/geschenkbox-willkommen-im-team-inhalt-800.avif",
+     "1200": "/images/boxen/geschenkbox-willkommen-im-team-inhalt-1200.avif",
+     "1600": "/images/boxen/geschenkbox-willkommen-im-team-inhalt-1600.avif"
+    },
+    "webp": {
+     "480": "/images/boxen/geschenkbox-willkommen-im-team-inhalt-480.webp",
+     "800": "/images/boxen/geschenkbox-willkommen-im-team-inhalt-800.webp",
+     "1200": "/images/boxen/geschenkbox-willkommen-im-team-inhalt-1200.webp",
+     "1600": "/images/boxen/geschenkbox-willkommen-im-team-inhalt-1600.webp"
+    }
+   },
+   "breite": 1600,
+   "hoehe": 1600,
+   "blur": "data:image/webp;base64,UklGRmgAAABXRUJQVlA4IFwAAACwBACdASoUABQAPu1cqE2ppKOiN/VYATAdiWUAnQAQ47gMsvZ2LgjlXBm9zxwAAP7DPI/kVft7y44tND4d0zEYaAjGhVtu8mNSHilOw2tF0DTBIQxQ2ODsqgAAAA=="
+  },
+  "geschlossen": {
+   "varianten": {
+    "avif": {
+     "480": "/images/boxen/geschenkbox-willkommen-im-team-geschlossen-480.avif",
+     "800": "/images/boxen/geschenkbox-willkommen-im-team-geschlossen-800.avif",
+     "1200": "/images/boxen/geschenkbox-willkommen-im-team-geschlossen-1200.avif",
+     "1600": "/images/boxen/geschenkbox-willkommen-im-team-geschlossen-1600.avif"
+    },
+    "webp": {
+     "480": "/images/boxen/geschenkbox-willkommen-im-team-geschlossen-480.webp",
+     "800": "/images/boxen/geschenkbox-willkommen-im-team-geschlossen-800.webp",
+     "1200": "/images/boxen/geschenkbox-willkommen-im-team-geschlossen-1200.webp",
+     "1600": "/images/boxen/geschenkbox-willkommen-im-team-geschlossen-1600.webp"
+    }
+   },
+   "breite": 1600,
+   "hoehe": 1200,
+   "blur": "data:image/webp;base64,UklGRlQAAABXRUJQVlA4IEgAAAAwBACdASoUAA8APu1iqk2ppaQiMAgBMB2JYwCdMoADTtPKlQS8tf4W4AAA/t6xZ9xsmBbqaXw34kepZzpDIT/klxbco8YIAAA="
+  }
+ },
+ "winterabend": {
+  "hero": {
+   "varianten": {
+    "avif": {
+     "480": "/images/boxen/geschenkbox-winterabend-geoeffnet-480.avif",
+     "800": "/images/boxen/geschenkbox-winterabend-geoeffnet-800.avif",
+     "1200": "/images/boxen/geschenkbox-winterabend-geoeffnet-1200.avif",
+     "1600": "/images/boxen/geschenkbox-winterabend-geoeffnet-1600.avif"
+    },
+    "webp": {
+     "480": "/images/boxen/geschenkbox-winterabend-geoeffnet-480.webp",
+     "800": "/images/boxen/geschenkbox-winterabend-geoeffnet-800.webp",
+     "1200": "/images/boxen/geschenkbox-winterabend-geoeffnet-1200.webp",
+     "1600": "/images/boxen/geschenkbox-winterabend-geoeffnet-1600.webp"
+    }
+   },
+   "breite": 1600,
+   "hoehe": 1200,
+   "blur": "data:image/webp;base64,UklGRloAAABXRUJQVlA4IE4AAAAQBACdASoUAA8APu1iqk4ppaQiMAgBMB2JYwCdMoAC/DH79/htQegJIAD+3tuFx+0s7+iKuLY9l6NoW9T1DFq7Lxj3kZxALXETVdlYAAA="
+  },
+  "flatlay": {
+   "varianten": {
+    "avif": {
+     "480": "/images/boxen/geschenkbox-winterabend-inhalt-480.avif",
+     "800": "/images/boxen/geschenkbox-winterabend-inhalt-800.avif",
+     "1200": "/images/boxen/geschenkbox-winterabend-inhalt-1200.avif",
+     "1600": "/images/boxen/geschenkbox-winterabend-inhalt-1600.avif"
+    },
+    "webp": {
+     "480": "/images/boxen/geschenkbox-winterabend-inhalt-480.webp",
+     "800": "/images/boxen/geschenkbox-winterabend-inhalt-800.webp",
+     "1200": "/images/boxen/geschenkbox-winterabend-inhalt-1200.webp",
+     "1600": "/images/boxen/geschenkbox-winterabend-inhalt-1600.webp"
+    }
+   },
+   "breite": 1600,
+   "hoehe": 1600,
+   "blur": "data:image/webp;base64,UklGRmYAAABXRUJQVlA4IFoAAACwBACdASoUABQAPu1mpk2ppaMiMBgMATAdiWUAuwAQ4kDtYBQuota7UiXMqUIAAP7DhgdjAm5CTKQIv34na2o7Jn75YK9fBA5PJK2GmrhF4mcWkFRLiEAAAAA="
+  },
+  "geschlossen": {
+   "varianten": {
+    "avif": {
+     "480": "/images/boxen/geschenkbox-winterabend-geschlossen-480.avif",
+     "800": "/images/boxen/geschenkbox-winterabend-geschlossen-800.avif",
+     "1200": "/images/boxen/geschenkbox-winterabend-geschlossen-1200.avif",
+     "1600": "/images/boxen/geschenkbox-winterabend-geschlossen-1600.avif"
+    },
+    "webp": {
+     "480": "/images/boxen/geschenkbox-winterabend-geschlossen-480.webp",
+     "800": "/images/boxen/geschenkbox-winterabend-geschlossen-800.webp",
+     "1200": "/images/boxen/geschenkbox-winterabend-geschlossen-1200.webp",
+     "1600": "/images/boxen/geschenkbox-winterabend-geschlossen-1600.webp"
+    }
+   },
+   "breite": 1600,
+   "hoehe": 1200,
+   "blur": "data:image/webp;base64,UklGRlIAAABXRUJQVlA4IEYAAAAQBACdASoUAA8APu1mqk4ppaOiMAgBMB2JYwCdMoADTpxTYRrcFXlCAAD+3rJdCjM81TtqQT3DthVcFSMa39wgPgiHWqAA"
   }
  }
 }
