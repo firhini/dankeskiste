@@ -2,11 +2,13 @@
 
 Bestell-Website und Admin-Dashboard für Geschenkboxen an Firmen. Next.js 16 (App Router), TypeScript, Tailwind 4, Postgres (Neon) mit Drizzle, Auth.js, Stripe Checkout, Vercel Blob, Resend.
 
-Weitere Dokumente: [`PLAN.md`](PLAN.md) · [`DECISIONS.md`](DECISIONS.md) · [`SORTIMENT.md`](SORTIMENT.md) · [`EINKAUFSLISTE.md`](EINKAUFSLISTE.md)
+Weitere Dokumente: [`LIVEGANG.md`](LIVEGANG.md) · [`PLAN.md`](PLAN.md) · [`DECISIONS.md`](DECISIONS.md) · [`SORTIMENT.md`](SORTIMENT.md) · [`EINKAUFSLISTE.md`](EINKAUFSLISTE.md)
+
+> **Die Website online bringen?** Dann ist [`LIVEGANG.md`](LIVEGANG.md) die richtige Anleitung. Dafür muss nichts heruntergeladen oder auf dem eigenen Rechner installiert werden – alles läuft im Browser (Netlify, Neon, Stripe, Resend). Die Abschnitte 1 bis 3 hier unten sind nur für jemanden gedacht, der am Code weiterarbeitet.
 
 ---
 
-## 1. Lokal starten
+## 1. Lokal starten (nur für die Weiterentwicklung)
 
 Voraussetzungen: Node 22, eine Postgres-Datenbank (lokal oder Neon).
 

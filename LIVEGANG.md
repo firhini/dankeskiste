@@ -4,6 +4,8 @@ Diese Anleitung führt von „Code liegt auf GitHub“ bis „Flyer dürfen raus
 
 Stand: 16.11.2026. Menüs der Anbieter werden gelegentlich umbenannt – wenn ein Punkt anders heißt, hilft die Suche im jeweiligen Dashboard.
 
+**Nichts herunterladen, nichts installieren.** Alle Schritte laufen im Browser. Einzige Besonderheit gegenüber einer einfachen Website: Der Ordner wird nicht per Drag-and-drop zu Netlify hochgeladen, sondern Netlify wird einmal mit dem GitHub-Repository verbunden (Schritt 8). Die Seite braucht Server-Funktionen für Bestellung, Zahlung und Admin – die baut Netlify selbst aus dem Repository.
+
 **Wichtig vorab**
 
 - **Schlüssel nie in einen Chat, eine Mail oder ins Repository schreiben.** Sie gehören ausschließlich in die Umgebungsvariablen bei Netlify. Wer den Stripe-Schlüssel kennt, kann Erstattungen auslösen.
