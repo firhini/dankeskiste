@@ -93,7 +93,7 @@ export default async function BoxSeite({ params }: PageProps<"/admin/boxen/[id]"
             ))}
             <div className="border border-dashed border-salbei p-3">
               <p className="klein font-semibold">Weiteres Foto hinzufügen</p>
-              <Formular aktion={bildHochladen} className="mt-2 space-y-2">
+              <Formular aktion={bildHochladen} leeren className="mt-2 space-y-2">
                 <input type="hidden" name="boxId" value={b.box.id} />
                 <label className="nur-sr" htmlFor="d-neu">Foto</label>
                 <input id="d-neu" name="datei" type="file" accept="image/jpeg,image/png,image/webp" required className="klein w-full" />

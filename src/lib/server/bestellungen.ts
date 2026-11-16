@@ -626,6 +626,6 @@ export async function erstatte(orderId: string, betragCent?: number): Promise<nu
   const betrag = betragCent ?? offen;
   if (betrag <= 0 || betrag > offen) throw new Error(`Erstattbar sind höchstens ${euro(offen)}.`);
   await stripe().refunds.create({ payment_intent: b.stripePaymentIntentId, amount: betrag, metadata: { orderId, nummer: b.nummer } });
-  const [neu] = await db.update(schema.orders).set({ erstattetCent: sql`${schema.orders.erstattetCent} + ${betrag}` }).where(eq(schema.orders.id, orderId)).returning({ erstattetCent: schema.orders.erstattetCent });
+  const [neu] = await db.update(schema.orders).set({ erstattetCent: sql`greatest(${schema.orders.erstattetCent}, ${b.erstattetCent + betrag})` }).where(eq(schema.orders.id, orderId)).returning({ erstattetCent: schema.orders.erstattetCent });
   return neu.erstattetCent;
 }

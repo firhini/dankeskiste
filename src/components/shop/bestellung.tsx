@@ -291,6 +291,19 @@ export function Bestellung({ boxen, e, startBox }: { boxen: BestellBoxInfo[]; e:
     return f;
   }
 
+  // Behobene Fehler sofort ausblenden (neue Fehler erscheinen erst beim nächsten „Weiter“)
+  useEffect(() => {
+    // eslint-disable-next-line react-hooks/set-state-in-effect -- Fehleranzeige folgt den Eingaben
+    setFehler((alt) => {
+      const schluessel = Object.keys(alt);
+      if (schluessel.length === 0) return alt;
+      const aktuell = pruefe(z.schritt);
+      const rest = Object.fromEntries(schluessel.filter((k) => k in aktuell).map((k) => [k, aktuell[k]]));
+      return schluessel.length === Object.keys(rest).length && schluessel.every((k) => rest[k] === alt[k]) ? alt : rest;
+    });
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [z, angebot]);
+
   function weiter() {
     const f = pruefe(z.schritt);
     setFehler(f);
@@ -410,6 +423,31 @@ export function Bestellung({ boxen, e, startBox }: { boxen: BestellBoxInfo[]; e:
     </div>
   );
 
+  // Das Formular erscheint erst, wenn der gespeicherte Warenkorb geladen ist. So kann niemand
+  // tippen, bevor die Seite bereit ist (Eingaben während der Hydration gingen sonst verloren).
+  if (!geladen) {
+    return (
+      <div className="raster min-h-[70vh] gap-y-8" aria-busy="true" aria-label="Bestellung wird geladen">
+        <div className="col-span-12 lg:col-span-7">
+          <div className="grid grid-cols-4 gap-1.5">
+            {SCHRITTE.map((name) => (
+              <div key={name} className="border-t-2 border-salbei pt-2"><span className="klein text-dunkel">&nbsp;</span></div>
+            ))}
+          </div>
+          <div className="mt-8 h-10 w-3/4 max-w-md bg-salbei/25" />
+          <div className="mt-8 space-y-0 border-t border-salbei">
+            {Array.from({ length: 6 }, (_, i) => (
+              <div key={i} className="flex items-center justify-between border-b border-salbei py-3.5">
+                <div className="h-11 w-2/5 bg-salbei/20" />
+                <div className="h-11 w-36 border border-salbei" />
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+    );
+  }
+
   if (alleGesperrt) {
     return (
       <div className="mass border border-dunkel p-6">
@@ -474,12 +512,12 @@ export function Bestellung({ boxen, e, startBox }: { boxen: BestellBoxInfo[]; e:
                           <p className="klein zahl text-dunkel">{euro(b.preisCent)}{b.alkohol ? " · auch ohne Alkohol" : ""}</p>
                         </div>
                         <div className="flex shrink-0 items-center" role="group" aria-label={`Menge ${b.name}`}>
-                          <button type="button" onClick={() => menge(b.slug, n - 1)} disabled={n === 0} aria-label={`Eine ${b.name} weniger`} className="flex h-11 w-11 items-center justify-center rounded-l-[2px] border border-salbei disabled:opacity-40">
+                          <button type="button" onClick={() => menge(b.slug, n - 1)} disabled={n === 0} aria-label={`${b.name}: Menge verringern`} className="flex h-11 w-11 items-center justify-center rounded-l-[2px] border border-salbei disabled:opacity-40">
                             <Minus />
                           </button>
                           <label className="nur-sr" htmlFor={`m-${b.slug}`}>Anzahl {b.name}</label>
                           <input id={`m-${b.slug}`} inputMode="numeric" pattern="[0-9]*" value={n === 0 ? "" : n} placeholder="0" onChange={(ev) => menge(b.slug, Number(ev.target.value.replace(/\D/g, "")))} className="zahl h-11 w-14 border-y border-salbei bg-transparent text-center font-semibold" />
-                          <button type="button" onClick={() => menge(b.slug, n + 1)} aria-label={`Eine ${b.name} mehr`} className="flex h-11 w-11 items-center justify-center rounded-r-[2px] border border-salbei">
+                          <button type="button" onClick={() => menge(b.slug, n + 1)} aria-label={`${b.name}: Menge erhöhen`} className="flex h-11 w-11 items-center justify-center rounded-r-[2px] border border-salbei">
                             <Plus />
                           </button>
                         </div>
@@ -759,7 +797,7 @@ export function Bestellung({ boxen, e, startBox }: { boxen: BestellBoxInfo[]; e:
         {/* Navigation Desktop */}
         <div className="mt-10 hidden items-center justify-between gap-4 border-t border-salbei pt-6 lg:flex">
           {z.schritt > 1 ? <button type="button" className="textlink" onClick={() => { setFehler({}); setze({ schritt: (z.schritt - 1) as Zustand["schritt"] }); }}>Zurück</button> : <span />}
-          <button type="button" className="knopf" onClick={weiter} disabled={sendet || !geladen}>
+          <button type="button" className="knopf" onClick={weiter} disabled={sendet}>
             {z.schritt === 4 ? (sendet ? "Einen Moment …" : `Jetzt bestellen und ${euro(angebot.summeCent, { immerCent: true })} bezahlen`) : <>Weiter: {SCHRITTE[z.schritt]} <Pfeil /></>}
           </button>
         </div>
@@ -784,7 +822,7 @@ export function Bestellung({ boxen, e, startBox }: { boxen: BestellBoxInfo[]; e:
         </details>
         <div className="flex items-center gap-3 px-5 pb-[max(0.75rem,env(safe-area-inset-bottom))] pt-2.5">
           {z.schritt > 1 ? <button type="button" className="knopf knopf-hell !px-4" onClick={() => { setFehler({}); setze({ schritt: (z.schritt - 1) as Zustand["schritt"] }); }} aria-label="Zurück">Zurück</button> : null}
-          <button type="button" className="knopf min-w-0 flex-1" onClick={weiter} disabled={sendet || !geladen}>
+          <button type="button" className="knopf min-w-0 flex-1" onClick={weiter} disabled={sendet}>
             {z.schritt === 4 ? (sendet ? "Einen Moment …" : "Jetzt bestellen und bezahlen") : <>Weiter <Pfeil /></>}
           </button>
         </div>

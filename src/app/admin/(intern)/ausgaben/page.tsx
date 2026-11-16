@@ -28,7 +28,7 @@ export default async function Ausgaben() {
   return (
     <Seite titel="Ausgaben" hinweis={`${jahr}: ${euro(gesamt, { immerCent: true })} gesamt, davon ${euro(gemein, { immerCent: true })} Gemeinkosten, die anteilig auf Bestellungen umgelegt werden. Verpackung, Wareneinkauf und Porto stecken schon in den Bestellkosten und zählen nur im Steuer-Export.`}>
       <Block titel="Neue Ausgabe">
-        <Formular aktion={ausgabeAnlegen} className="grid gap-3 sm:grid-cols-2 lg:grid-cols-[9rem_14rem_1fr_8rem_12rem_auto] lg:items-end">
+        <Formular aktion={ausgabeAnlegen} leeren className="grid gap-3 sm:grid-cols-2 lg:grid-cols-[9rem_14rem_1fr_8rem_12rem_auto] lg:items-end">
           <div>
             <label htmlFor="datum" className="feldname">Datum</label>
             <input id="datum" name="datum" type="date" defaultValue={heuteBerlin()} required className={feldKlein} />

@@ -239,6 +239,10 @@ describe("Fristen und Liefergebiet", () => {
     expect(tage).not.toContain("2026-12-21");
     expect(tage.find((t) => t > "2026-12-19")).toBe("2027-01-07");
     expect(lieferTage("2026-12-08", f).filter((t) => t.saison).map((t) => t.id)).toEqual(["2026-12-15", "2026-12-16", "2026-12-17", "2026-12-18", "2026-12-19"]);
+    // Auch Wochen vorher wird das Saisonfenster angeboten, selbst bei kurzer Liste
+    const frueh = lieferTage("2026-11-16", f, 6).map((t) => t.id);
+    expect(frueh.slice(0, 6)).toEqual(["2026-11-20", "2026-11-21", "2026-11-23", "2026-11-24", "2026-11-25", "2026-11-26"]);
+    expect(frueh.slice(6)).toEqual(["2026-12-15", "2026-12-16", "2026-12-17", "2026-12-18", "2026-12-19"]);
   });
   it("prüft den gewählten Termin serverseitig", () => {
     expect(terminGueltig("versand", "saison", "2026-12-01", f)).toBe(true);

@@ -122,12 +122,17 @@ export function lieferTage(heute: string, f: Fristen, anzahl = 24): TerminOption
   if (!status.verfuegbar) return [];
   const tage: TerminOption[] = [];
   let d = plusWerktage(heute, f.vorlaufPersoenlichWerktage);
+  // `anzahl` reguläre Liefertage ab dem frühesten Termin – und zusätzlich immer alle Tage des
+  // Saisonfensters, auch wenn es weiter in der Zukunft liegt.
+  const ende = status.saison && f.persoenlich.fensterBis >= d ? f.persoenlich.fensterBis : d;
+  let regulaer = 0;
   let schutz = 0;
-  while (tage.length < anzahl && schutz++ < 200) {
+  while ((regulaer < anzahl || d <= ende) && schutz++ < 400) {
     const imFenster = f.aktiv && d >= f.persoenlich.fensterVon && d <= f.persoenlich.fensterBis;
     const inRuhe = f.aktiv && d > f.persoenlich.fensterBis && d < f.wiederAb;
-    if (istLiefertag(d) && !inRuhe) {
+    if (istLiefertag(d) && !inRuhe && (regulaer < anzahl || imFenster)) {
       tage.push({ id: d, titel: datumKurz(d), hinweis: imFenster ? f.saisonName.replace(/\s*\d{4}$/, "") : "", saison: imFenster });
+      if (!imFenster || regulaer < anzahl) regulaer++;
     }
     d = plusTage(d, 1);
   }

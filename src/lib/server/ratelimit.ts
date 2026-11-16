@@ -8,7 +8,11 @@ import { db, schema } from "../../../db";
  * Zählt Anfragen je Schlüssel und Zeitfenster in Postgres (funktioniert auch auf Serverless).
  * Gespeichert wird nur ein gesalzener Hash der IP; abgelaufene Fenster werden gelöscht.
  */
-export async function rateLimit(bereich: string, limit: number, fensterSekunden: number): Promise<{ ok: boolean; rest: number }> {
+/** Nur für automatisierte Tests: vervielfacht alle Limits (greift ausschließlich mit Stripe-Test-Schlüssel). */
+const FAKTOR = process.env.STRIPE_SECRET_KEY?.startsWith("sk_test_") ? Math.max(1, Number(process.env.RATE_LIMIT_FAKTOR ?? 1) || 1) : 1;
+
+export async function rateLimit(bereich: string, grundLimit: number, fensterSekunden: number): Promise<{ ok: boolean; rest: number }> {
+  const limit = grundLimit * FAKTOR;
   const h = await headers();
   const ip = (h.get("x-forwarded-for") ?? "").split(",")[0].trim() || h.get("x-real-ip") || "unbekannt";
   const salz = process.env.AUTH_SECRET ?? "dankeskiste";

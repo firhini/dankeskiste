@@ -23,7 +23,7 @@ export default async function Kampagnen() {
   return (
     <Seite titel="Kampagnen" hinweis="Jeder Flyer und jede Visitenkarte bekommt einen eigenen Kurzlink mit QR-Code. Gezählt werden nur Aufrufe pro Tag – ohne IP-Adresse, Cookie oder Geräteerkennung.">
       <Block titel="Neue Kampagne">
-        <Formular aktion={kampagneSpeichern} className="grid gap-3 sm:grid-cols-2 lg:grid-cols-[1.2fr_1fr_10rem_8rem_10rem_auto] lg:items-end">
+        <Formular aktion={kampagneSpeichern} leeren className="grid gap-3 sm:grid-cols-2 lg:grid-cols-[1.2fr_1fr_10rem_8rem_10rem_auto] lg:items-end">
           <div>
             <label htmlFor="name" className="feldname">Name</label>
             <input id="name" name="name" required placeholder="Flyer Mannheim Quadrate" className={feldKlein} />

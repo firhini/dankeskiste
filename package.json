@@ -13,7 +13,10 @@
     "db:seed": "tsx db/seed.ts",
     "test": "vitest run",
     "typecheck": "next typegen && tsc --noEmit",
-    "docs": "tsx scripts/gen-docs.ts"
+    "docs": "tsx scripts/gen-docs.ts",
+    "bilder": "tsx scripts/process-images.ts",
+    "render": "python3 scripts/render/render.py --boxes scripts/render/boxes.json --out renders/final --grade",
+    "e2e": "playwright test"
   },
   "dependencies": {
     "@auth/drizzle-adapter": "^1.11.3",

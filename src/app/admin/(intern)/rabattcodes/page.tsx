@@ -29,7 +29,7 @@ export default async function Rabattcodes() {
     <Seite titel="Rabattcodes" hinweis="Werden als Stripe Promotion Codes angelegt; Stripe setzt Ablaufdatum und Nutzungslimit durch. Der Rabatt gilt für Boxen und Personalisierung, nicht für den Versand.">
       {!stripeKonfiguriert() ? <Meldung art="fehler">Stripe ist nicht eingerichtet (STRIPE_SECRET_KEY fehlt). Codes können erst danach angelegt werden.</Meldung> : null}
       <Block titel="Neuer Code">
-        <Formular aktion={rabattcodeAnlegen} className="grid gap-3 sm:grid-cols-2 lg:grid-cols-[12rem_9rem_8rem_10rem_8rem_auto] lg:items-end">
+        <Formular aktion={rabattcodeAnlegen} leeren className="grid gap-3 sm:grid-cols-2 lg:grid-cols-[12rem_9rem_8rem_10rem_8rem_auto] lg:items-end">
           <div>
             <label htmlFor="code" className="feldname">Code</label>
             <input id="code" name="code" required placeholder="MANNHEIM10" autoCapitalize="characters" className={`${feldKlein} uppercase`} />
