@@ -1,0 +1,141 @@
+{
+ "grosse-weihnachtskiste": {
+  "hero": {
+   "varianten": {
+    "avif": {
+     "480": "/images/boxen/geschenkbox-grosse-weihnachtskiste-geoeffnet-480.avif",
+     "800": "/images/boxen/geschenkbox-grosse-weihnachtskiste-geoeffnet-800.avif",
+     "1200": "/images/boxen/geschenkbox-grosse-weihnachtskiste-geoeffnet-1200.avif",
+     "1600": "/images/boxen/geschenkbox-grosse-weihnachtskiste-geoeffnet-1600.avif"
+    },
+    "webp": {
+     "480": "/images/boxen/geschenkbox-grosse-weihnachtskiste-geoeffnet-480.webp",
+     "800": "/images/boxen/geschenkbox-grosse-weihnachtskiste-geoeffnet-800.webp",
+     "1200": "/images/boxen/geschenkbox-grosse-weihnachtskiste-geoeffnet-1200.webp",
+     "1600": "/images/boxen/geschenkbox-grosse-weihnachtskiste-geoeffnet-1600.webp"
+    }
+   },
+   "breite": 1600,
+   "hoehe": 1200,
+   "blur": "data:image/webp;base64,UklGRloAAABXRUJQVlA4IE4AAAAQBACdASoUAA8APu1iqk4ppaQiMAgBMB2JYwCdMoAC/B/A2PkeE32EgAD+3t2afzvTec+UeN39FyX8TPTNscq9nHBceVaYTDU/XWncTAA="
+  }
+ },
+ "kleine-weihnachtskiste": {
+  "hero": {
+   "varianten": {
+    "avif": {
+     "480": "/images/boxen/geschenkbox-kleine-weihnachtskiste-geoeffnet-480.avif",
+     "800": "/images/boxen/geschenkbox-kleine-weihnachtskiste-geoeffnet-800.avif",
+     "1200": "/images/boxen/geschenkbox-kleine-weihnachtskiste-geoeffnet-1200.avif",
+     "1600": "/images/boxen/geschenkbox-kleine-weihnachtskiste-geoeffnet-1600.avif"
+    },
+    "webp": {
+     "480": "/images/boxen/geschenkbox-kleine-weihnachtskiste-geoeffnet-480.webp",
+     "800": "/images/boxen/geschenkbox-kleine-weihnachtskiste-geoeffnet-800.webp",
+     "1200": "/images/boxen/geschenkbox-kleine-weihnachtskiste-geoeffnet-1200.webp",
+     "1600": "/images/boxen/geschenkbox-kleine-weihnachtskiste-geoeffnet-1600.webp"
+    }
+   },
+   "breite": 1600,
+   "hoehe": 1200,
+   "blur": "data:image/webp;base64,UklGRloAAABXRUJQVlA4IE4AAAAwBACdASoUAA8APu1kqk4ppaQiMAgBMB2JYwCdMoADQLyOQxtEC6xO4mAA/t6WQAXeT2IweUiPLFPKsF60wWl9gjL3kVZKqsWKkWQAAAA="
+  },
+  "flatlay": {
+   "varianten": {
+    "avif": {
+     "480": "/images/boxen/geschenkbox-kleine-weihnachtskiste-inhalt-480.avif",
+     "800": "/images/boxen/geschenkbox-kleine-weihnachtskiste-inhalt-800.avif",
+     "1200": "/images/boxen/geschenkbox-kleine-weihnachtskiste-inhalt-1200.avif",
+     "1600": "/images/boxen/geschenkbox-kleine-weihnachtskiste-inhalt-1600.avif"
+    },
+    "webp": {
+     "480": "/images/boxen/geschenkbox-kleine-weihnachtskiste-inhalt-480.webp",
+     "800": "/images/boxen/geschenkbox-kleine-weihnachtskiste-inhalt-800.webp",
+     "1200": "/images/boxen/geschenkbox-kleine-weihnachtskiste-inhalt-1200.webp",
+     "1600": "/images/boxen/geschenkbox-kleine-weihnachtskiste-inhalt-1600.webp"
+    }
+   },
+   "breite": 1600,
+   "hoehe": 1600,
+   "blur": "data:image/webp;base64,UklGRmoAAABXRUJQVlA4IF4AAADwBACdASoUABQAPu1oqk+ppiOiKA1RMB2JZQCdM47BqMTypzq/ZnBG0C6k4wHK3QAA/sM8jSquYLAbAs7sxzCzZjgj8AePrH2gFPDfvbFyJry4RCVlT8hHn+DPTJgA"
+  },
+  "geschlossen": {
+   "varianten": {
+    "avif": {
+     "480": "/images/boxen/geschenkbox-kleine-weihnachtskiste-geschlossen-480.avif",
+     "800": "/images/boxen/geschenkbox-kleine-weihnachtskiste-geschlossen-800.avif",
+     "1200": "/images/boxen/geschenkbox-kleine-weihnachtskiste-geschlossen-1200.avif",
+     "1600": "/images/boxen/geschenkbox-kleine-weihnachtskiste-geschlossen-1600.avif"
+    },
+    "webp": {
+     "480": "/images/boxen/geschenkbox-kleine-weihnachtskiste-geschlossen-480.webp",
+     "800": "/images/boxen/geschenkbox-kleine-weihnachtskiste-geschlossen-800.webp",
+     "1200": "/images/boxen/geschenkbox-kleine-weihnachtskiste-geschlossen-1200.webp",
+     "1600": "/images/boxen/geschenkbox-kleine-weihnachtskiste-geschlossen-1600.webp"
+    }
+   },
+   "breite": 1600,
+   "hoehe": 1200,
+   "blur": "data:image/webp;base64,UklGRlIAAABXRUJQVlA4IEYAAAAwBACdASoUAA8APu1iqk2ppaQiMAgBMB2JYwCdMoADTtPPFbINXxgTNYAA/t6sP+Du7vFtaZxLbzIByyCt1o9P+L4eagAA"
+  }
+ },
+ "weihnachtskiste": {
+  "hero": {
+   "varianten": {
+    "avif": {
+     "480": "/images/boxen/geschenkbox-weihnachtskiste-geoeffnet-480.avif",
+     "800": "/images/boxen/geschenkbox-weihnachtskiste-geoeffnet-800.avif",
+     "1200": "/images/boxen/geschenkbox-weihnachtskiste-geoeffnet-1200.avif",
+     "1600": "/images/boxen/geschenkbox-weihnachtskiste-geoeffnet-1600.avif"
+    },
+    "webp": {
+     "480": "/images/boxen/geschenkbox-weihnachtskiste-geoeffnet-480.webp",
+     "800": "/images/boxen/geschenkbox-weihnachtskiste-geoeffnet-800.webp",
+     "1200": "/images/boxen/geschenkbox-weihnachtskiste-geoeffnet-1200.webp",
+     "1600": "/images/boxen/geschenkbox-weihnachtskiste-geoeffnet-1600.webp"
+    }
+   },
+   "breite": 1600,
+   "hoehe": 1200,
+   "blur": "data:image/webp;base64,UklGRloAAABXRUJQVlA4IE4AAAAQBACdASoUAA8APu1kqU2ppaQiMAgBMB2JQBOmUABNnvtaL/CGxSTr4AD+3t9Y+CviqRdRAE+kSwFlVo8eN606g5ZwLzn6mT8VaR3IAAA="
+  },
+  "flatlay": {
+   "varianten": {
+    "avif": {
+     "480": "/images/boxen/geschenkbox-weihnachtskiste-inhalt-480.avif",
+     "800": "/images/boxen/geschenkbox-weihnachtskiste-inhalt-800.avif",
+     "1200": "/images/boxen/geschenkbox-weihnachtskiste-inhalt-1200.avif",
+     "1600": "/images/boxen/geschenkbox-weihnachtskiste-inhalt-1600.avif"
+    },
+    "webp": {
+     "480": "/images/boxen/geschenkbox-weihnachtskiste-inhalt-480.webp",
+     "800": "/images/boxen/geschenkbox-weihnachtskiste-inhalt-800.webp",
+     "1200": "/images/boxen/geschenkbox-weihnachtskiste-inhalt-1200.webp",
+     "1600": "/images/boxen/geschenkbox-weihnachtskiste-inhalt-1600.webp"
+    }
+   },
+   "breite": 1600,
+   "hoehe": 1600,
+   "blur": "data:image/webp;base64,UklGRmIAAABXRUJQVlA4IFYAAABwBACdASoUABQAPu1osFAppaUiqAqpMB2JZQCsABEI48p1/QZ4RhcXnfBuAAD+wzx8r716REjiZ53GKB5EUHxab/DKMAMZWYZT6pBcFYDViMlORxgAAA=="
+  },
+  "geschlossen": {
+   "varianten": {
+    "avif": {
+     "480": "/images/boxen/geschenkbox-weihnachtskiste-geschlossen-480.avif",
+     "800": "/images/boxen/geschenkbox-weihnachtskiste-geschlossen-800.avif",
+     "1200": "/images/boxen/geschenkbox-weihnachtskiste-geschlossen-1200.avif",
+     "1600": "/images/boxen/geschenkbox-weihnachtskiste-geschlossen-1600.avif"
+    },
+    "webp": {
+     "480": "/images/boxen/geschenkbox-weihnachtskiste-geschlossen-480.webp",
+     "800": "/images/boxen/geschenkbox-weihnachtskiste-geschlossen-800.webp",
+     "1200": "/images/boxen/geschenkbox-weihnachtskiste-geschlossen-1200.webp",
+     "1600": "/images/boxen/geschenkbox-weihnachtskiste-geschlossen-1600.webp"
+    }
+   },
+   "breite": 1600,
+   "hoehe": 1200,
+   "blur": "data:image/webp;base64,UklGRlQAAABXRUJQVlA4IEgAAAAwBACdASoUAA8APu1mqk4ppaOiMAgBMB2JQBOmUABp20BLPvK2J7QifAAA/t6xZ9Z3xa1g/mYWQBaXo8hlrLmh+StC4SBxgAA="
+  }
+ }
+}

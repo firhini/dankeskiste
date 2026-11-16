@@ -6,7 +6,7 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint",
+    "lint": "eslint .",
     "kalkulation": "tsx scripts/kalkulation.ts",
     "db:generate": "drizzle-kit generate",
     "db:migrate": "drizzle-kit migrate",
@@ -16,7 +16,8 @@
     "docs": "tsx scripts/gen-docs.ts",
     "bilder": "tsx scripts/process-images.ts",
     "render": "python3 scripts/render/render.py --boxes scripts/render/boxes.json --out renders/final --grade",
-    "e2e": "playwright test"
+    "e2e": "playwright test",
+    "bilder:api": "tsx scripts/generate-images-api.ts"
   },
   "dependencies": {
     "@auth/drizzle-adapter": "^1.11.3",

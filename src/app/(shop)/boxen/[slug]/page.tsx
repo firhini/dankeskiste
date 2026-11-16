@@ -67,7 +67,7 @@ export default async function BoxSeite({ params }: PageProps<"/boxen/[slug]">) {
                 <div className="mt-3 grid grid-cols-2 gap-3">
                   {weitere.map((b, i) => (
                     <div key={i} className="overflow-hidden rounded-[2px] bg-salbei/25">
-                      <Bild bild={b} sizes="(min-width: 1024px) 28vw, 46vw" className="aspect-[4/3] w-full object-cover" />
+                      <Bild bild={b} sizes="(min-width: 1024px) 28vw, 46vw" className="aspect-square w-full object-cover" />
                     </div>
                   ))}
                 </div>
@@ -84,7 +84,8 @@ export default async function BoxSeite({ params }: PageProps<"/boxen/[slug]">) {
         {/* Kaufbereich */}
         <div className="col-span-12 lg:col-span-5 lg:pl-4">
           <p className="label text-dunkel">
-            <Link href={`/kollektionen/${box.kollektionSlug}`} className="no-underline hover:underline">{box.kollektionName}</Link> · {box.anlass}
+            <Link href={`/kollektionen/${box.kollektionSlug}`} className="no-underline hover:underline">{box.kollektionName}</Link>
+            {box.anlass && box.anlass !== box.kollektionName ? ` · ${box.anlass}` : ""}
           </p>
           <h1 className="mt-3 !text-[clamp(2.2rem,1.6rem+2.8vw,3.75rem)] text-oliv">{box.name}</h1>
           <p className="lead mt-4">{box.kurz}</p>

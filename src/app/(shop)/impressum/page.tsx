@@ -3,7 +3,7 @@ import { Rechtstext, Wert } from "@/components/shop/rechtstext";
 import { ladeEinstellungen } from "@/lib/server/einstellungen";
 
 export const ensureStatic = "navigation";
-export const metadata: Metadata = { title: "Impressum", description: "Impressum und Anbieterkennzeichnung von Dankeskiste, Schwetzingen.", alternates: { canonical: "/impressum" } };
+export const metadata: Metadata = { title: "Impressum", description: "Impressum von Dankeskiste, Schwetzingen: Anbieterkennzeichnung, Kontakt und Hinweis auf die Kleinunternehmerregelung nach § 19 UStG.", alternates: { canonical: "/impressum" } };
 
 export default async function Impressum() {
   const { kontakt: k } = await ladeEinstellungen();

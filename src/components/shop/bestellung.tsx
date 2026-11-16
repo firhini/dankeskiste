@@ -117,8 +117,8 @@ export function Bestellung({ boxen, e, startBox }: { boxen: BestellBoxInfo[]; e:
       start.mengen = { ...start.mengen, [wunsch]: Object.keys(start.mengen).length ? 1 : e.mindestmenge };
       start.schritt = 1;
     }
-    if (q.get("abgebrochen")) setAbgebrochen(true);
     /* eslint-disable react-hooks/set-state-in-effect -- einmaliges Laden nach der Hydration */
+    if (q.get("abgebrochen")) setAbgebrochen(true);
     setZ(start);
     setHeute(heuteBerlin());
     setGeladen(true);

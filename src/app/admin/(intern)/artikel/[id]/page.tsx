@@ -17,6 +17,15 @@ export const metadata: Metadata = { title: "Artikel bearbeiten" };
 const KATEGORIEN = ["Kaffee & Tee", "Schokolade & Pralinen", "Gebäck", "Frühstück", "Nüsse & Snacks", "Getränke", "Feinkost", "Non-Food"];
 const LAEDEN = ["REWE", "EDEKA", "Kaufland", "dm", "Rossmann", "Lidl", "Aldi Süd", "Metro"];
 
+function F({ name, label, wert, ...rest }: { name: string; label: string; wert?: string | number | null } & React.InputHTMLAttributes<HTMLInputElement>) {
+  return (
+    <div>
+      <label htmlFor={name} className="feldname">{label}</label>
+      <input id={name} name={name} defaultValue={wert ?? ""} className={feldKlein} {...rest} />
+    </div>
+  );
+}
+
 export default async function ArtikelSeite({ params }: PageProps<"/admin/artikel/[id]">) {
   await erfordereAdmin();
   const { id } = await params;
@@ -29,12 +38,6 @@ export default async function ArtikelSeite({ params }: PageProps<"/admin/artikel
     a ? db.select({ name: schema.boxes.name, id: schema.boxes.id }).from(schema.boxItems).innerJoin(schema.boxes, eq(schema.boxes.id, schema.boxItems.boxId)).where(eq(schema.boxItems.articleId, a.id)) : [],
   ]);
   const alt = a ? a.geprueftAm < plusTage(heuteBerlin(), -30) : false;
-  const F = ({ name, label, wert, ...rest }: { name: string; label: string; wert?: string | number | null } & React.InputHTMLAttributes<HTMLInputElement>) => (
-    <div>
-      <label htmlFor={name} className="feldname">{label}</label>
-      <input id={name} name={name} defaultValue={wert ?? ""} className={feldKlein} {...rest} />
-    </div>
-  );
   return (
     <Seite titel={a ? `${a.marke} ${a.name}` : "Neuer Artikel"} hinweis={a ? `${a.groesse} · verwendet in: ${verwendung.map((v) => v.name).join(", ") || "keiner Box"}` : undefined} aktionen={<AKnopf href="/admin/artikel" hell>Zur Liste</AKnopf>}>
       {alt ? <Meldung art="fehler">Der Preis wurde zuletzt am {datumZahl(a!.geprueftAm)} geprüft – das ist über 30 Tage her. Bitte im Laden oder online prüfen und unten bestätigen.</Meldung> : null}

@@ -5,7 +5,7 @@ import { ladeKatalog } from "@/lib/server/katalog";
 
 export const ensureStatic = "navigation";
 export const metadata: Metadata = {
-  title: "Kundengeschenke unter 50 € – mit Logo, von Hand gepackt",
+  title: { absolute: "Kundengeschenke unter 50 € mit Logo · Dankeskiste" },
   description: "Kundengeschenke für Weihnachten und das ganze Jahr: Geschenkboxen unter 50 € mit Ihrem Logo und Grußkarte. Ab 5 Stück, Versand deutschlandweit.",
   alternates: { canonical: "/kundengeschenke" },
 };

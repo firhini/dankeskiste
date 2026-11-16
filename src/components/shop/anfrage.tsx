@@ -5,6 +5,10 @@ import { leseKampagne } from "./kampagne";
 
 type Zustand = { art: "bereit" } | { art: "sendet" } | { art: "ok" } | { art: "fehler"; text: string; felder?: Record<string, string> };
 
+function Fehler({ felder, name }: { felder: Record<string, string>; name: string }) {
+  return felder[name] ? <p id={`${name}-fehler`} className="feldfehler">{felder[name]}</p> : null;
+}
+
 export function AnfrageFormular({ vorgabe = "angebot", hinweis }: { vorgabe?: "angebot" | "musterbox"; hinweis?: string }) {
   const [z, setZ] = useState<Zustand>({ art: "bereit" });
   const felder = z.art === "fehler" ? (z.felder ?? {}) : {};
@@ -36,7 +40,6 @@ export function AnfrageFormular({ vorgabe = "angebot", hinweis }: { vorgabe?: "a
     );
   }
 
-  const Fehler = ({ name }: { name: string }) => (felder[name] ? <p id={`${name}-fehler`} className="feldfehler">{felder[name]}</p> : null);
   const attr = (name: string) => ({ "aria-invalid": felder[name] ? true : undefined, "aria-describedby": felder[name] ? `${name}-fehler` : undefined });
 
   return (
@@ -52,17 +55,17 @@ export function AnfrageFormular({ vorgabe = "angebot", hinweis }: { vorgabe?: "a
       <div>
         <label htmlFor="a-firma" className="feldname">Firma</label>
         <input id="a-firma" name="firma" required autoComplete="organization" className="feld" {...attr("firma")} />
-        <Fehler name="firma" />
+        <Fehler felder={felder} name="firma" />
       </div>
       <div>
         <label htmlFor="a-name" className="feldname">Ihr Name</label>
         <input id="a-name" name="name" required autoComplete="name" className="feld" {...attr("name")} />
-        <Fehler name="name" />
+        <Fehler felder={felder} name="name" />
       </div>
       <div>
         <label htmlFor="a-email" className="feldname">E-Mail</label>
         <input id="a-email" name="email" type="email" required autoComplete="email" inputMode="email" className="feld" {...attr("email")} />
-        <Fehler name="email" />
+        <Fehler felder={felder} name="email" />
       </div>
       <div>
         <label htmlFor="a-telefon" className="feldname">Telefon <span className="font-normal">(optional)</span></label>
@@ -80,14 +83,14 @@ export function AnfrageFormular({ vorgabe = "angebot", hinweis }: { vorgabe?: "a
       <div className="sm:col-span-2">
         <label htmlFor="a-nachricht" className="feldname">Was haben Sie vor?</label>
         <textarea id="a-nachricht" name="nachricht" rows={4} className="feld" placeholder="Anlass, Wunschtermin, Lieferadressen, besondere Wünsche …" {...attr("nachricht")} />
-        <Fehler name="nachricht" />
+        <Fehler felder={felder} name="nachricht" />
       </div>
       <div className="sm:col-span-2">
         <label className="klein flex items-start gap-3">
           <input type="checkbox" name="b2b" required className="mt-0.5 h-5 w-5 shrink-0 accent-[#455230]" {...attr("b2b")} />
           <span>Ich frage als Unternehmer im Sinne von §&nbsp;14 BGB an, nicht als Verbraucher.</span>
         </label>
-        <Fehler name="b2b" />
+        <Fehler felder={felder} name="b2b" />
       </div>
       <div className="sm:col-span-2">
         <button type="submit" disabled={z.art === "sendet"} className="knopf">

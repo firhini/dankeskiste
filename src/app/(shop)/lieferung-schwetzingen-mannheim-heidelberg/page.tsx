@@ -10,7 +10,7 @@ import { SITE_URL } from "@/lib/site";
 
 export const ensureStatic = "navigation";
 export const metadata: Metadata = {
-  title: { absolute: "Firmengeschenke: Lieferung Mannheim, Heidelberg, Schwetzingen" },
+  title: { absolute: "Firmengeschenke-Lieferung Mannheim, Heidelberg & Umgebung" },
   description: "Geschenkboxen für Firmen, persönlich geliefert in Schwetzingen, Mannheim, Heidelberg und Umgebung. Wunschtermin, ab 250 € Warenwert kostenlos.",
   alternates: { canonical: "/lieferung-schwetzingen-mannheim-heidelberg" },
 };

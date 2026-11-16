@@ -96,7 +96,7 @@ export default async function Startseite() {
         </div>
         <dl className="mt-12 grid grid-cols-2 border-t border-salbei lg:mt-20 lg:grid-cols-4">
           {[
-            ["Preis je Box", `ab ${euro(abPreis)}`, "ohne Umsatzsteuer (§ 19 UStG)"],
+            ["Preis je Box", `ab ${euro(abPreis)}`, "ohne Umsatzsteuer (§\u00a019\u00a0UStG)"],
             ["Mindestmenge", `${e.mindestmenge} Boxen`, "frei mischbar"],
             ["Inklusive", "Logo & Karte", "Sticker und gedruckter Gruß"],
             inSaison ? ["Bestellschluss Versand", datumLang(e.fristen.versand.bestellschluss), `Zustellung bis ${datumLang(e.fristen.versand.lieferungBis)}`] : ["Versand", `in ${e.fristen.vorlaufVersandWerktage} Werktagen`, "deutschlandweit mit DHL"],

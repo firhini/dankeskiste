@@ -8,7 +8,7 @@ import { ladeKatalog } from "@/lib/server/katalog";
 
 export const ensureStatic = "navigation";
 export const metadata: Metadata = {
-  title: "Weihnachtsgeschenke für Mitarbeiter: Boxen ab 29 €",
+  title: { absolute: "Weihnachtsgeschenke für Mitarbeiter: Boxen ab 29 €" },
   description: "Weihnachtsgeschenke für Mitarbeiter ab 5 Stück: Geschenkboxen von 29 bis 69 €, mit Logo und Karte, auch einzeln ins Homeoffice. Bestellschluss 10.12.",
   alternates: { canonical: "/weihnachtsgeschenke-mitarbeiter" },
 };
